@@ -1,0 +1,16 @@
+<template>
+    <h1>{{ title }}</h1>
+</template>
+
+<script>
+    export default {
+        name: "ProjectTitle",
+        props: [
+            'title'
+        ]
+    }
+</script>
+
+<style scoped>
+
+</style>
