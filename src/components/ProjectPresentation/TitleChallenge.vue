@@ -1,5 +1,6 @@
 <template>
-    <h2>{{ title }}</h2>
+    <div>
+    {{ title }}</div>
 </template>
 
 <script>
@@ -12,8 +13,11 @@
 
 <style scoped>
 
-    h2 {
+    div {
         font-size: 35px;
         text-align: center;
+        color: whitesmoke;
+        font-family: Verdana, Geneva, sans-serif;
+        margin-bottom: 25px;
     }
 </style>

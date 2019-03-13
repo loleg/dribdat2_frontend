@@ -56,6 +56,7 @@ export default {
 
   .rest-iframe {
     height: 60%;
+
   }
 }
 
