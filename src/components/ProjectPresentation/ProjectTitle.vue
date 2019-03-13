@@ -1,5 +1,7 @@
 <template>
-    <div>{{ title }}</div>
+    <div class="project-title">
+        <h1>{{ title }}</h1>
+    </div>
 </template>
 
 <script>
@@ -35,7 +37,7 @@
     */
     @media screen and (min-width: 728px)
     {
-        div{
+        .project-title h1{
             margin-top: auto;
             font-size: 300%;
             color: whitesmoke;

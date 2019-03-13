@@ -44,18 +44,18 @@
 
 <style lang="scss">
 
+    body{
+
+       margin-bottom: 20px;
+        margin-top:20px;
+        background-color: #292929;
+
+    }
 
 
+    @media screen and (min-width: 600px){
 
-    @media screen and (min-width: 728px){
 
-        body{
-
-            margin-bottom: 20px;
-            margin-top:20px;
-            background-color: #292929;
-
-        }
 
         #app {
             font-family: Arial;
@@ -105,17 +105,11 @@
         }
     }
 
-//CSS part for the mobile to tablet
-    @media screen and (min-width: 300px) and (max-width: 768px){
-        body{
 
-            margin-bottom: 20px;
-            margin-top: 20px;
-            background-color: #292929;
-            margin-left: 20px;
-            margin-right: 20px;
+    @media screen and (max-width: 600px){
 
-        }
+
+
 
         #app {
             font-family: Arial;
@@ -124,13 +118,15 @@
             text-align: center;
             color: #2c3e50;
 
+            margin:0 auto;
+            padding:0 auto;
         }
 
         #nav {
 
 
             border-bottom: whitesmoke 1px solid;
-            margin-bottom: 20px;
+            margin-bottom: 4px;
             ul{
                 list-style-type: none;
                 margin: 5px;
@@ -145,7 +141,7 @@
                 display: block;
                 color: white;
                 text-align: center;
-                padding: 2px 3px;
+                padding: 10px 20px;
                 text-decoration: none;
                 font-weight: bold;
                 color: whitesmoke;

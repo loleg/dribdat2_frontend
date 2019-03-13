@@ -1,4 +1,4 @@
-import {shallowMount} from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import TitleChallenge from '@/components/ProjectPresentation/TitleChallenge.vue'
 
 describe('TitleChallenge.vue', () => {
@@ -8,6 +8,6 @@ describe('TitleChallenge.vue', () => {
         const wrapper = shallowMount(TitleChallenge, {
             propsData: {title}
         })
-        expect(wrapper.find('.titleChallenge').text()).toMatch(title)
+        expect(wrapper.find('.challenge-title h2').text()).toMatch(title)
     })
 })
