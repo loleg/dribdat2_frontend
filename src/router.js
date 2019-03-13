@@ -27,10 +27,10 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/ProjectPresentation.vue')
     },
 
-      {
+    {
           path: '/infoTeam',
           name: 'infoTeam',
           component: () => import(/* webpackChunkName: "about" */ './views/InfoTeam.vue')
-      },
+    },
   ]
 })

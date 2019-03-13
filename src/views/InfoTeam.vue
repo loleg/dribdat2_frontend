@@ -1,6 +1,6 @@
 <template>
     <div class="infoTeam">
-        <HeadlineStatus title="Headline Status"></HeadlineStatus>
+        <HeadlineStatus status="Headline Status"></HeadlineStatus>
     </div>
 </template>
 
