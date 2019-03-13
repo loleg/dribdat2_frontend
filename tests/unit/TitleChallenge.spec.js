@@ -4,10 +4,10 @@ import TitleChallenge from '@/components/ProjectPresentation/TitleChallenge.vue'
 describe('TitleChallenge.vue', () => {
     it('Title challenge passed', () => {
 
-        const titleChallenge = 'Title du challenge'
+        const title = 'Title du challenge'
         const wrapper = shallowMount(TitleChallenge, {
-            propsData: { titleChallenge}
+            propsData: {title}
         })
-        expect(wrapper.text()).toMatch(titleChallenge)
+        expect(wrapper.find('.titleChallenge h2').text()).toMatch(title)
     })
 })

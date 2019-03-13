@@ -9,6 +9,30 @@
   </div>
 </template>
 
+<script>
+  import {APIService} from './APIService';
+  export default {
+      name: 'HelloWorld',
+      data () {
+          return {
+              info: null
+          }
+      },
+      methods: {
+
+          getData() {
+              APIService.getProject(1).then((data) => {
+
+                  this.info = data
+              })
+          }
+      },
+      mounted() {
+          this.getData()
+      }
+  }
+</script>
+
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
