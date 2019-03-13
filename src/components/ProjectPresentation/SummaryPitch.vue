@@ -12,9 +12,14 @@
 </script>
 
 <style scoped>
+@media screen and (min-width: 320px){
 
-    p{
+
+    .textSummary{
         text-align: justify;
-    }
+        color: whitesmoke;
+        font-family: Verdana, Geneva, sans-serif;
 
+    }
+}
 </style>

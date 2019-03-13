@@ -51,10 +51,12 @@ export default {
 @media screen and (min-width: 992px) {
   .resp-container {
     margin-bottom: -13%;
+
   }
 
   .rest-iframe {
     height: 60%;
+
   }
 }
 

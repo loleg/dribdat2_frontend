@@ -8,6 +8,6 @@ describe('TitleChallenge.vue', () => {
         const wrapper = shallowMount(TitleChallenge, {
             propsData: {title}
         })
-        expect(wrapper.find('.titleChallenge h2').text()).toMatch(title)
+        expect(wrapper.find('.titleChallenge').text()).toMatch(title)
     })
 })
