@@ -13,4 +13,8 @@
 
 <style scoped>
 
+    p{
+        text-align: justify;
+    }
+
 </style>
