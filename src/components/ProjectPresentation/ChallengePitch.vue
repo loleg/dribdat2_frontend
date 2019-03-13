@@ -1,7 +1,7 @@
 <template>
 <div class="resp-container">
   <iframe class="rest-iframe" :src="embedable_pitch"></iframe>
-</div> 
+</div>
 </template>
 
 <script>
@@ -50,7 +50,7 @@ export default {
 
 @media screen and (min-width: 992px) {
   .resp-container {
-    margin: 0 10%;
+    margin-bottom: -13%;
   }
 
   .rest-iframe {
