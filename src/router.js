@@ -26,5 +26,11 @@ export default new Router({
       name: 'projectPresentation',
       component: () => import(/* webpackChunkName: "about" */ './views/ProjectPresentation.vue')
     },
+
+    {
+          path: '/infoTeam',
+          name: 'infoTeam',
+          component: () => import(/* webpackChunkName: "about" */ './views/InfoTeam.vue')
+    },
   ]
 })

@@ -11,7 +11,7 @@
 
 <script>
     import TitleChallenge from "../components/ProjectPresentation/TitleChallenge";
-    import SummaryPitch from '../components/SummaryPitch'
+    import SummaryPitch from '../components/ProjectPresentation/SummaryPitch'
     import ProjectTitle from '../components/ProjectPresentation/ProjectTitle'
     import ChallengePitch from '../components/ProjectPresentation/ChallengePitch'
 
