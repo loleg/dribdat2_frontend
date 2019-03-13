@@ -13,48 +13,57 @@
             </ul>
             <br/>
         </div>
-        <router-view/>
+        <router-view :project="project"/>
     </div>
 
 </template>
 
 <script>
-  import {APIService} from './APIService';
-  export default {
-      name: 'HelloWorld',
-      data () {
-          return {
-              info: null
-          }
-      },
-      methods: {
+    import {APIService} from './APIService';
 
-          getData() {
-              APIService.getProject(1).then((data) => {
+    export default {
+        name: 'HelloWorld',
+        data() {
+            return {
+                project: {
+                    name: 'name',
+                    summary: 'summary',
+                    challenge: {
+                        name: 'challengeName'
+                    },
+                    pitch: 'http://example.com'
+                }
+            }
+        },
+        methods: {
 
-                  this.info = data
-              })
-          }
-      },
-      mounted() {
-          this.getData()
-      }
-  }
+            getData() {
+                APIService.getProject(1).then((data) => {
+
+                    this.project.name = data.project.name
+                    this.project.summary = data.project.summary
+                    this.project.challenge.name = data.project.category.name
+                })
+            }
+        },
+        created() {
+            this.getData()
+        }
+    }
 </script>
 
 <style lang="scss">
 
-    body{
+    body {
 
-       margin-bottom: 20px;
-        margin-top:20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
         background-color: #292929;
 
     }
 
 
-    @media screen and (min-width: 600px){
-
+    @media screen and (min-width: 600px) {
 
 
         #app {
@@ -64,8 +73,8 @@
             text-align: center;
             color: #2c3e50;
 
-            margin:0 auto;
-            padding:0 auto;
+            margin: 0 auto;
+            padding: 0 auto;
             margin-left: 250px;
             margin-right: 250px;
         }
@@ -75,16 +84,19 @@
 
             border-bottom: whitesmoke 1px solid;
             margin-bottom: 4px;
-            ul{
+
+            ul {
                 list-style-type: none;
                 margin: 5px;
                 padding: 0;
                 overflow: hidden;
                 background-color: #292929;
             }
+
             li {
                 float: left;
             }
+
             li a {
                 display: block;
                 color: white;
@@ -106,9 +118,7 @@
     }
 
 
-    @media screen and (max-width: 600px){
-
-
+    @media screen and (max-width: 600px) {
 
 
         #app {
@@ -118,8 +128,8 @@
             text-align: center;
             color: #2c3e50;
 
-            margin:0 auto;
-            padding:0 auto;
+            margin: 0 auto;
+            padding: 0 auto;
         }
 
         #nav {
@@ -127,16 +137,19 @@
 
             border-bottom: whitesmoke 1px solid;
             margin-bottom: 4px;
-            ul{
+
+            ul {
                 list-style-type: none;
                 margin: 5px;
                 padding: 0;
                 overflow: hidden;
                 background-color: #292929;
             }
+
             li {
                 float: left;
             }
+
             li a {
                 display: block;
                 color: white;
