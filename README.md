@@ -1,5 +1,7 @@
 # dribdat2_frontend
 
+[![Travis](https://travis-ci.org/hackathons-ftw/dribdat2_frontend.svg?branch=master)](https://travis-ci.org/hackathons-ftw/dribdat2_frontend)
+
 ## Project setup
 ```
 npm install
