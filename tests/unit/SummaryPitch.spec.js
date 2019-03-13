@@ -1,5 +1,5 @@
 import {shallowMount} from '@vue/test-utils'
-import SummaryPitch from '@/components/SummaryPitch.vue'
+import SummaryPitch from '@/components/ProjectPresentation/SummaryPitch.vue'
 
 describe('SummaryPitch.vue', () => {
     it('summary text passed', () => {
