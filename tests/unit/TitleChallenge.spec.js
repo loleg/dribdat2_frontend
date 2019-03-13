@@ -1,5 +1,5 @@
 import {shallowMount} from '@vue/test-utils'
-import TitleChallenge from '@/components/TitleChallenge.vue'
+import TitleChallenge from '@/components/ProjectPresentation/TitleChallenge.vue'
 
 describe('TitleChallenge.vue', () => {
     it('Title challenge passed', () => {
