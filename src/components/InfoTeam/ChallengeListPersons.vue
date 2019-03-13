@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h3>TEAM</h3>
+    <h3>CHALLENGE REPRESENTED BY :</h3>
     <ul>
-      <li v-for="person in list" :key="person">
+      <li v-for="person in list" :key="person.id">
         <a :href="person.link">{{ person.firstname + ' ' + person.lastname }}</a>
       </li>
     </ul>
