@@ -1,7 +1,5 @@
 <template>
-    <div class="titleChallenge">
-        <h2>{{ title }}</h2>
-    </div>
+    <h2>{{ title }}</h2>
 </template>
 
 <script>
