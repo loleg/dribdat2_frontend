@@ -6,7 +6,7 @@
         <!-- https://www.dailymotion.com/video/xkq3cr -->
         <!-- https://www.youtube.com/watch?v=zihJTimjdls -->
         <ChallengePitch pitch="https://www.dailymotion.com/video/xkq3cr"></ChallengePitch>
-        <SummaryPitch  summary-text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est error dolorem voluptate culpa maiores, perspiciatis dolor, doloribus temporibus asperiores, fugiat accusantium veniam iure. Voluptatem dolores distinctio reprehenderit animi. Perspiciatis, minus."/>
+
     </div>
 </template>
 
