@@ -6,7 +6,7 @@ describe('ProjectPresentation.vue', () => {
 
         const wrapper = mount(ProjectPresentation)
 
-        expect(wrapper.find('.projectPresentation .socialLink').text()).toEqual('www.facebook.com');
+        expect(wrapper.find(' .projectPresentation .contentLeft .LinkSocial .toLink').text()).toEqual('www.facebook.com');
 
 
     })

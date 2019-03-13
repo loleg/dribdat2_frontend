@@ -48,14 +48,10 @@ export default {
   border: 0;
 }
 
-@media screen and (min-width: 992px) {
-  .resp-container {
-    margin-bottom: -13%;
-
-  }
+@media screen and (min-width: 300px) and (max-width: 768px){
 
   .rest-iframe {
-    height: 60%;
+    height: 100%;
 
   }
 }
