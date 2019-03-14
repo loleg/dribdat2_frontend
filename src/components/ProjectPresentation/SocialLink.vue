@@ -1,7 +1,7 @@
 <template>
-    <div class="socialLink">
+    <div class="social-link">
 
-        <p class="titleLink"><b>Project link in social network : </b> </p>
+        <p class="link-label"><b>Project link in social network : </b> </p>
         <a v-bind:href="'//' + link">{{link}}</a>
     </div>
 </template>
@@ -18,12 +18,12 @@
 
     @media  screen and (min-width: 320px) {
 
-        .socialLink{
+        .social-link{
             font-size: 90%;
 
         }
 
-        .titleLink{
+        .link-label{
             color: whitesmoke;
             text-decoration: underline whitesmoke;
         }
