@@ -1,6 +1,6 @@
 # dribdat2_frontend
 
-[![Travis](https://travis-ci.org/hackathons-ftw/dribdat2_frontend.svg?branch=master)](https://travis-ci.org/hackathons-ftw/dribdat2_frontend)
+[![Travis](https://travis-ci.org/hackathons-ftw/dribdat2_frontend.svg?branch=master)](https://travis-ci.org/hackathons-ftw/dribdat2_frontend)[![Coverage Status](https://coveralls.io/repos/github/hackathons-ftw/dribdat2_frontend/badge.svg?branch=master)](https://coveralls.io/github/hackathons-ftw/dribdat2_frontend?branch=master)
 
 ## Project setup
 ```
