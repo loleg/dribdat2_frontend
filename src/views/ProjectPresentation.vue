@@ -3,7 +3,7 @@
         <ProjectTitle :title="project.name"></ProjectTitle>
         <TitleChallenge :title="project.challenge.name"></TitleChallenge>
         <ChallengePitch :pitch="project.pitch"></ChallengePitch>
-        <SummaryPitch  :summary="project.summary"></SummaryPitch>
+        <SummaryPitch :summary="project.summary"></SummaryPitch>
         <!-- https://www.dailymotion.com/video/xkq3cr -->
         <!-- https://www.youtube.com/watch?v=zihJTimjdls -->
         <div class="contentLeft">
@@ -14,32 +14,28 @@
 
 <script>
     import TitleChallenge from "../components/ProjectPresentation/TitleChallenge";
-    import SummaryPitch from '../components/ProjectPresentation/SummaryPitch'
-    import ProjectTitle from '../components/ProjectPresentation/ProjectTitle'
-    import ChallengePitch from '../components/ProjectPresentation/ChallengePitch'
+    import SummaryPitch from "../components/ProjectPresentation/SummaryPitch";
+    import ProjectTitle from "../components/ProjectPresentation/ProjectTitle";
+    import ChallengePitch from "../components/ProjectPresentation/ChallengePitch";
     import SocialLink from "../components/ProjectPresentation/SocialLink";
 
     export default {
-        name: 'ProjectPresentation',
+        name: "ProjectPresentation",
         components: {
             SocialLink,
             TitleChallenge,
             SummaryPitch,
             ProjectTitle,
-            ChallengePitch,
-
+            ChallengePitch
         },
-        props: [
-            'project'
-        ]
-
-    }
+        props: ["project"]
+    };
 </script>
 
 <style scoped>
 
 
-    @media screen and (min-width: 992px)
+    @media screen
     {
         .projectPresentation{
             height: 75%;
