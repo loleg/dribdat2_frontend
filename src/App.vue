@@ -1,53 +1,53 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <ul>
-        <li>
-          <router-link to="/">Project presentation</router-link>
-        </li>
+    <div id="app">
+        <div id="nav">
+            <ul>
+                <li>
+                    <router-link to="/">Project presentation</router-link>
+                </li>
 
-        <li>
-          <router-link to="/infoTeam">Info Team</router-link>
-        </li>
-      </ul>
-      <br>
+                <li>
+                    <router-link to="/infoTeam">Info Team</router-link>
+                </li>
+            </ul>
+            <br>
+        </div>
+        <router-view :project="project"/>
     </div>
-    <router-view :project="project"/>
-  </div>
 </template>
 
 <script>
     import { APIService } from "./APIService";
 
-export default {
-  name: "dribdat",
-  data() {
-    return {
-      project: {
-        name: "name",
-        summary: "summary",
-        challenge: {
-          name: "challengeName"
+    export default {
+        name: "dribdat",
+        data() {
+            return {
+                project: {
+                    name: "name",
+                    summary: "summary",
+                    challenge: {
+                        name: "challengeName"
+                    },
+                    id: null,
+                    pitch: "http://example.com"
+                }
+            };
         },
-        id: null,
-        pitch: "http://example.com"
-      }
+        methods: {
+            getData() {
+                APIService.getProject(2).then(data => {
+                    this.project.id = data.project.id;
+                    this.project.name = data.project.name;
+                    this.project.summary = data.project.summary;
+                    this.project.challenge.name = data.project.category.name;
+                });
+            }
+        },
+        created() {
+            this.getData();
+        }
     };
-  },
-  methods: {
-    getData() {
-      APIService.getProject(2).then(data => {
-        this.project.id = data.project.id;
-        this.project.name = data.project.name;
-        this.project.summary = data.project.summary;
-        this.project.challenge.name = data.project.category.name;
-      });
-    }
-  },
-  created() {
-    this.getData();
-  }
-};
 </script>
 
 <style lang="scss">
@@ -60,6 +60,67 @@ export default {
         background-color: #616163;
 
     }
+
+    .container {
+
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .add-feedback {
+        &.open {
+            background-color: #FAFAFA;
+            padding: 18px 32px;
+            border-radius: 5px;
+            width: 900px;
+            height: auto;
+            cursor: default;
+            form {
+                opacity: 1;
+                transition: opacity 0.1s ease;
+                transition-delay: 0.3s;
+                height: auto;
+            }
+        }
+        transition: all 0.3s ease;
+        background-color: #3498DB;
+        height: 100px;
+        width: 100px;
+        border-radius: 72px;
+        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .07);
+        cursor: pointer;
+        .button-copy {
+            text-align: center;
+            line-height: 100px;
+
+            font-weight: normal;
+            color: #f7f7f7;
+        }
+        form {
+            transition: none;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        .cancel {
+            font-size: 12px;
+            text-align: right;
+            margin-top: 1em;
+            span {
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+
+
+
 
     /*
     Part for computer
@@ -173,6 +234,7 @@ export default {
             }
             li {
                 float: left;
+
 
             }
             li a {
