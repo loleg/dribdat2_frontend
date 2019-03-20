@@ -1,63 +1,70 @@
 <template>
-    <div class="infoTeam">
-        <HeadlineStatus status=project.phase></HeadlineStatus>
-        <ChallengeListPersons :list="persons"></ChallengeListPersons>
-    </div>
+  <div class="infoTeam">
+    <HeadlineStatus status="Headline Status"></HeadlineStatus>
+    <ChallengeListPersons :list="persons"></ChallengeListPersons>
+    <ChallengeFeedback :id="project.id"></ChallengeFeedback>
+  </div>
 </template>
 
 <script>
-    import HeadlineStatus from "../components/InfoTeam/HeadlineStatus";
-    import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
+import HeadlineStatus from "../components/InfoTeam/HeadlineStatus";
+import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
+import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
 
-    export default {
-        name: "InfoTeam",
-        components: {
-            HeadlineStatus,
-            ChallengeListPersons
+export default {
+  name: "InfoTeam",
+  components: {
+    HeadlineStatus,
+    ChallengeListPersons,
+    ChallengeFeedback
+  },
+  props: ["project"],
+  data() {
+    return {
+      // need to get persons from API
+      persons: [
+        {
+          id: 1,
+          firstname: "Mickaël",
+          lastname: "Coluccia",
+          link: "#",
+          role: "dev"
         },
-        data() {
-            return {
-                // need to get persons from API
-                persons: [
-                    {
-                        firstname: "Mickaël",
-                        lastname: "Coluccia",
-                        link: "#"
-                    },
-                    {
-                        firstname: "Jon",
-                        lastname: "Schnyderche",
-                        link: "#"
-                    },
-                    {
-                        firstname: "Entrique",
-                        lastname: "Haziri",
-                        link: "#"
-                    },
-                    {
-                        firstname: "Entrique",
-                        lastname: "Haziri",
-                        link: "#"
-                    },
-                    {
-                        firstname: "Entrique",
-                        lastname: "Haziri",
-                        link: "#"
-                    },
-                    {
-                        firstname: "Entrique",
-                        lastname: "Haziri",
-                        link: "#"
-                    }
-                ],
-                props: [
-                    'project'
-                ]
-            };
+        {
+          id: 2,
+          firstname: "Jonathan",
+          lastname: "Schnyder",
+          link: "#"
+        },
+        {
+          id: 3,
+          firstname: "Endrit",
+          lastname: "Haziri",
+          link: "#"
+        },
+        {
+          id: 4,
+          firstname: "Mickaël",
+          lastname: "Coluccia",
+          link: "#"
+        },
+        {
+          id: 5,
+          firstname: "Jonathan",
+          lastname: "Schnyder",
+          link: "#"
+        },
+        {
+          id: 6,
+          firstname: "Endrit",
+          lastname: "Haziri",
+          link: "#"
         }
+      ]
     };
+  }
+};
 </script>
 
 <style scoped>
-
 </style>

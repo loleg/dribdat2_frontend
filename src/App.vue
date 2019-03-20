@@ -1,52 +1,55 @@
 <template>
-    <div id="app">
-        <div id="nav">
-            <ul>
-                <li>
-                    <router-link to="/">Project presentation</router-link>
-                </li>
+  <div id="app">
+    <div id="nav">
+      <ul>
+        <li>
+          <router-link to="/">Project presentation</router-link>
+        </li>
 
-                <li>
-                    <router-link to="/infoTeam">Info Team</router-link>
-                </li>
-            </ul>
-            <br>
-        </div>
-        <router-view :project="project"/>
+        <li>
+          <router-link to="/infoTeam">Info Team</router-link>
+        </li>
+      </ul>
+      <br>
     </div>
+    <router-view :project="project"/>
+  </div>
 </template>
 
 <script>
     import { APIService } from "./APIService";
 
-    export default {
-        name: "HelloWorld",
-        data() {
-            return {
-                project: {
-                    name: "name",
-                    summary: "summary",
-                    challenge: {
-                        name: "challengeName"
-                    },
-                    pitch: "http://example.com"
-                }
-            };
+export default {
+  name: "dribdat",
+  data() {
+    return {
+      project: {
+        name: "name",
+        summary: "summary",
+        challenge: {
+          name: "challengeName"
         },
-        methods: {
-            getData() {
-                APIService.getProject(1).then(data => {
-                    this.project.name = data.project.name;
-                    this.project.summary = data.project.summary;
-                    this.project.challenge.name = data.project.category.name;
-                });
-            }
-        },
-        created() {
-            this.getData();
-        }
+        id: null,
+        pitch: "http://example.com"
+      }
     };
+  },
+  methods: {
+    getData() {
+      APIService.getProject(2).then(data => {
+        this.project.id = data.project.id;
+        this.project.name = data.project.name;
+        this.project.summary = data.project.summary;
+        this.project.challenge.name = data.project.category.name;
+      });
+    }
+  },
+  created() {
+    this.getData();
+  }
+};
 </script>
+
 <style lang="scss">
     body{
 
@@ -98,7 +101,6 @@
             }
             li a {
                 display: block;
-                color: white;
                 text-align: center;
                 padding: 10px 20px;
                 text-decoration: none;
@@ -175,7 +177,6 @@
             }
             li a {
                 display: block;
-                color: white;
                 text-align: center;
                 padding: 10px 20px;
                 padding-left: 1px;
@@ -249,7 +250,6 @@
             }
             li a {
                 display: block;
-                color: white;
                 text-align: center;
                 padding: 10px 10px;
                 padding-left: 1px;
@@ -285,9 +285,6 @@
                 text-decoration: underline;
             }
 
-            li a:hover {
-                text-decoration: underline;
-            }
         }
     }
 
