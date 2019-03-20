@@ -54,7 +54,7 @@
         margin-top:20px;
         margin-left: 20px;
         margin-right: 20px;
-        background-color: #292929;
+        background-color: #616163;
 
     }
 
@@ -63,7 +63,7 @@
  */
 
 
-    @media screen and (min-width: 1119px) and (max-width: 1600px){
+    @media screen and (min-width: 1200px) and (max-width: 1600px){
 
 
 
@@ -83,14 +83,15 @@
         #nav {
 
 
-            border-bottom: whitesmoke 1px solid;
+            border-bottom: #f9f9f9 1px solid;
             margin-bottom: 4px;
             ul{
                 list-style-type: none;
                 margin: 5px;
                 padding: 0;
                 overflow: hidden;
-                background-color: #292929;
+                background-color: #616163;
+                margin-bottom: -5px;
             }
             li {
                 float: left;
@@ -102,11 +103,30 @@
                 padding: 10px 20px;
                 text-decoration: none;
                 font-weight: bold;
-                color: whitesmoke;
+                color: #f9f9f9;
+                font-size: 16px;
+                padding-left: 1px;
+
+
+                //Vertical line
+                margin-right: 8px;
+                margin-left: 8px;
+                border-right: 1px solid #f9f9f9;
+                height: 12px;
+                margin-top: -8px;
 
                 &.router-link-exact-active {
-                    color: whitesmoke;
+                    color: #f9f9f9;
                 }
+            }
+
+            //Used to not have the margin in left in 8px
+            li:first-child a {
+                margin-left: 0px;
+            }
+            //Used to not have the border for the last router
+            li:last-child a {
+                border-right: none;
             }
 
             li a:hover {
@@ -118,7 +138,7 @@
     /*
     Tablets part
     */
-    @media screen and (min-width: 767px) and (max-width: 1999px){
+    @media screen and (min-width: 767px) and (max-width: 1200px){
 
 
 
@@ -139,14 +159,15 @@
         #nav {
 
 
-            border-bottom: whitesmoke 1px solid;
+            border-bottom: #f9f9f9 1px solid;
 
             ul{
                 list-style-type: none;
                 margin: 5px;
                 padding: 0;
                 overflow: hidden;
-                background-color: #292929;
+                background-color: #616163;
+                margin-bottom: -8px;
             }
             li {
                 float: left;
@@ -160,15 +181,32 @@
                 padding-left: 1px;
                 text-decoration: none;
                 font-weight: bold;
-                color: whitesmoke;
-                font-size: 18px;
+                color: #f9f9f9;
+                font-size: 15px;
+
+
+
+                //Vertical line
+                margin-right: 8px;
+                margin-left: 8px;
+                border-right: 1px solid #f9f9f9;
+                height: 12px;
+                margin-top: -8px;
 
 
                 &.router-link-exact-active {
-                    color: whitesmoke;
+                    color: #f9f9f9;
                 }
             }
 
+            //Used to not have the margin in left in 8px
+            li:first-child a {
+                margin-left: 0px;
+            }
+            //Used to not have the border for the last router
+            li:last-child a {
+                border-right: none;
+            }
             li a:hover {
                 text-decoration: underline;
             }
@@ -197,14 +235,14 @@
         #nav {
 
 
-            border-bottom: whitesmoke 1px solid;
+            border-bottom: #f9f9f9 1px solid;
             margin-bottom: 2px;
             ul{
                 list-style-type: none;
                 margin: 1px;
                 padding: 0;
                 overflow: hidden;
-                background-color: #292929;
+                background-color: #616163;
             }
             li {
                 float: left;
@@ -217,12 +255,34 @@
                 padding-left: 1px;
                 text-decoration: none;
                 font-weight: bold;
-                color: whitesmoke;
+                color: #f9f9f9;
                 font-size: 13px;
+                margin-top: -8px;
+                margin-bottom: -8px;
+
+                //Vertical line
+                margin-right: 3px;
+                margin-left: 3px;
+                border-right: 1px solid #f9f9f9;
+                height: 12px;
+
+
 
                 &.router-link-exact-active {
-                    color: whitesmoke;
+                    color: #f9f9f9;
                 }
+            }
+
+            //Used to not have the margin in left in 8px
+            li:first-child a {
+                margin-left: 0px;
+            }
+            //Used to not have the border for the last router
+            li:last-child a {
+                border-right: none;
+            }
+            li a:hover {
+                text-decoration: underline;
             }
 
             li a:hover {
