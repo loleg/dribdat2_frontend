@@ -1,6 +1,7 @@
 <template>
-    <div class="titleChallenge">
-    {{ title }}</div>
+    <div class="challenge-title">
+        <h2>{{ title }}</h2>
+    </div>
 </template>
 
 <script>
@@ -13,7 +14,7 @@
 
 <style scoped>
 
-    .titleChallenge {
+    .challenge-title h2 {
         font-size: 35px;
         text-align: center;
         color: whitesmoke;

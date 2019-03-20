@@ -1,12 +1,15 @@
-import {mount} from '@vue/test-utils'
-import ProjectPresentation from '@/views/ProjectPresentation.vue'
+import { shallowMount } from '@vue/test-utils'
+import SocialLink from '@/components/ProjectPresentation/SocialLink.vue'
 
 describe('ProjectPresentation.vue', () => {
     it('the project presentation contains the link to a media social', () => {
 
-        const wrapper = mount(ProjectPresentation)
+        const link = 'www.facebook.com'
+        const wrapper = shallowMount(SocialLink, {
+            propsData: { link }
+        })
 
-        expect(wrapper.find('.projectPresentation .socialLink').text()).toEqual('www.facebook.com');
+        expect(wrapper.text()).toEqual(link);
 
 
     })

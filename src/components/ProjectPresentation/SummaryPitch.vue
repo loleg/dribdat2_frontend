@@ -1,13 +1,13 @@
 <template>
-    <div class="textSummary">
-        <p>{{ summaryText }}</p>
+    <div class="summary">
+        <p>{{ summary }}</p>
     </div>
 </template>
 
 <script>
     export default {
         name: "SummaryPitch",
-        props: ['summaryText']
+        props: ['summary']
     }
 </script>
 
