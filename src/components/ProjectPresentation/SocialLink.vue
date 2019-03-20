@@ -28,8 +28,8 @@
         }
 
         .title-link{
-            color: #ffe3ba;
-            text-decoration: underline #f9f9f9;
+            color: #89a7af;
+            text-decoration: underline #89a7af;
         }
 
 
@@ -47,8 +47,8 @@
         }
 
         .title-link{
-            color: #f9f9f9;
-            text-decoration: underline #f9f9f9;
+            color:  #89a7af;
+            text-decoration: underline #89a7af;
         }
     }
 
@@ -63,8 +63,8 @@
         }
 
         .title-link{
-            color: #f9f9f9;
-            text-decoration: underline #f9f9f9;
+            color:  #89a7af;
+            text-decoration: underline #89a7af;
         }
     }
 
