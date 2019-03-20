@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     getData() {
-      APIService.getProject(2).then(data => {
+      APIService.getProject(1).then(data => {
         this.project.id = data.project.id;
         this.project.name = data.project.name;
         this.project.summary = data.project.summary;
@@ -69,7 +69,7 @@ export default {
  */
 
 
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1200px) {
 
 
 
