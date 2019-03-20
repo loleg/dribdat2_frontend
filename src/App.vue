@@ -9,6 +9,9 @@
         <li>
           <router-link to="/infoTeam">Info Team</router-link>
         </li>
+        <li>
+          <router-link to="/developmentStatus">Development Status</router-link>
+        </li>
       </ul>
       <br>
     </div>
@@ -66,7 +69,7 @@ export default {
  */
 
 
-    @media screen and (min-width: 1200px) and (max-width: 1600px){
+    @media screen and (min-width: 1200px){
 
 
 
