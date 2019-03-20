@@ -23,6 +23,6 @@ describe('ChallengeListPersons.vue', () => {
     const wrapper = shallowMount(ChallengeListPersons, {
       propsData: { list }
     })
-    expect(wrapper.text()).toMatch(list)
+    expect(wrapper.find('ul').element.children).toHaveLength(list.length)
   })
 })
