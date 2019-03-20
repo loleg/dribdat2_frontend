@@ -25,20 +25,21 @@
 
         .summary{
             text-align: justify;
-            color: whitesmoke;
+            color: #f9f9f9;
             font-family: Verdana, Geneva, sans-serif;
             font-size: 15px;
 
         }
     }
+
     /*
              Tablets part
              */
-    @media screen and (min-width: 767px) and (max-width: 1119px) {
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
 
         .summary {
             text-align: justify;
-            color: whitesmoke;
+            color: #f9f9f9;
             font-family: Verdana, Geneva, sans-serif;
             font-size: 15px;
         }
@@ -47,12 +48,13 @@
      Part for the computer
   */
 
-    @media screen and (min-width: 1119px) and (max-width: 1600px) {
+    @media screen and (min-width: 1200px) {
 
         .summary{
             text-align: justify;
-            color: whitesmoke;
+            color: #f9f9f9;
             font-family: Verdana, Geneva, sans-serif;
+            margin-top: -130px;
 
         }
     }

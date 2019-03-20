@@ -1,6 +1,7 @@
 <template>
-    <div class="titleChallenge">
-    {{ title }}</div>
+    <div class="challenge-title">
+        <h2>{{ title }}</h2>
+    </div>
 </template>
 
 <script>
@@ -20,7 +21,7 @@
 
     @media screen and (min-width: 300px) and (max-width: 767px) {
 
-        .titleChallenge {
+        .challenge-title {
             font-size: 20px;
             text-align: center;
             color: whitesmoke;
@@ -31,9 +32,9 @@
     /*
            Tablets part
            */
-    @media screen and (min-width: 767px) and (max-width: 1119px) {
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
 
-        .titleChallenge {
+        .challenge-title {
             font-size: 30px;
             text-align: center;
             color: whitesmoke;
@@ -45,13 +46,15 @@
 /*
 Part for the computer
  */
-    @media screen and (min-width: 1119px) and (max-width: 1600px){
-        .titleChallenge {
+
+    @media screen and (min-width: 1200px){
+        .challenge-title {
             font-size: 35px;
             text-align: center;
             color: whitesmoke;
             font-family: Verdana, Geneva, sans-serif;
             margin-bottom: 25px;
+            margin-top: -15px;
         }
     }
 </style>

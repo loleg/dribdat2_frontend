@@ -66,7 +66,7 @@ export default {
  */
 
 
-    @media screen and (min-width: 1200px) and (max-width: 1600px){
+    @media screen and (min-width: 1200px) {
 
 
 

@@ -19,7 +19,7 @@
     /*
            Tablets part
            */
-    @media screen and (min-width: 767px) and (max-width: 1119px) {
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
 
         .social-link{
             font-size: 80%;
@@ -28,9 +28,11 @@
         }
 
         .title-link{
-            color: whitesmoke;
-            text-decoration: underline whitesmoke;
+            color: #89a7af;
+            text-decoration: underline #89a7af;
         }
+
+
     }
 
     /*
@@ -45,15 +47,15 @@
         }
 
         .title-link{
-            color: whitesmoke;
-            text-decoration: underline whitesmoke;
+            color:  #89a7af;
+            text-decoration: underline #89a7af;
         }
     }
 
     /*
     Part for the computer
      */
-    @media screen and (min-width: 1119px) and (max-width: 1600px)
+    @media screen and (min-width: 1200px)
     {
         .social-link{
             font-size: 90%;
@@ -61,8 +63,8 @@
         }
 
         .title-link{
-            color: whitesmoke;
-            text-decoration: underline whitesmoke;
+            color:  #89a7af;
+            text-decoration: underline #89a7af;
         }
     }
 

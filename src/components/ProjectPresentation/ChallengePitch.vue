@@ -48,12 +48,21 @@ export default {
   border: 0;
 }
 
+@media screen and (min-width: 1200px) {
+  .rest-iframe {
+    height: 75%;
 
+  }
+}
 
+@media screen and (max-width: 1200px){
   .rest-iframe {
     height: 100%;
 
   }
+
+}
+
 
 
 </style>
