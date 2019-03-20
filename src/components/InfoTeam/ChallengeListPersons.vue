@@ -40,7 +40,7 @@ li:last-child {
  
 li a {
   text-decoration: none;
-  color: #000;
+  color: antiquewhite;
   display: block;
  
   -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
@@ -62,3 +62,17 @@ li a:hover {
 }
 
 </style>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
