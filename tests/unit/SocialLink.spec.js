@@ -9,7 +9,7 @@ describe('ProjectPresentation.vue', () => {
             propsData: { link }
         })
 
-        expect(wrapper.text()).toEqual(link);
+        expect(wrapper.find('.social-link a').text()).toEqual(link);
 
 
     })

@@ -20,7 +20,7 @@
 import { APIService } from "./APIService";
 
 export default {
-  name: "HelloWorld",
+  name: "dribdat",
   data() {
     return {
       project: {
@@ -29,13 +29,15 @@ export default {
         challenge: {
           name: "challengeName"
         },
+        id: null,
         pitch: "http://example.com"
       }
     };
   },
   methods: {
     getData() {
-      APIService.getProject(1).then(data => {
+      APIService.getProject(2).then(data => {
+        this.project.id = data.project.id;
         this.project.name = data.project.name;
         this.project.summary = data.project.summary;
         this.project.challenge.name = data.project.category.name;
