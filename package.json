@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap": "^4.3.1",
-    "node-sass": "^4.11.0",
+    "bootstrap-vue": "^2.0.0-rc.15",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.6",
+    "vue-a11y-dialog": "^0.4.2",
     "vue-axios": "^2.1.4",
     "vue-media-embed": "^1.0.0",
     "vue-router": "^3.0.1",

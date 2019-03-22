@@ -64,6 +64,67 @@ export default {
 
     }
 
+    .container {
+
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .add-feedback {
+        &.open {
+            background-color: #FAFAFA;
+            padding: 18px 32px;
+            border-radius: 5px;
+            width: 900px;
+            height: auto;
+            cursor: default;
+            form {
+                opacity: 1;
+                transition: opacity 0.1s ease;
+                transition-delay: 0.3s;
+                height: auto;
+            }
+        }
+        transition: all 0.3s ease;
+        background-color: #3498DB;
+        height: 100px;
+        width: 100px;
+        border-radius: 72px;
+        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .07);
+        cursor: pointer;
+        .button-copy {
+            text-align: center;
+            line-height: 100px;
+
+            font-weight: normal;
+            color: #f7f7f7;
+        }
+        form {
+            transition: none;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        .cancel {
+            font-size: 12px;
+            text-align: right;
+            margin-top: 1em;
+            span {
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+
+
+
+
     /*
     Part for computer
  */
