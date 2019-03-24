@@ -4,7 +4,7 @@
 
 
         <div class="card" >
-            <h5 class="card-header bg-primary">In progress</h5>
+            <h5 class="card-header bg-primary text-light">In progress</h5>
             <div class="card-body">
 
                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>

@@ -13,6 +13,7 @@ export default new Vuex.Store({
   state: {
       github_BaseURL: '',
       github_repoPath: '/repos/ChallengeHunt/challengehunt',
+      project: {},
       contributors: [],
       issues: []
   },
@@ -22,7 +23,10 @@ export default new Vuex.Store({
       },
       SET_ISSUES (state, issues) {
           state.issues = issues
-      }
+      },
+      SET_PROJECT (state, project) {
+          state.project = project
+      },
   },
   actions: {
       loadContributors ({ commit }) {
@@ -33,13 +37,29 @@ export default new Vuex.Store({
                   commit('SET_CONTRIBUTORS', contributors)
               })
       },
-      loadIssues ({ commit }) {
+      loadIssues ({ commit, state }) {
           axios
-              .get(github_apiURL + path + '/issues')
+              .get(github_apiURL + state.github_repoPath + '/issues')
               .then(r => r.data)
               .then(issues => {
                   commit('SET_ISSUES', issues)
               })
+      },
+      loadProject ({ commit }) {
+          axios
+              .get('http://127.0.0.1:5000/api/project/' + '1' + '/info.json')
+              .then(r => r.data)
+              .then(project => {
+                  commit('SET_PROJECT', project)
+              })
       }
-  }
+  },
+    getters: {
+        projectSourceUrl: state => {
+            return state.project.project.source_url
+        },
+        projectSourceAPI_Path: state => {
+            return state.project.project.source_url.replace('https://github.com', '')
+        },
+    }
 })

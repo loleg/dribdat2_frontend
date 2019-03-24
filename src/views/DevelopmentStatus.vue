@@ -18,6 +18,7 @@
                     </div>
                 </div>
             </div>
+            <!--
             <div class="card">
                 <div class="card-header" id="headingContributors" >
                     <h5 class="mb-0">
@@ -31,6 +32,7 @@
                         <contributions-badge v-bind:contributors="contributors"></contributions-badge>
                     </div>
                 </div>
+                -->
             </div>
         </div>
 
@@ -54,8 +56,11 @@
         },
         props: ["project"],
         mounted () {
+            this.$store.dispatch('loadProject')
             this.$store.dispatch('loadContributors')
             this.$store.dispatch('loadIssues')
+
+
         },
         computed: mapState([
             'contributors',
