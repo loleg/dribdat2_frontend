@@ -1,14 +1,13 @@
 <template>
-    <ul class="list-group">
-        <li class="list-group-item active d-flex justify-content-between align-items-center">
-           Contributions
-        </li>
+    <div>
+    <ul class="list-group-flush">
         <li class="list-group-item d-flex justify-content-between align-items-center"
             v-bind:key="contributor.id" v-for="contributor in contributors">
-            {{contributor.author.login}}
+            <div class="text-left">{{contributor.author.login}}</div>
             <span class="badge badge-primary badge-pill">{{contributor.total}}</span>
         </li>
     </ul>
+    </div>
 </template>
 
 <script>
@@ -19,5 +18,12 @@
 </script>
 
 <style scoped>
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    span {
+        margin-left: 10px;
+    }
 
 </style>
