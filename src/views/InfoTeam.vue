@@ -1,4 +1,10 @@
 <template>
+  <div class="infoTeam">
+    <HeadlineStatus status="Headline Status"></HeadlineStatus>
+    <ChallengeListPersons :list="persons"></ChallengeListPersons>
+    <ChallengeFeedback :id="project.id"></ChallengeFeedback>
+    <Timeline :projectId="project.id" ></Timeline>
+  </div>
     <div class="infoTeam">
         <HeadlineStatus status=project.phase></HeadlineStatus>
         <ChallengeListPersons :list="persons"></ChallengeListPersons>
@@ -21,10 +27,12 @@
 import HeadlineStatus from "../components/InfoTeam/HeadlineStatus";
 import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
 import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
+import Timeline from "../components/InfoTeam/Timeline";
 
 export default {
   name: "InfoTeam",
   components: {
+    Timeline,
     HeadlineStatus,
     ChallengeListPersons,
     ChallengeFeedback

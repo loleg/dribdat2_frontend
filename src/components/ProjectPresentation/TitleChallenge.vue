@@ -51,7 +51,7 @@ Part for the computer
         .challenge-title {
             font-size: 35px;
             text-align: center;
-            color: whitesmoke;
+            color: #f9f9f9;
             font-family: Verdana, Geneva, sans-serif;
             margin-bottom: 25px;
             margin-top: -15px;
