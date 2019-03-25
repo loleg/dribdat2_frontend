@@ -34,9 +34,11 @@ export default {
         },
         id: null,
         pitch: "http://example.com"
-      }
+      },
     };
+
   },
+
   methods: {
     getData() {
       APIService.getProject(1).then(data => {

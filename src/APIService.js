@@ -5,6 +5,21 @@ export class APIService{
     constructor(){
     }
 
+    static getActivityList(idProject)
+    {
+
+        var url = `${API_URL}/project/${idProject}/activity.json`
+
+        return axios.get(url, { method: 'GET',
+            mode: 'no-cors',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+            }}).then(response => response.data.activities);
+    }
+
+
+
     static getProject(id) {
         const url = `${API_URL}/project/${id}/info.json`;
         return axios.get(url, { method: 'GET',
