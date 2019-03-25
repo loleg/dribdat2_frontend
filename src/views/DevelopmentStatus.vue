@@ -32,7 +32,7 @@
                         <contributions-badge v-bind:contributors="contributors"></contributions-badge>
                     </div>
                 </div>
-                -->
+            -->
             </div>
         </div>
 </template>
