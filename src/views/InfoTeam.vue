@@ -35,6 +35,7 @@ export default {
   },
   props: ["project"],
 
+
   data() {
     return {
       formOpen: false,
@@ -105,4 +106,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>
