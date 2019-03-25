@@ -2,7 +2,7 @@
     <div class="infoTeam">
         <HeadlineStatus status=project.phase></HeadlineStatus>
         <ChallengeListPersons :list="persons"></ChallengeListPersons>
-
+        <a href="https://github.com/ChallengeHunt/challengehunt" class="btn btn-primary">Source Code</a>
         <div class="container" id="app">
             <div class="add-feedback" :class="{'open': formOpen}">
                 <div class="button-copy" v-show="!formOpen" @click="formOpen = true">Feedback</div>
