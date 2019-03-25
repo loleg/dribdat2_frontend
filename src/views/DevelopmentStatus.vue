@@ -32,14 +32,14 @@
                         <contributions-badge v-bind:contributors="contributors"></contributions-badge>
                     </div>
                 </div>
-                -->
+            -->
             </div>
         </div>
 </template>
 
 <script>
     import { mapState } from 'vuex'
-    import ContributionsBadge from "../components/DevelopementStatus/contributionsBadge";
+    //import ContributionsBadge from "../components/DevelopementStatus/contributionsBadge";
     import IssuesBadge from "../components/DevelopementStatus/issuesBadge";
     import ProjectProgressBar from "../components/DevelopementStatus/projectProgressBar";
     export default {
@@ -47,7 +47,7 @@
         components: {
             ProjectProgressBar,
             IssuesBadge,
-            ContributionsBadge,
+            //ContributionsBadge,
         },
         props: ["project"],
         mounted () {

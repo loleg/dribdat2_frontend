@@ -11,6 +11,5 @@ describe('ProjectPresentation.vue', () => {
 
         expect(wrapper.find('.social-link a').text()).toEqual(link);
 
-
     })
 })
