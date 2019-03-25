@@ -65,7 +65,7 @@ export default {
         background-color: #616163;
 
     }
-
+    
     .container {
 
         display: flex;
@@ -180,8 +180,8 @@ export default {
                 margin-right: 8px;
                 margin-left: 8px;
                 border-right: 1px solid #f9f9f9;
-                height: 12px;
-                margin-top: -8px;
+                height: 32px;
+                margin-bottom: 5px;
 
                 &.router-link-exact-active {
                     color: #f9f9f9;

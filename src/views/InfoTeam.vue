@@ -1,26 +1,21 @@
 <template>
   <div class="infoTeam">
-    <HeadlineStatus status="Headline Status"></HeadlineStatus>
+    <HeadlineStatus status="project.phase"></HeadlineStatus>
     <ChallengeListPersons :list="persons"></ChallengeListPersons>
-    <ChallengeFeedback :id="project.id"></ChallengeFeedback>
+    <a href="https://github.com/ChallengeHunt/challengehunt" class="btn btn-primary">Source Code</a>
+    <div class="container">
+      <div class="add-feedback" :class="{'open': formOpen}">
+        <div class="button-copy" v-show="!formOpen" @click="formOpen = true">Feedback</div>
+        <form @submit="cancel()">
+          <ChallengeFeedback :id="project.id"></ChallengeFeedback>
+          <div class="cancel">
+            <span @click="cancel()">Cancel</span>
+          </div>
+        </form>
+      </div>
+    </div>
     <Timeline :projectId="project.id" ></Timeline>
   </div>
-    <div class="infoTeam">
-        <HeadlineStatus status=project.phase></HeadlineStatus>
-        <ChallengeListPersons :list="persons"></ChallengeListPersons>
-        <a href="https://github.com/ChallengeHunt/challengehunt" class="btn btn-primary">Source Code</a>
-        <div class="container" id="app">
-            <div class="add-feedback" :class="{'open': formOpen}">
-                <div class="button-copy" v-show="!formOpen" @click="formOpen = true">Feedback</div>
-                <form @submit="cancel()">
-                    <ChallengeFeedback :id="project.id"></ChallengeFeedback>
-                    <div class="cancel"><span @click="cancel()">Cancel</span></div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
 </template>
 
 <script>
@@ -39,65 +34,59 @@ export default {
   },
   props: ["project"],
 
-
   data() {
     return {
-        formOpen: false,
+      formOpen: false,
 
-
-        // need to get persons from API
-        persons: [
-            {
-                id: 1,
-                firstname: "Mickaël",
-                lastname: "Coluccia",
-                link: "#",
-                role: "dev"
-            },
-            {
-                id: 2,
-                firstname: "Jonathan",
-                lastname: "Schnyder",
-                link: "#"
-            },
-            {
-                id: 3,
-                firstname: "Endrit",
-                lastname: "Haziri",
-                link: "#"
-            },
-            {
-                id: 4,
-                firstname: "Mickaël",
-                lastname: "Coluccia",
-                link: "#"
-            },
-            {
-                id: 5,
-                firstname: "Jonathan",
-                lastname: "Schnyder",
-                link: "#"
-            },
-            {
-                id: 6,
-                firstname: "Endrit",
-                lastname: "Haziri",
-                link: "#"
-            }
-        ],
-
-
-        cancel: function() {
-            this.formOpen = false;
-            this.resetForm();
+      // need to get persons from API
+      persons: [
+        {
+          id: 1,
+          firstname: "Mickaël",
+          lastname: "Coluccia",
+          link: "#",
+          role: "dev"
+        },
+        {
+          id: 2,
+          firstname: "Jonathan",
+          lastname: "Schnyder",
+          link: "#"
+        },
+        {
+          id: 3,
+          firstname: "Endrit",
+          lastname: "Haziri",
+          link: "#"
+        },
+        {
+          id: 4,
+          firstname: "Mickaël",
+          lastname: "Coluccia",
+          link: "#"
+        },
+        {
+          id: 5,
+          firstname: "Jonathan",
+          lastname: "Schnyder",
+          link: "#"
+        },
+        {
+          id: 6,
+          firstname: "Endrit",
+          lastname: "Haziri",
+          link: "#"
         }
+      ],
 
-
+      cancel: function() {
+        this.formOpen = false;
+        this.resetForm();
+      }
     };
   }
 };
 </script>
 
 <style scoped>
-
 </style>
