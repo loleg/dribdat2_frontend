@@ -12,5 +12,6 @@ describe('InfoTeam.vue', () => {
         expect(wrapper.find('.Button-copy'));
 
 
+
     })
 })
