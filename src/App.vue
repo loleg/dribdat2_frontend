@@ -80,7 +80,7 @@ export default {
             background-color: #FAFAFA;
             padding: 18px 32px;
             border-radius: 5px;
-            width: 900px;
+            width: 700px;
             height: auto;
             cursor: default;
             form {
@@ -122,9 +122,6 @@ export default {
             }
         }
     }
-
-
-
 
 
     /*

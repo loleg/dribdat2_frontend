@@ -1,13 +1,9 @@
 <template>
-  <div class="infoTeam">
-    <HeadlineStatus status="Headline Status"></HeadlineStatus>
-    <ChallengeListPersons :list="persons"></ChallengeListPersons>
-    <ChallengeFeedback :id="project.id"></ChallengeFeedback>
-    <Timeline :projectId="project.id" ></Timeline>
-  </div>
+
     <div class="infoTeam">
         <HeadlineStatus status=project.phase></HeadlineStatus>
         <ChallengeListPersons :list="persons"></ChallengeListPersons>
+        <Timeline :projectId="project.id" ></Timeline>
         <a href="https://github.com/ChallengeHunt/challengehunt" class="btn btn-primary">Source Code</a>
         <div class="container" id="app">
             <div class="add-feedback" :class="{'open': formOpen}">
