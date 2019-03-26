@@ -1,6 +1,6 @@
 <template>
   <div class="infoTeam">
-    <HeadlineStatus status="project.phase"></HeadlineStatus>
+    <HeadlineStatus :status="project.phase"></HeadlineStatus>
     <ChallengeListPersons :list="persons"></ChallengeListPersons>
     <a href="https://github.com/ChallengeHunt/challengehunt" class="btn btn-primary">Source Code</a>
     <div class="container">
@@ -14,7 +14,7 @@
         </form>
       </div>
     </div>
-    <Timeline :projectId="project.id" ></Timeline>
+    <Timeline :projectId="project.id"></Timeline>
   </div>
 </template>
 
@@ -33,8 +33,6 @@ export default {
     ChallengeFeedback
   },
   props: ["project"],
-
-
   data() {
     return {
       formOpen: false,
@@ -90,5 +88,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

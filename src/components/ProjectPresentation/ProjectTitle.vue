@@ -1,5 +1,5 @@
 <template>
-    <div class="ProjectTitle">
+    <div class="project-title">
         <h1>{{ title }}</h1>
     </div>
 </template>
