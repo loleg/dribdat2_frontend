@@ -2,7 +2,8 @@
     <div class="social-link">
 
         <p class="title-link"><b>Project link in social network : </b> </p>
-        <a class="to-link" v-bind:href="'//' + link">{{link}}</a>
+        <a v-if="!editMode" class="to-link" v-bind:href="'//' + link">{{link}}</a>
+        <input v-if="editMode" type="url" v-model="link" v-bind:href="'//' + link">
     </div>
 </template>
 
@@ -10,7 +11,7 @@
 
     export default {
         name: "SocialLink",
-        props:[ 'link' ]
+        props:[ 'link', 'editMode' ]
     }
 </script>
 

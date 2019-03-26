@@ -1,23 +1,23 @@
 <template>
-  <div>
-    <h3>CHALLENGE REPRESENTED BY :</h3>
+  <div class="tools">
+    <h3>TOOLS USED DURING THIS CHALLENGE</h3>
     <ul>
-      <li v-for="person in list" :key="person.id">
-        <a :href="person.link">{{ person.firstname + ' ' + person.lastname }}</a>
-      </li>
+      <li v-for="tool in tools" :key="tool.id">{{ tool.name }}</li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    list: Array
-  }
+  props: ["tools"]
 };
 </script>
 
 <style scoped>
+.tools {
+  margin-top: 20px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -29,16 +29,8 @@ li {
   font: 200 18px/1.5 Helvetica, Verdana, sans-serif;
   border-bottom: 1px solid #ccc;
   height: 38px;
-  vertical-align: middle;
-  width: 400px;
+  width: 100%;
   margin-top: 10px;
-}
-
-li:last-child {
-  border: none;
-}
-
-li a {
   text-decoration: none;
   color: #f9f9f9;
   display: block;
@@ -50,18 +42,14 @@ li a {
   transition: font-size 0.2s ease, background-color 0.2s ease;
 }
 
-li a:hover {
+li:last-child {
+  border: none;
+}
+
+li:hover {
   font-size: 21px;
   color: #019eba;
 }
-
-li {
-  width: 100%;
-}
-
-/*
-      Part for the mobile
-   */
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
   h3 {
@@ -98,16 +86,4 @@ Part for the computer
   }
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
 

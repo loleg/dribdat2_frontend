@@ -3,16 +3,17 @@
     <ProjectTitle :title="project.name"></ProjectTitle>
     <TitleChallenge :title="project.challenge.name"></TitleChallenge>
     <ChallengePitch :pitch="project.pitch"></ChallengePitch>
-    <SummaryPitch :summary="project.summary"></SummaryPitch>
+    <SummaryPitch :summary="project.summary" :edit-mode="editMode"></SummaryPitch>
     <!-- https://www.dailymotion.com/video/xkq3cr -->
     <!-- https://www.youtube.com/watch?v=zihJTimjdls -->
     <div class="contentLeft">
-      <SocialLink class="LinkSocial" link="www.facebook.com"></SocialLink>
+      <SocialLink class="LinkSocial" link="www.facebook.com" :edit-mode="editMode"></SocialLink>
     </div>
   </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
 import TitleChallenge from "../components/ProjectPresentation/TitleChallenge";
 import SummaryPitch from "../components/ProjectPresentation/SummaryPitch";
 import ProjectTitle from "../components/ProjectPresentation/ProjectTitle";
@@ -28,7 +29,13 @@ export default {
     ProjectTitle,
     ChallengePitch
   },
-  props: ["project"]
+  props: ["project"],
+  mounted() {
+    this.$store.dispatch('setModeDisplay')
+  },
+  computed: mapState([
+          'editMode'
+  ])
 };
 </script>
 

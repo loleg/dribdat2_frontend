@@ -15,7 +15,8 @@ export default new Vuex.Store({
       github_repoPath: '/repos/ChallengeHunt/challengehunt',
       project: {},
       contributors: [],
-      issues: []
+      issues: [],
+      editMode: false
   },
   mutations: {
       SET_CONTRIBUTORS (state, contributors) {
@@ -27,6 +28,10 @@ export default new Vuex.Store({
       SET_PROJECT (state, project) {
           state.project = project
       },
+
+      SET_EDITABLE(state, editMode){
+          state.editMode = editMode
+      }
   },
   actions: {
       loadContributors ({ commit }) {
@@ -52,6 +57,14 @@ export default new Vuex.Store({
               .then(project => {
                   commit('SET_PROJECT', project)
               })
+      },
+
+      setModeEdit({commit}){
+          commit('SET_EDITABLE', true)
+      },
+
+      setModeDisplay({commit}){
+          commit('SET_EDITABLE', false)
       }
   },
     getters: {
