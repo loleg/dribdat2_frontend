@@ -1,84 +1,12 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <ul>
-        <li>
-          <router-link to="/">Project presentation</router-link>
-        </li>
-        <li>
-          <router-link to="/infoTeam">Info Team</router-link>
-        </li>
-        <li>
-          <router-link to="/developmentStatus">Development Status</router-link>
-        </li>
-        <li>
-          <router-link to="/ressources">Ressources</router-link>
-        </li>
-      </ul>
-      <br>
-    </div>
-    <div class="edit_button float-right">
-      <div v-if="edit_mode">
-        <button type="button" class="btn btn-dark" @click="edit">
-          <i class="icon-pencil"></i>
-        </button>
-      </div>
-      <div v-else>
-        <button type="button" class="btn btn-success" @click="save">
-          <i class="icon-ok-sign"></i>
-        </button>
-        <button type="button" class="btn btn-danger" @click="discard">
-          <i class="icon-remove"></i>
-        </button>
-      </div>
-    </div>
-    <router-view :project="project"/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import { APIService } from "./APIService";
-
 export default {
-  name: "dribdat",
-  data() {
-    return {
-      edit_mode: true,
-      project: {
-        name: "name",
-        summary: "summary",
-        challenge: {
-          name: "challengeName"
-        },
-        id: null,
-        pitch: "http://example.com"
-      }
-    };
-  },
-
-  methods: {
-    getData() {
-      APIService.getProject(1).then(data => {
-        this.project.id = data.project.id;
-        this.project.name = data.project.name;
-        this.project.summary = data.project.summary;
-        this.project.phase = data.project.phase;
-        this.project.challenge.name = data.project.category.name;
-      });
-    },
-    edit() {
-      this.edit_mode = !this.edit_mode;
-    },
-    save() {
-      this.edit_mode = !this.edit_mode;
-    },
-    discard() {
-      this.edit_mode = !this.edit_mode;
-    }
-  },
-  created() {
-    this.getData();
-  }
+  name: "dribdat"
 };
 </script>
 
@@ -89,19 +17,18 @@ body {
   margin-left: 20px;
   margin-right: 20px;
   background-color: #616163;
-}
 
-.edit_button button {
-    margin-left: 10px;
-}
 
-.container {
-  display: flex;
-  width: auto;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-}
+    }
+
+    .container {
+
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
 
 .add-feedback {
   &.open {

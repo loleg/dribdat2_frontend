@@ -3,7 +3,7 @@ import ListTools from '@/components/Ressources/ListTools.vue'
 
 describe('ListTools.vue', () => {
   it('list is diplayed', () => {
-    const list = [
+    const tools = [
       {
         id: 1,
         name: "GitHub"
@@ -18,9 +18,9 @@ describe('ListTools.vue', () => {
       }
     ]
     const wrapper = shallowMount(ListTools, {
-      propsData: { list }
+      propsData: { tools }
     })
 
-    expect(wrapper.find('ul').element.children).toHaveLength(list.length)
+    expect(wrapper.find('ul').element.children).toHaveLength(tools.length)
   })
 })
