@@ -1,13 +1,15 @@
 <template>
-    <div class="summary">
-        <p>{{ summary }}</p>
+    <div class="summary" >
+        <p v-if="!editMode"> {{ summary }}</p>
+        <input type="text" v-model="summary" v-if="editMode" placeholder="Description of the challenge">
     </div>
+
 </template>
 
 <script>
     export default {
         name: "SummaryPitch",
-        props: ['summary']
+        props: ['summary', 'editMode']
     }
 </script>
 
