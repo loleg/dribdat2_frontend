@@ -21,6 +21,11 @@ export default new Router({
             path: '/developmentStatus',
             name: 'developmentStatus',
             component: () => import(/* webpackChunkName: "about" */ './views/DevelopmentStatus.vue')
+        },
+        {
+            path: '/ressources',
+            name: 'ressources',
+            component: () => import(/* webpackChunkName: "about" */ './views/Ressources.vue')
         }
     ]
 })

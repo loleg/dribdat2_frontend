@@ -1,6 +1,6 @@
 <template>
   <div class="infoTeam">
-    <HeadlineStatus status="project.phase"></HeadlineStatus>
+    <HeadlineStatus :status="project.phase"></HeadlineStatus>
     <ChallengeListPersons :list="persons"></ChallengeListPersons>
     <a href="https://github.com/ChallengeHunt/challengehunt" class="btn btn-primary">Source Code</a>
     <div class="container">

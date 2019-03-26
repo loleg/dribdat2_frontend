@@ -12,6 +12,9 @@
         <li>
           <router-link to="/developmentStatus">Development Status</router-link>
         </li>
+        <li>
+          <router-link to="/ressources">Ressources</router-link>
+        </li>
       </ul>
       <br>
     </div>
@@ -45,6 +48,7 @@ export default {
         this.project.id = data.project.id;
         this.project.name = data.project.name;
         this.project.summary = data.project.summary;
+        this.project.phase = data.project.phase;
         this.project.challenge.name = data.project.category.name;
       });
     }
