@@ -1,7 +1,12 @@
 <template>
-  <ul>
-    <li v-for="activity in activities" :key="activity.id">{{activity.date}} - {{activity.user_name}}</li>
-  </ul>
+  <div>
+    <ul>
+      <li
+        v-for="activity in activities"
+        :key="activity.id"
+      >{{activity.date}} - {{activity.user_name}}</li>
+    </ul>
+  </div>
 </template>
 
 <script>

@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style scoped>
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -56,19 +55,16 @@ li a:hover {
   color: #019eba;
 }
 
-
-  li {
-    width: 100%;
-  }
-
+li {
+  width: 100%;
+}
 
 /*
       Part for the mobile
    */
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
-
-  h3{
+  h3 {
     font-size: 120%;
     color: #f9f9f9;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -80,24 +76,20 @@ li a:hover {
     Tablets part
     */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
-
-  h3{
+  h3 {
     font-size: 110%;
     color: #f9f9f9;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-align: center;
     margin-bottom: 30px;
   }
-
 }
-
 
 /*
 Part for the computer
  */
-@media screen and (min-width: 1200px){
-
-  h3{
+@media screen and (min-width: 1200px) {
+  h3 {
     font-size: 120%;
     color: #f9f9f9;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -105,7 +97,6 @@ Part for the computer
     margin-bottom: 32px;
   }
 }
-
 </style>
 
 
