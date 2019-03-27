@@ -55,11 +55,11 @@ export default new Vuex.Store({
       }
   },
     getters: {
-        projectSourceUrl: state => {
+        /**projectSourceUrl: state => {
             return state.project.project.source_url
         },
         projectSourceAPI_Path: state => {
             return state.project.project.source_url.replace('https://github.com', '')
-        },
+        },**/
     }
 })
