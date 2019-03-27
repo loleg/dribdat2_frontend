@@ -7,6 +7,7 @@ import './registerServiceWorker'
 Vue.config.productionTip = false
 
 
+require('./design/custom.css');
 
 new Vue({
   router,
