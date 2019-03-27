@@ -47,6 +47,9 @@ export default new Vuex.Store({
         },
         SET_PROJECT_LIST(state, projectList) {
             state.projectList = projectList;
+        },
+        SET_EDITABLE(state, editMode) {
+            state.editMode = editMode;
         }
     },
     actions: {

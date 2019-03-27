@@ -2,7 +2,7 @@
   <div class="projectPresentation">
     <ProjectTitle :title="project.name"></ProjectTitle>
     <TitleChallenge :title="project.challenge.name"></TitleChallenge>
-    <ChallengePitch :pitch="project.pitch"></ChallengePitch>
+    <ChallengePitch :pitch="project.pitch" :editMode="editMode"></ChallengePitch>
     <SummaryPitch :summary="project.summary" :edit-mode="editMode"></SummaryPitch>
     <!-- https://www.dailymotion.com/video/xkq3cr -->
     <!-- https://www.youtube.com/watch?v=zihJTimjdls -->
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+import { mapState } from "vuex";
 import TitleChallenge from "../components/ProjectPresentation/TitleChallenge";
 import SummaryPitch from "../components/ProjectPresentation/SummaryPitch";
 import ProjectTitle from "../components/ProjectPresentation/ProjectTitle";
@@ -31,11 +31,9 @@ export default {
   },
   props: ["project"],
   mounted() {
-    this.$store.dispatch('setModeDisplay')
+    this.$store.dispatch("setModeDisplay");
   },
-  computed: mapState([
-          'editMode'
-  ])
+  computed: mapState(["editMode"])
 };
 </script>
 

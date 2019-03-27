@@ -17,18 +17,15 @@ body {
   margin-left: 20px;
   margin-right: 20px;
   background-color: #616163;
+}
 
-
-    }
-
-    .container {
-
-        display: flex;
-        width: auto;
-        height: auto;
-        justify-content: center;
-        align-items: center;
-    }
+.container {
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
 
 .add-feedback {
   &.open {

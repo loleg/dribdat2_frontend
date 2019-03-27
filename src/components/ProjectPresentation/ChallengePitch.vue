@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="edit">
+    <div v-if="editMode">
       <input type="text" placeholder="Insert the URL of the pitch">
     </div>
     <div v-else>
@@ -14,12 +14,12 @@
 <script>
 export default {
   props: {
-    pitch: String
+    pitch: String,
+    editMode: Boolean
   },
   data() {
     return {
-      embedable_pitch: "",
-      edit: false
+      embedable_pitch: ""
     };
   },
   created() {
