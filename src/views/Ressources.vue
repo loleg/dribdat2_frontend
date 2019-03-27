@@ -1,6 +1,6 @@
 <template>
   <div class="RT">
-    <ListRessources :ressources="ressources"></ListRessources>
+    <ListRessources :ressources="ressources" :edit-mode="editMode"></ListRessources>
     <list-tools :tools="tools" :editMode="editMode"></list-tools>
   </div>
 </template>
