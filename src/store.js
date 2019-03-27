@@ -8,7 +8,7 @@ Vue.use(VueAxios, axios)
 
 let github_apiURL = 'https://api.github.com'
 let path = '/repos/ChallengeHunt/challengehunt'
-const Backend_API_URL = 'http://127.0.0.1:5000/api'
+const Backend_API_URL = 'https://dribdat2.herokuapp.com/api'
 
 export default new Vuex.Store({
     state: {
@@ -71,7 +71,7 @@ export default new Vuex.Store({
         },
         loadProject({commit}) {
             axios
-                .get('http://127.0.0.1:5000/api/project/' + '1' + '/info.json')
+                .get(`${Backend_API_URL}/project/1/info.json`)
                 .then(r => r.data)
                 .then(project => {
                     commit('SET_PROJECT', project)
@@ -79,7 +79,14 @@ export default new Vuex.Store({
         },
         loadCustomProject({commit}, id) {
             axios
-                .get('http://127.0.0.1:5000/api/project/' + id + '/info.json')
+                .get( `${Backend_API_URL}/project/${id}/info.json`, {
+                    method: 'GET',
+                    mode: 'no-cors',
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json',
+                    }
+                })
                 .then(r => r.data)
                 .then(custom_project => {
                     commit('SET_CUSTOM_PROJECT', custom_project)
@@ -88,10 +95,10 @@ export default new Vuex.Store({
         loadProjectList({commit},event) {
             let eventId = event || 'current'
 
-            var url = `${Backend_API_URL}/event/${eventId}/challenges.json`
+            var url = `${Backend_API_URL}/event/${eventId}/projects.json`
 
             if(eventId === 'current'){
-                url = `${Backend_API_URL}/event/current/challenges.json` ;
+                url = `${Backend_API_URL}/event/current/projects.json` ;
             }
 
             axios
@@ -104,7 +111,7 @@ export default new Vuex.Store({
                     }
                 })
                 .then(response => {
-                    commit('SET_PROJECT_LIST', response.data.challenges)
+                    commit('SET_PROJECT_LIST', response.data.projects)
                 })
         },
         setModeEdit({commit}){
