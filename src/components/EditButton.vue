@@ -17,9 +17,6 @@
 </template>
 
 <script>
-// eslint-disable-next-line
-import mapState from "vuex";
-
 export default {
   name: "EditButton",
   props: ["editMode"],
