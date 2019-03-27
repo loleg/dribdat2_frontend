@@ -1,21 +1,68 @@
 <template>
   <div class="tools">
     <h3>TOOLS USED DURING THIS CHALLENGE</h3>
-    <ul>
-      <li v-for="tool in tools" :key="tool.id">{{ tool.name }}</li>
-    </ul>
+    <div v-if="!editMode">
+      <ul>
+        <li v-for="tool in tools" :key="tool.id">{{ tool.name }}</li>
+      </ul>
+    </div>
+    <div v-else>
+      <ul>
+        <li v-for="tool in tools" :key="tool.id">
+          {{ tool.name }}
+          <button type="button" class="btn btn-danger" @click="remove(tool)">
+            <i class="icon-remove"></i>
+          </button>
+        </li>
+      </ul>
+      <input type="text" v-model="tool" placeholder="Insert a new tool">
+      <button type="button" class="btn btn-primary" @click="add">Add</button>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["tools"]
+  props: ["tools", "editMode"],
+  data() {
+    return {
+      tool: ""
+    };
+  },
+  methods: {
+    remove(tool) {
+      this.tools.splice(this.tools.indexOf(tool), 1);
+    },
+    add() {
+      let idTool = this.tools[this.tools.length - 1]["id"];
+      if (idTool == null) idTool = 1;
+      this.tools.push({
+        id: idTool + 1,
+        name: this.tool
+      });
+    }
+  }
 };
 </script>
 
 <style scoped>
 .tools {
   margin-top: 20px;
+}
+
+.btn-danger {
+  float: right;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 ul {

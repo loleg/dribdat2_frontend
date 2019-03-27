@@ -1,11 +1,12 @@
 <template>
   <div class="RT">
     <ListRessources :ressources="ressources"></ListRessources>
-    <list-tools :tools="tools"></list-tools>
+    <list-tools :tools="tools" :editMode="editMode"></list-tools>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import ListRessources from "../components/Ressources/ListRessources.vue";
 import ListTools from "../components/Ressources/ListTools.vue";
 
@@ -43,7 +44,11 @@ export default {
         }
       ]
     };
-  }
+  },
+  mounted() {
+    this.$store.dispatch("setModeDisplay");
+  },
+  computed: mapState(["editMode"])
 };
 </script>
 
