@@ -1,12 +1,16 @@
 <template>
+    <div class="Headline" >
     <h2>{{ status }}</h2>
+    <p v-if="!editMode"> {{ Status }}</p>
+    <input type="text" v-model="status" v-if="editMode" placeholder="Headline status ">
+    </div>
 </template>
 
 <script>
     export default {
         name: "HeadlineStatus",
         props: [
-            'status'
+            'status' , 'editMode'
         ]
     }
 </script>
