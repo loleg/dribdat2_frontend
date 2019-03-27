@@ -3,7 +3,7 @@ import Timeline from '@/components/InfoTeam/Timeline.vue'
 
 describe('Timeline.vue', () => {
     it('list of timeline is diplayed', () => {
-        const list = [
+        const activities = [
             {
                 date: "Mon, 11 Mar 2019 11:02:29 GMT",
                 user_name: "admin",
@@ -18,8 +18,8 @@ describe('Timeline.vue', () => {
             }
         ]
         const wrapper = shallowMount(Timeline, {
-            propsData: { list }
+            propsData: { activities }
         })
-        expect(wrapper.find('ul').element.children).toHaveLength(list.length)
+        expect(wrapper.find('ul').element.children).toHaveLength(activities.length)
     })
 })

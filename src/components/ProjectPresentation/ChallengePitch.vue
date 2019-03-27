@@ -1,38 +1,46 @@
 <template>
-<div class="resp-container">
-  <iframe class="rest-iframe" :src="embedable_pitch"></iframe>
-</div>
+  <div>
+    <div v-if="editMode">
+      <input type="text" placeholder="Insert the URL of the pitch">
+    </div>
+    <div v-else>
+      <div class="resp-container">
+        <iframe class="rest-iframe" :src="embedable_pitch"></iframe>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
-    pitch: String
+    pitch: String,
+    editMode: Boolean
   },
-  data () {
+  data() {
     return {
-      embedable_pitch: ''
-    }
+      embedable_pitch: ""
+    };
   },
-  created () {
-    if(this.pitch.includes('youtube')) {
+  created() {
+    if (this.pitch.includes("youtube")) {
       // youtube video
-      let yt_video_id = this.pitch.split('=')[1];
-      this.embedable_pitch = 'https://www.youtube.com/embed/' + yt_video_id
-    } else if (this.pitch.includes('dailymotion')) {
+      let yt_video_id = this.pitch.split("=")[1];
+      this.embedable_pitch = "https://www.youtube.com/embed/" + yt_video_id;
+    } else if (this.pitch.includes("dailymotion")) {
       // dailymotion video
-      let dm_video_id = this.pitch.split('video/')[1];
-      this.embedable_pitch = 'https://www.dailymotion.com/embed/video/' + dm_video_id
+      let dm_video_id = this.pitch.split("video/")[1];
+      this.embedable_pitch =
+        "https://www.dailymotion.com/embed/video/" + dm_video_id;
     } else {
       // other
-      this.embedable_pitch = this.pitch
+      this.embedable_pitch = this.pitch;
     }
   }
-}
+};
 </script>
 
 <style scoped>
-
 .resp-container {
   position: relative;
   overflow: hidden;
@@ -48,21 +56,26 @@ export default {
   border: 0;
 }
 
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 @media screen and (min-width: 1200px) {
   .rest-iframe {
     height: 75%;
-
   }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
   .rest-iframe {
     height: 100%;
-
   }
-
 }
-
-
-
 </style>

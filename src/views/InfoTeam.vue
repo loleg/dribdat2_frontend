@@ -14,7 +14,7 @@
         </form>
       </div>
     </div>
-    <Timeline :projectId="project.id"></Timeline>
+     <Timeline :activities="activities" ></Timeline>
   </div>
 </template>
 
@@ -23,6 +23,7 @@ import HeadlineStatus from "../components/InfoTeam/HeadlineStatus";
 import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
 import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
 import Timeline from "../components/InfoTeam/Timeline";
+import { APIService } from "../APIService";
 
 export default {
   name: "InfoTeam",
@@ -78,14 +79,33 @@ export default {
         }
       ],
 
-      cancel: function() {
-        this.formOpen = false;
-        this.resetForm();
-      }
+        activities: [],
+
+
+        cancel: function() {
+            this.formOpen = false;
+            this.resetForm();
+        }
+
+
     };
-  }
+  },
+    methods: {
+        getDataActivity() {
+            APIService.getActivityList(this.project.id).then(data => {
+                this.activities = data;
+            });
+        }
+    },
+    created() {
+        this.getDataActivity();
+    }
 };
 </script>
 
 <style scoped>
+
+
+
+
 </style>

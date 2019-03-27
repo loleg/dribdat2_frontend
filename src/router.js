@@ -8,24 +8,38 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
         {
-            path: '/',
-            name: 'projectPresentation',
-            component: () => import(/* webpackChunkName: "about" */ './views/ProjectPresentation.vue')
+            path: '/event', component: () => import('./views/ProjectList'), alias: '/'
         },
-        {
-            path: '/infoTeam',
-            name: 'infoTeam',
-            component: () => import(/* webpackChunkName: "about" */ './views/InfoTeam.vue')
-        },
-        {
-            path: '/developmentStatus',
-            name: 'developmentStatus',
-            component: () => import(/* webpackChunkName: "about" */ './views/DevelopmentStatus.vue')
-        },
-        {
-            path: '/ressources',
-            name: 'ressources',
-            component: () => import(/* webpackChunkName: "about" */ './views/Ressources.vue')
+
+        { path: '/project/:id', component: () => import('./components/Project'),
+            props: true,
+            children: [
+                {
+                    // UserProfile will be rendered inside User's <router-view>
+                    // when /user/:id/profile is matched
+                    path: 'presentation',
+                    alias: '/',
+                    name: 'presentation',
+                    component: () => import(/* webpackChunkName: "about" */ './views/ProjectPresentation.vue')
+                },
+                {
+                    // UserPosts will be rendered inside User's <router-view>
+                    // when /user/:id/posts is matched
+                    path: 'team',
+                    name: 'team',
+                    component: () => import(/* webpackChunkName: "about" */ './views/InfoTeam')
+                },
+                {
+                    path: 'development',
+                    name: 'development',
+                    component: () => import(/* webpackChunkName: "about" */ './views/DevelopmentStatus.vue')
+                },
+                {
+                    path: 'ressources',
+                    name: 'ressources',
+                    component: () => import(/* webpackChunkName: "about" */ './views/Ressources.vue')
+                }
+            ]
         }
     ]
 })
