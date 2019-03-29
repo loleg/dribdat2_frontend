@@ -4,7 +4,6 @@
         <li class="list-group-item d-flex flex-column justify-content-between align-items-center"
             v-bind:key="contributor.id" v-for="contributor in contributors">
             <div class="d-flex w-100 justify-content-between">
-                <avatar></avatar>
                 <h5 class="mb-1">{{contributor.author.login}}</h5>
                 <small>commits <span class="badge badge-primary badge-pill">{{contributor.total}}</span></small>
             </div>

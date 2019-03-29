@@ -1,5 +1,5 @@
 <template>
-    <img src="" class="avatar">
+    <img src="" onerror="this.src='public/img/icons/avatar-default.png'"  class="avatar">
 </template>
 
 <script>
