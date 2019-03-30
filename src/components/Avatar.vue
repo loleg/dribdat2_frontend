@@ -1,5 +1,8 @@
 <template>
-    <img src="" onerror="this.src='public/img/icons/avatar-default.png'"  class="avatar">
+    <img :src="url"
+         onerror="this.onerror=null
+                  this.src='/img/icons/avatar-default.png'"
+         class="avatar">
 </template>
 
 <script>

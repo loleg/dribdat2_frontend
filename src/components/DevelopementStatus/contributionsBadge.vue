@@ -3,10 +3,12 @@
     <ul class="list-group-flush">
         <li class="list-group-item d-flex flex-column justify-content-between align-items-center"
             v-bind:key="contributor.id" v-for="contributor in contributors">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{contributor.author.login}}</h5>
-                <small>commits <span class="badge badge-primary badge-pill">{{contributor.total}}</span></small>
+            <div class="d-flex flex-row w-100">
+                <avatar class="m-2" v-bind:url="contributor.author.avatar_url"></avatar>
+                <h5 class="align-self-center"> {{contributor.author.login}}</h5>
+                <small class="ml-auto">commits <span class="badge badge-primary badge-pill">{{contributor.total}}</span></small>
             </div>
+            <!--
             <div class="d-flex w-100">
                 <small class="text-success">added <span class="badge badge-success badge-pill">++ {{sumAddedCodeLines(contributor)}}</span></small>
 
@@ -14,6 +16,7 @@
             <div class="d-flex w-100">
                 <small class="text-danger">deleted <span class="badge badge-danger badge-pill">-- {{sumDeletedCodeLines(contributor)}}</span></small>
             </div>
+            -->
             <div class="d-flex w-100">
                 <contribution-chart v-bind:chartData="createChartData(contributor)"></contribution-chart>
             </div>
@@ -31,13 +34,12 @@
         components: {Avatar, ContributionChart},
         props: ["contributors"],
         methods: {
-            sumAddedCodeLines(contributor){
-                let sum = 0
-
-                for (let i = 0; i < contributor.weeks.length; i++) {
-                    sum += contributor.weeks[i].a
-                }
-                return sum
+            getUrl() {
+                let test= 'img/icons/avatar-default.png'
+                return test
+            },
+            sumAddedCodeLines(contributor, ){
+                return contributor.weeks.reduce((subtotal, item) => { return subtotal + item.d}, 0)
             },
             sumDeletedCodeLines(contributor){
                 let sum = 0
