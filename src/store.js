@@ -22,7 +22,7 @@ export default new Vuex.Store({
                 name: "challengeName"
             },
             id: 1,
-            pitch: "http://example.com"
+            pitch: "https://www.youtube.com/watch?v=29Y_POE8tuw"
         },
         contributors: [],
         issues: [],

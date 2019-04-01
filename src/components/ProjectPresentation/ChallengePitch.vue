@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="pitch">
     <div v-if="editMode">
-      <input type="text" placeholder="Insert the URL of the pitch">
+      <input type="text"  v-model="embedable_pitch" placeholder="Insert the URL of the pitch">
+      <button type="button" class="btn btn-primary" @click="modify">Modify</button>
     </div>
     <div v-else>
       <div class="resp-container">
@@ -22,6 +23,12 @@ export default {
       embedable_pitch: ""
     };
   },
+  methods: {
+    modify() {
+      // send the new spitch to the API
+
+    }
+  },
   created() {
     if (this.pitch.includes("youtube")) {
       // youtube video
@@ -41,6 +48,7 @@ export default {
 </script>
 
 <style scoped>
+
 .resp-container {
   position: relative;
   overflow: hidden;
@@ -52,7 +60,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   border: 0;
 }
 
