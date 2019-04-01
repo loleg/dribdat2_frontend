@@ -1,7 +1,7 @@
 <template>
   <div class="pitch">
     <div v-if="editMode">
-      <input type="text"  v-model="embedable_pitch" placeholder="Insert the URL of the pitch">
+      <input type="text" v-model="embedable_pitch" placeholder="Insert the URL of the pitch">
       <button type="button" class="btn btn-primary" @click="modify">Modify</button>
     </div>
     <div v-else>
@@ -25,30 +25,33 @@ export default {
   },
   methods: {
     modify() {
-      // send the new spitch to the API
+      this.embedable_pitch = this.embedLink(this.embedable_pitch);
 
+      // send the new spitch to the API
+      
+    },
+    embedLink(link) {
+      if (link.includes("youtube")) {
+        // youtube video
+        let yt_video_id = link.split("=")[1];
+        return "https://www.youtube.com/embed/" + yt_video_id;
+      } else if (link.includes("dailymotion")) {
+        // dailymotion video
+        let dm_video_id = this.pitch.split("video/")[1];
+        return "https://www.dailymotion.com/embed/video/" + dm_video_id;
+      } else {
+        // other
+        return link;
+      }
     }
   },
   created() {
-    if (this.pitch.includes("youtube")) {
-      // youtube video
-      let yt_video_id = this.pitch.split("=")[1];
-      this.embedable_pitch = "https://www.youtube.com/embed/" + yt_video_id;
-    } else if (this.pitch.includes("dailymotion")) {
-      // dailymotion video
-      let dm_video_id = this.pitch.split("video/")[1];
-      this.embedable_pitch =
-        "https://www.dailymotion.com/embed/video/" + dm_video_id;
-    } else {
-      // other
-      this.embedable_pitch = this.pitch;
-    }
+    this.embedable_pitch = this.embedLink(this.pitch);
   }
 };
 </script>
 
 <style scoped>
-
 .resp-container {
   position: relative;
   overflow: hidden;
