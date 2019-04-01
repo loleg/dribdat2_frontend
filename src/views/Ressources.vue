@@ -2,6 +2,7 @@
   <div class="RT">
     <ListRessources :ressources="ressources" :edit-mode="editMode"></ListRessources>
     <list-tools :tools="tools" :editMode="editMode"></list-tools>
+    <a href="https://sleepy-lalande-c0efaa.netlify.com/" class="btn btn-primary">Infos</a>
   </div>
 </template>
 
