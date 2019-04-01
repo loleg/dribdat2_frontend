@@ -5,24 +5,39 @@
 
         <div class="card" >
             <h5 class="card-header bg-primary text-light">In progress</h5>
-            <div class="card-body">
-
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            <div class="card-body d-flex justify-content-center">
+                <stepper :steps="steps" :current-step="currentStep" ></stepper>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import Stepper from "../Stepper";
     export default {
         name: "projectProgressBar",
-        props: ["beginDate", "endDate"]
+        components: {Stepper},
+        props: [],
+        data: function () {
+            return {
+                steps : [
+                    'Idea or challenge description',
+                    'Team has formed and started a project',
+                    'Research of the scope is done ',
+                    'Initial designs are sketched and shared',
+                    'Prototype is deployed',
+                    'Prototype is presented',
+                    'Project is live an publicly available'
+                ],
+                currentStep : 2
+            }
+        }
     }
 </script>
 
 <style scoped>
-#projectProgressBar{
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
+    #projectProgressBar{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
 </style>

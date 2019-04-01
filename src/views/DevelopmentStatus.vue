@@ -1,16 +1,14 @@
 <template>
     <div class="developmentStatus">
-
         <project-progress-bar></project-progress-bar>
-
         <div id="accordion">
             <div class="card">
                 <div class="card-header" id="headingIssues" >
                     <h5>
-                        <a class="card-link" @click="loadIssues" data-toggle="collapse" data-target="#collapse-issues" aria-expanded="false" aria-controls="collapse-issues">
+                        <a class="card-link"  data-toggle="collapse" data-target="#collapse-issues" aria-expanded="false" aria-controls="collapse-issues">
                             Open Issues
                         </a>
-                        <div id="issueSpinner" class="spinner-border ml-auto d-none" role="status" aria-hidden="true"></div>
+
                     </h5>
                 </div>
                 <div id="collapse-issues" class="collapse"  aria-labelledby="headingIssues" data-parent="#accordion">
@@ -22,10 +20,9 @@
             <div class="card">
                 <div class="card-header" id="headingContributors" >
                     <h5>
-                        <a class="card-link" @click="loadContributors" data-toggle="collapse" data-target="#collapse-contributors" aria-expanded="false" aria-controls="collapse-contributors">
+                        <a class="card-link" data-toggle="collapse" data-target="#collapse-contributors" aria-expanded="false" aria-controls="collapse-contributors">
                             Contributors
                         </a>
-                        <div id="contributorSpinner" class="spinner-border ml-auto d-none" role="status" aria-hidden="true"></div>
                     </h5>
                 </div>
                 <div id="collapse-contributors" class="collapse"  aria-labelledby="headingContributors" data-parent="#accordion">
@@ -58,32 +55,11 @@
         },
         props: ["project"],
         methods: {
-            loadIssues() {
-
-                if($('#collapse-issues').is(':hidden')) {
-                    $('#issueSpinner').removeClass("d-none");
-
-                    this.$store.dispatch('loadIssues')
-                        .then(() => {
-                            $('#issueSpinner').addClass("d-none")
-
-                        })
-                }
-            },
-            loadContributors() {
-
-                if($('#collapse-contributors').is(':hidden')) {
-                    $('#contributorSpinner').removeClass("d-none");
-
-                    this.$store.dispatch('loadContributors')
-                        .then(() => {
-                            $('#contributorSpinner').addClass("d-none")
-                        })
-                }
-            }
         },
         created () {
             this.$store.dispatch('loadProject')
+            this.$store.dispatch('loadIssues')
+            this.$store.dispatch('loadContributors')
         },
         computed: mapState([
             'contributors',
