@@ -1,6 +1,6 @@
 <template>
   <div class="infoTeam">
-    <HeadlineStatus :status="project.phase"></HeadlineStatus>
+    <HeadlineStatus :status="project.phase" :editMode="editMode"></HeadlineStatus>
     <ChallengeListPersons :list="persons"></ChallengeListPersons>
     <a href="https://github.com/ChallengeHunt/challengehunt" class="btn btn-primary">Source Code</a>
     <div class="container">
@@ -24,6 +24,7 @@ import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
 import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
 import Timeline from "../components/InfoTeam/Timeline";
 import { APIService } from "../APIService";
+import { mapState } from "vuex";
 
 export default {
   name: "InfoTeam",
@@ -34,6 +35,7 @@ export default {
     ChallengeFeedback
   },
   props: ["project"],
+
   data() {
     return {
       formOpen: false,
@@ -99,7 +101,11 @@ export default {
     },
     created() {
         this.getDataActivity();
-    }
+    },
+  mounted() {
+    this.$store.dispatch("setModeDisplay");
+  },
+  computed: mapState(["editMode"])
 };
 </script>
 

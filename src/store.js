@@ -22,7 +22,8 @@ export default new Vuex.Store({
                 name: "challengeName"
             },
             id: 1,
-            pitch: "http://example.com"
+            pitch: "http://example.com",
+            phase : "hello"
         },
         contributors: [],
         issues: [],

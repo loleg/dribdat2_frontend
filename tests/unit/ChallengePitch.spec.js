@@ -1,5 +1,6 @@
-import {shallowMount} from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import ChallengePitch from '@/components/ProjectPresentation/ChallengePitch.vue'
+import Vuex from 'vuex'
 
 describe('ChallengePitch.vue youtube', () => {
     it('iframe loaded', () => {
@@ -37,5 +38,31 @@ describe('ChallengePitch.vue other', () => {
         })
         expect(wrapper.isVisible())
 
+    })
+})
+
+describe('ChallengePitch shows input file in edit mode', () => {
+    it('input visible', () => {
+        const localVue = createLocalVue()
+        localVue.use(Vuex)
+
+        let store = new Vuex.Store({
+            state: {
+                editMode: true
+            },
+            actions: {
+                setModeEdit: jest.fn()
+            }
+        })
+        const pitch = 'https://example.com'
+        const wrapper = shallowMount(ChallengePitch, {
+            propsData: {
+                pitch
+            },
+            store: store,
+            localVue: localVue
+        })
+
+        expect(wrapper.find('input-pitch input'))
     })
 })

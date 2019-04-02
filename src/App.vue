@@ -29,6 +29,7 @@ body {
 
 .add-feedback {
   &.open {
+
     background-color: #fafafa;
     padding: 18px 32px;
     border-radius: 5px;
@@ -43,7 +44,7 @@ body {
     }
   }
   transition: all 0.3s ease;
-  background-color: #3498db;
+  background-color:#7FFFD4;
   height: 100px;
   width: 100px;
   border-radius: 72px;
@@ -54,9 +55,10 @@ body {
     line-height: 100px;
 
     font-weight: normal;
-    color: #f7f7f7;
+    color: #000000;
   }
   form {
+
     transition: none;
     opacity: 0;
     height: 0;
