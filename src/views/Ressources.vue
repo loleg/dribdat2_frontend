@@ -2,7 +2,9 @@
   <div class="RT">
     <ListRessources :ressources="ressources" :edit-mode="editMode"></ListRessources>
     <list-tools :tools="tools" :editMode="editMode"></list-tools>
-    <a href="https://sleepy-lalande-c0efaa.netlify.com/" class="btn btn-primary">Infos</a>
+    <div class="contentLeft">
+      <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/" :edit-mode="editMode"></InfosLink>
+    </div>
   </div>
 </template>
 
@@ -10,10 +12,12 @@
 import { mapState } from "vuex";
 import ListRessources from "../components/Ressources/ListRessources.vue";
 import ListTools from "../components/Ressources/ListTools.vue";
+import InfosLink from "../components/Ressources/InfosLink.vue";
+
 
 export default {
   name: "Ressources",
-  components: { ListRessources, ListTools },
+  components: { ListRessources, ListTools, InfosLink},
   data() {
     return {
       tools: [
