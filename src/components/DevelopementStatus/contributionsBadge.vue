@@ -34,21 +34,6 @@
         components: {Avatar, ContributionChart},
         props: ["contributors"],
         methods: {
-            getUrl() {
-                let test= 'img/icons/avatar-default.png'
-                return test
-            },
-            sumAddedCodeLines(contributor, ){
-                return contributor.weeks.reduce((subtotal, item) => { return subtotal + item.d}, 0)
-            },
-            sumDeletedCodeLines(contributor){
-                let sum = 0
-
-                for (let i = 0; i < contributor.weeks.length; i++) {
-                    sum += contributor.weeks[i].d
-                }
-                return sum
-            },
             createChartData(contributor){
                 let chartData = {labels: [], datasets: [{data: []}]}
 
