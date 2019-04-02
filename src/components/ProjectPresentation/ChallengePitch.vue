@@ -1,7 +1,7 @@
 <template>
   <div class="pitch">
     <div v-if="editMode">
-      <input type="text" v-model="embedable_pitch" placeholder="Insert the URL of the pitch">
+      <input class="input-pitch" type="text" v-model="embedable_pitch" placeholder="Insert the URL of the pitch">
       <button type="button" class="btn btn-primary" @click="modify">Modify</button>
     </div>
     <div v-else>
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { APIService } from "../../APIService";
+
 export default {
   props: {
     pitch: String,
@@ -28,7 +30,10 @@ export default {
       this.embedable_pitch = this.embedLink(this.embedable_pitch);
 
       // send the new spitch to the API
-      
+      APIService.postProject({
+        id: 1,
+        name: "test Project"
+      });
     },
     embedLink(link) {
       if (link.includes("youtube")) {

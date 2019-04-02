@@ -54,6 +54,11 @@ export default {
   float: right;
 }
 
+.btn-primary {
+  display: block;
+  width: 100%;
+}
+
 input[type="text"],
 select {
   width: 100%;
