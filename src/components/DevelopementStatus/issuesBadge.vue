@@ -13,7 +13,7 @@
 <script>
     export default {
         name: "issuesBadge",
-        props: ["issues"]
+        props: ["issues"],
     }
 </script>
 

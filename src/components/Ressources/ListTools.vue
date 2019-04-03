@@ -15,7 +15,7 @@
           </button>
         </li>
       </ul>
-      <input type="text" v-model="tool" placeholder="Insert a new tool">
+      <input class="input-tools" type="text" v-model="tool" placeholder="Insert a new tool">
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>
   </div>

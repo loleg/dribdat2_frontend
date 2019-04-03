@@ -1,8 +1,5 @@
 <template>
     <div id="projectProgressBar">
-
-
-
         <div class="card" >
             <h5 class="card-header bg-primary text-light">In progress</h5>
             <div class="card-body d-flex justify-content-center">
@@ -17,7 +14,7 @@
     export default {
         name: "projectProgressBar",
         components: {Stepper},
-        props: [],
+        props: ['currentStep'],
         data: function () {
             return {
                 steps : [
@@ -28,8 +25,7 @@
                     'Prototype is deployed',
                     'Prototype is presented',
                     'Project is live an publicly available'
-                ],
-                currentStep : 2
+                ]
             }
         }
     }
