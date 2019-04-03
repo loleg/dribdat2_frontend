@@ -30,9 +30,9 @@
 }
 
 .btn-primary {
-    color: black;
-    background-color: #7FFFD4;
-    border-color: #7FFFD4;
+    color:  black;
+    background-color: #bee1e2;
+    border-color: #bee1e2;
 }
 
 .btn-primary:hover,
@@ -40,7 +40,7 @@
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    color: black;
-    background-color:#7FFFD4;
-    border-color: #7FFFD4;
+    color:  black;
+    background-color:#bee1e2;;
+    border-color: #bee1e2;;
 }

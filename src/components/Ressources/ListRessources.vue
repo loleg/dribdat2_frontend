@@ -76,7 +76,7 @@
     }
 
     li {
-        font: 200 18px/1.5 Helvetica, Verdana, sans-serif;
+        font: 200 18px/1.5 Verdana, Geneva, sans-serif;;
         border-bottom: 1px solid #ccc;
         height: 38px;
         width: 100%;
@@ -105,7 +105,7 @@
         h3 {
             font-size: 120%;
             color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-family: Verdana, Geneva, sans-serif;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -130,7 +130,7 @@
         h3 {
             font-size: 120%;
             color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-family: Verdana, Geneva, sans-serif;
             text-align: center;
             margin-bottom: 32px;
         }

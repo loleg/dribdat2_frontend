@@ -20,10 +20,12 @@
     .title-link{
         color:  #89a7af;
         text-decoration: underline #89a7af;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 12px;
     }
 
         .social-link {
-            font-size: 100%;
+            font-size: 80%;
             text-align: left;
         }
 </style>

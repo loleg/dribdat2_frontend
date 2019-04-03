@@ -1,7 +1,7 @@
 <template>
     <div id="projectProgressBar">
         <div class="card" >
-            <h5 class="card-header bg-primary text-light">In progress</h5>
+            <h5 class="card-header ">In progress</h5>
             <div class="card-body d-flex justify-content-center">
                 <stepper :steps="steps" :current-step="currentStep" ></stepper>
             </div>
@@ -35,5 +35,18 @@
     #projectProgressBar{
         margin-top: 5%;
         margin-bottom: 5%;
+        font-family: Verdana, Geneva, sans-serif;
+
     }
+
+    h5{
+        font-family: Verdana, Geneva, sans-serif;
+        background-color: #89a7af;
+        color: #f9f9f9 ;
+    }
+
+
+
+
+
 </style>

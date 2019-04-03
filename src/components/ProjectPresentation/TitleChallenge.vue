@@ -24,7 +24,7 @@
         .challenge-title {
             font-size: 20px;
             text-align: center;
-            color: whitesmoke;
+            color: #f9f9f9;
             font-family: Verdana, Geneva, sans-serif;
             margin-bottom: 25px;
         }
@@ -37,7 +37,7 @@
         .challenge-title {
             font-size: 30px;
             text-align: center;
-            color: whitesmoke;
+            color:#f9f9f9;
             font-family: Verdana, Geneva, sans-serif;
             margin-bottom: 25px;
         }

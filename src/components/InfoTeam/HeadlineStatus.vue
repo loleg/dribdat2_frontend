@@ -27,7 +27,7 @@
         h2{
             font-size: 150%;
             color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-family: Verdana, Geneva, sans-serif;
             text-align: center;
         }
     }
@@ -39,7 +39,7 @@
         h2{
             font-size: 180%;
             color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-family: Verdana, Geneva, sans-serif;
             text-align: center;
         }
 
@@ -54,7 +54,7 @@
         h2{
             font-size: 250%;
             color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-family: Verdana, Geneva, sans-serif;
             text-align: center;
         }
     }

@@ -30,7 +30,7 @@
         height: 100%;
         border: 1px groove  #89a7af;
         border-radius: 5px;
-
+        font-family: Verdana, Geneva, sans-serif;
     }
 
     .sidebar a  {
@@ -56,7 +56,7 @@
 
 
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 700px) {
         .sidebar {
 
             width: 100%;

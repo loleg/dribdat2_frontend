@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
     <ul class="list-group-flush">
         <li class="list-group-item d-flex flex-column justify-content-between align-items-center"
             v-bind:key="contributor.id" v-for="contributor in contributors">
@@ -55,9 +55,11 @@
     ul {
         margin: 0;
         padding: 0;
+        font-family: Verdana, Geneva, sans-serif;
     }
     span {
         margin-left: 10px;
     }
+
 
 </style>

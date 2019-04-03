@@ -24,7 +24,7 @@
         div{
             font-size: 100%;
             color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-family: Verdana, Geneva, sans-serif;
             text-align: center;
         }
     }
@@ -36,7 +36,7 @@
         div{
             font-size: 150%;
             color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-family: Verdana, Geneva, sans-serif;
             text-align: center;
         }
 
@@ -51,7 +51,7 @@
             div{
             font-size: 150%;
             color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                font-family: Verdana, Geneva, sans-serif;
             text-align: center;
         }
     }

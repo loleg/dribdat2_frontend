@@ -21,6 +21,7 @@
     ul {
         margin: 0;
         padding: 0;
+        font-family: Verdana, Geneva, sans-serif;
     }
     span {
         margin-left: 10px;

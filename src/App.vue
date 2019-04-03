@@ -2,6 +2,8 @@
   <div id="app">
     <router-view/>
   </div>
+
+
 </template>
 
 <script>
@@ -44,7 +46,7 @@ body {
     }
   }
   transition: all 0.3s ease;
-  background-color:#7FFFD4;
+  background-color: #bee1e2;
   height: 100px;
   width: 100px;
   border-radius: 72px;

@@ -26,7 +26,7 @@ ul {
 }
 
 li {
-  font: 200 18px/1.5 Helvetica, Verdana, sans-serif;
+  font: 200 18px/1.5  Verdana, Geneva, sans-serif;;
   border-bottom: 1px solid #ccc;
   height: 38px;
   vertical-align: middle;
@@ -65,9 +65,9 @@ li {
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
   h3 {
-    font-size: 120%;
+    font-size: 110%;
     color: #f9f9f9;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -77,9 +77,9 @@ li {
     */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h3 {
-    font-size: 110%;
+    font-size: 100%;
     color: #f9f9f9;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
     text-align: center;
     margin-bottom: 30px;
   }
@@ -90,9 +90,9 @@ Part for the computer
  */
 @media screen and (min-width: 1200px) {
   h3 {
-    font-size: 120%;
+    font-size: 110%;
     color: #f9f9f9;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
     text-align: center;
     margin-bottom: 32px;
   }

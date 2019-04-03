@@ -83,8 +83,9 @@
 
 <style scoped>
 
-
-    @media screen
-    {
+    #headingIssues, #headingContributors{
+        font-family: Verdana, Geneva, sans-serif;
+        background-color: #89a7af;
+        color: #f9f9f9 ;
     }
 </style>
