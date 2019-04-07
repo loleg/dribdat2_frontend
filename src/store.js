@@ -6,7 +6,7 @@ import VueAxios from 'vue-axios'
 Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 
-let github_apiURL = 'https://api.github.com'
+let github_apiURL = 'https://api.github.com/repos'
 let path = '/repos/ChallengeHunt/challengehunt'
 const Backend_API_URL = 'http://127.0.0.1:5000/api'
 
@@ -53,9 +53,11 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        loadContributors({commit}) {
+        loadContributors({commit, state}) {
             axios
-                .get(github_apiURL + path + '/stats/contributors')
+                .get(github_apiURL
+                    + state.custom_project.source_url.replace('https://github.com', '')
+                    + '/stats/contributors')
                 .then(r => r.data)
                 .then(contributors => {
                     commit('SET_CONTRIBUTORS', contributors)
@@ -63,7 +65,9 @@ export default new Vuex.Store({
         },
         loadIssues({commit, state}) {
             axios
-                .get(github_apiURL + state.github_repoPath + '/issues')
+                .get(github_apiURL
+                    + state.custom_project.source_url.replace('https://github.com', '')
+                    + '/issues')
                 .then(r => r.data)
                 .then(issues => {
                     commit('SET_ISSUES', issues)
@@ -116,11 +120,8 @@ export default new Vuex.Store({
         }
     },
     getters: {
-        /**projectSourceUrl: state => {
-            return state.project.project.source_url
-        },
         projectSourceAPI_Path: state => {
-            return state.project.project.source_url.replace('https://github.com', '')
-        },**/
+            return  state.custom_project.source_url.replace('https://github.com', '')
+        },
     }
 })
