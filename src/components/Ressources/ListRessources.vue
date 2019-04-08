@@ -55,6 +55,7 @@
 
     .btn-danger {
         float: right;
+        margin-bottom: 0px !important;
     }
 
     input[type="text"],

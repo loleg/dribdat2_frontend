@@ -52,11 +52,7 @@ export default {
 
 .btn-danger {
   float: right;
-}
-
-.btn-primary {
-  display: block;
-  width: 100%;
+  margin-bottom: 0px !important;
 }
 
 input[type="text"],
@@ -83,6 +79,7 @@ li {
   height: 38px;
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   color: #f9f9f9;
   display: block;

@@ -22,7 +22,7 @@ export default new Vuex.Store({
                 name: "challengeName"
             },
             id: 1,
-            pitch: "http://example.com",
+            //pitch: "http://example.com",
             phase : "hello"
         },
         contributors: [],
@@ -43,7 +43,7 @@ export default new Vuex.Store({
         SET_CUSTOM_PROJECT(state, custom_project) {
             state.custom_project = custom_project.project
             state.custom_project.challenge = {name: 'challenge name'} //TODO challenge has to be provided by the API
-            state.custom_project.pitch = 'http://example.com' //TODO pitch has to be provided by the API
+            //state.custom_project.pitch = 'http://example.com' //TODO pitch has to be provided by the API
         },
         SET_PROJECT_LIST(state, projectList) {
             state.projectList = projectList;

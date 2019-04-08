@@ -2,18 +2,30 @@
     <div class="sidebar" >
 
         <a>
-            <router-link :to="{ name: 'presentation', params: { id:id }}">Project presentation</router-link>
+            <font-awesome-icon icon="lightbulb" />
+            <router-link class="textHide" :to="{ name: 'presentation', params: { id:id }}">Project </router-link>
         </a>
-        <a > <router-link :to="{ name: 'team', params: { id:id }}">Info Team</router-link></a>
-        <a >  <router-link :to="{ name: 'development', params: { id:id }}">Development Status</router-link></a>
-        <a ><router-link :to="{ name: 'ressources', params: { id:id }}">Ressources</router-link></a>
+        <a >
+            <font-awesome-icon icon="users" />
+            <router-link class="textHide" :to="{ name: 'team', params: { id:id }}">Team</router-link></a>
+        <a >
+            <font-awesome-icon icon="file-code"/>
+            <router-link class="textHide" :to="{ name: 'development', params: { id:id }}">Status</router-link></a>
+        <a >
+            <font-awesome-icon icon="link"/>
+            <router-link class="textHide" :to="{ name: 'ressources', params: { id:id }}">Ressources</router-link></a>
+        <a>
+            <edit-button :editMode="editMode"></edit-button>
+        </a>
     </div>
 </template>
 
 <script>
+    import EditButton from "./EditButton.vue";
     export default {
         name: "Navigation",
         props: ["id"],
+        components: {EditButton}
 
 
 
@@ -61,9 +73,19 @@
 
             width: 100%;
             position: relative;
+            border: none;
+
+
         }
-        .sidebar a {float: top;}
+        .sidebar a {float: left;
+            margin-bottom: 5px;
+        }
+
+        .textHide{
+            font-size: 0px;
+        }
     }
+
 
 
 </style>

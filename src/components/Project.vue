@@ -1,6 +1,6 @@
 <template>
     <div id="project">
-        <edit-button :editMode="editMode"></edit-button>
+
         <navigation :id="this.id"></navigation>
 
 
@@ -13,7 +13,7 @@
 
 <script>
     import {mapState} from "vuex";
-    import EditButton from "./EditButton.vue";
+
     import Navigation from "./Navigation.vue"
 
     export default {
@@ -24,7 +24,7 @@
                 backgroundColor: " #89a7af"
             }
         },
-        components: {EditButton, Navigation},
+        components: {Navigation},
         mounted() {
             this.$store.dispatch("loadCustomProject", this.id);
         },
@@ -50,6 +50,9 @@
         }
 
     }
+
+
+
 
 
 

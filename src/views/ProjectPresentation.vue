@@ -1,6 +1,6 @@
 <template>
   <div class="projectPresentation">
-    <ProjectTitle :title="project.name"></ProjectTitle>
+    <ProjectTitle :title="project.name" :editMode="editMode"></ProjectTitle>
     <TitleChallenge :title="project.challenge.name"></TitleChallenge>
     <ChallengePitch :pitch="project.pitch" :editMode="editMode"></ChallengePitch>
     <SummaryPitch :summary="project.summary" :edit-mode="editMode"></SummaryPitch>
