@@ -1,6 +1,8 @@
 <template>
     <div class="project-title">
         <h1>{{ title }}</h1>
+        <p v-if="!editMode"> {{ title }}</p>
+        <input type="text" v-model="title" v-if="editMode" placeholder="project title">
     </div>
 </template>
 
@@ -8,7 +10,7 @@
     export default {
         name: "ProjectTitle",
         props: [
-            'title'
+            'title', 'editMode'
         ]
     }
 </script>
