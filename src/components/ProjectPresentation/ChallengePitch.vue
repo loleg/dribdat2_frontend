@@ -1,7 +1,7 @@
 <template>
   <div class="pitch">
     <div v-if="editMode">
-      <input class="input-pitch" type="text" v-model="embedable_pitch" placeholder="Insert the URL of the pitch">
+      <input class="input-pitch" type="text" v-model="embedable_pitch" :placeholder="embedable_pitch">
       <button type="button" class="btn btn-primary" @click="modify">Modify</button>
     </div>
     <div v-else>
@@ -13,34 +13,24 @@
 </template>
 
 <script>
-import { APIService } from "../../APIService";
-
 export default {
   props: {
     pitch: String,
     editMode: Boolean
   },
   data() {
-    return {
-      embedable_pitch: ""
-    };
+    return {};
   },
   methods: {
     modify() {
       this.embedable_pitch = this.embedLink(this.embedable_pitch);
-
-      // send the new spitch to the API
-      APIService.postProject({
-        id: 1,
-        name: "test Project"
-      });
     },
     embedLink(link) {
-      if (link.includes("youtube")) {
+      if (link.includes("youtube.com/watch")) {
         // youtube video
         let yt_video_id = link.split("=")[1];
         return "https://www.youtube.com/embed/" + yt_video_id;
-      } else if (link.includes("dailymotion")) {
+      } else if (link.includes("dailymotion.com/video")) {
         // dailymotion video
         let dm_video_id = this.pitch.split("video/")[1];
         return "https://www.dailymotion.com/embed/video/" + dm_video_id;
@@ -50,8 +40,10 @@ export default {
       }
     }
   },
-  created() {
-    this.embedable_pitch = this.embedLink(this.pitch);
+  computed: {
+    embedable_pitch: function() {
+      return this.embedLink(this.pitch);
+    }
   }
 };
 </script>
