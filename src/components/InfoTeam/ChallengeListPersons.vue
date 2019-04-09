@@ -3,7 +3,7 @@
     <h3>CHALLENGE REPRESENTED BY :</h3>
     <ul>
       <li v-for="person in list" :key="person.key">
-        <a :href="person.link">{{ person.firstname + ' ' + person.lastname }}</a>
+        <a :href="person.link">{{ person.name }}</a>
       </li>
     </ul>
   </div>
