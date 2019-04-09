@@ -2,7 +2,17 @@
   <div class="infoTeam">
     <HeadlineStatus :status="project.phase" :editMode="editMode"></HeadlineStatus>
     <ChallengeListPersons :list="persons"></ChallengeListPersons>
-    <a href="https://github.com/ChallengeHunt/challengehunt" class="btn btn-primary">Source Code</a>
+
+    <div>
+      <label for="validationSourceCode">Source code</label>
+            <input type="text" class="form-control" :class="{'btn btn-primary' : !editMode }"
+             id="validationSourceCode" :value="custom_project.source_url"
+             placeholder="https://github.com/project/repository"
+             v-on:click="openSourceUrl()" required>
+      <div class="invalid-feedback">
+        Please provide a source code link
+      </div>
+    </div>
     <div class="container">
       <div class="add-feedback" :class="{'open': formOpen}">
         <div class="button-copy" v-show="!formOpen" @click="formOpen = true">Feedback</div>
@@ -97,6 +107,9 @@ export default {
             APIService.getActivityList(this.project.id).then(data => {
                 this.activities = data;
             });
+        },
+        openSourceUrl (){
+             window.location.href = this.$store.state.custom_project.source_url
         }
     },
     created() {
@@ -105,12 +118,11 @@ export default {
   mounted() {
     this.$store.dispatch("setModeDisplay");
   },
-  computed: mapState(["editMode"])
+  computed: mapState(['editMode', 'custom_project'])
 };
 </script>
 
 <style scoped>
-
 
 
 

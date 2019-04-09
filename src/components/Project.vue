@@ -1,11 +1,11 @@
 <template>
     <div id="project">
 
-        <navigation :id="this.id"></navigation>
+        <navigation :id="this.id" :edit-mode="editMode"></navigation>
 
 
         <div class="content" v-bind:style="{ backgroundColor: blue}">
-            <router-view :project="custom_project"></router-view>
+            <router-view  :project="custom_project"></router-view>
         </div>
 
     </div>

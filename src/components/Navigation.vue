@@ -24,7 +24,7 @@
     import EditButton from "./EditButton.vue";
     export default {
         name: "Navigation",
-        props: ["id"],
+        props: ["id", "editMode"],
         components: {EditButton}
 
 
@@ -48,7 +48,7 @@
     .sidebar a  {
         display: block;
         color: #f9f9f9;
-        padding : 15px;
+        padding : 10px;
         text-decoration: none;
         border-radius: 2px;
 
@@ -74,15 +74,22 @@
             width: 100%;
             position: relative;
             border: none;
+            text-align: center;
 
 
         }
         .sidebar a {float: left;
             margin-bottom: 5px;
+
+
+
         }
 
         .textHide{
-            font-size: 0px;
+            color:transparent;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
         }
     }
 
