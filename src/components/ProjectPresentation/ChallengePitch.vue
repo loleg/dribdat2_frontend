@@ -1,12 +1,12 @@
 <template>
   <div class="pitch">
     <div v-if="editMode">
-      <input class="input-pitch" type="text" v-model="embedable_pitch" :placeholder="embedable_pitch">
+      <input class="input-pitch" type="text" :placeholder="embedLink(this.challenge_pitch)">
       <button type="button" class="btn btn-primary" @click="modify">Modify</button>
     </div>
     <div v-else>
       <div class="resp-container">
-        <iframe class="rest-iframe" :src="embedable_pitch"></iframe>
+        <iframe class="rest-iframe" :src="embedLink(this.pitch)"></iframe>
       </div>
     </div>
   </div>
@@ -19,11 +19,13 @@ export default {
     editMode: Boolean
   },
   data() {
-    return {};
+    return {
+      challenge_pitch: this.embedLink(this.pitch)
+    };
   },
   methods: {
     modify() {
-      this.embedable_pitch = this.embedLink(this.embedable_pitch);
+      this.pitch = this.embedLink(this.challenge_pitch);
     },
     embedLink(link) {
       if (link.includes("youtube.com/watch")) {
@@ -38,11 +40,6 @@ export default {
         // other
         return link;
       }
-    }
-  },
-  computed: {
-    embedable_pitch: function() {
-      return this.embedLink(this.pitch);
     }
   }
 };
