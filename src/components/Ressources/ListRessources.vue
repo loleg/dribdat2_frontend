@@ -23,7 +23,7 @@
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>-->
     <ul>
-      <li v-for="ressource in ressources" :key="ressource.id">
+      <li v-for="ressource in ressources" :key="ressource.key">
         <a :href="ressource.link">{{ ressource.name }}</a>
       </li>
     </ul>

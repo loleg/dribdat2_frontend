@@ -21,32 +21,29 @@ export default {
     return {
       tools: [
         {
-          id: 1,
           link: "https://github.com/",
           name: "GitHub"
         },
         {
-          id: 2,
           link: "https://vuejs.org/",
           name: "VueJS"
         },
         {
-          id: 3,
           link: "https://jestjs.io/",
           name: "Jest"
         }
       ],
       ressources: [
         {
-          id: 1,
+          link: "https://github.com/",
           name: "GitHub"
         },
         {
-          id: 2,
+          link: "https://vuejs.org/",
           name: "VueJS"
         },
         {
-          id: 3,
+          link: "https://jestjs.io/",
           name: "Jest"
         }
       ]

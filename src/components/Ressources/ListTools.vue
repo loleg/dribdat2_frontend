@@ -21,7 +21,7 @@
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>-->
     <ul>
-      <li v-for="tool in tools" :key="tool.id">
+      <li v-for="tool in tools" :key="tool.key">
         <a :href="tool.link">{{ tool.name }}</a>
       </li>
     </ul>

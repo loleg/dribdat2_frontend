@@ -47,38 +47,32 @@ export default {
       // need to get persons from API
       persons: [
         {
-          id: 1,
           firstname: "Mickaël",
           lastname: "Coluccia",
           link: "#",
           role: "dev"
         },
         {
-          id: 2,
           firstname: "Jonathan",
           lastname: "Schnyder",
           link: "#"
         },
         {
-          id: 3,
           firstname: "Endrit",
           lastname: "Haziri",
           link: "#"
         },
         {
-          id: 4,
           firstname: "Mickaël",
           lastname: "Coluccia",
           link: "#"
         },
         {
-          id: 5,
           firstname: "Jonathan",
           lastname: "Schnyder",
           link: "#"
         },
         {
-          id: 6,
           firstname: "Endrit",
           lastname: "Haziri",
           link: "#"
