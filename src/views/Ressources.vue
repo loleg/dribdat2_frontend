@@ -4,6 +4,7 @@
     <list-tools :tools="tools"></list-tools>
     <div class="contentLeft">
       <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/"></InfosLink>
+      <CommunityLink :urlCommunity="urlCommunity"></CommunityLink>
     </div>
   </div>
 </template>
@@ -13,10 +14,12 @@
 import ListRessources from "../components/Ressources/ListRessources.vue";
 import ListTools from "../components/Ressources/ListTools.vue";
 import InfosLink from "../components/Ressources/InfosLink.vue";
+import CommunityLink from "../components/Ressources/CommunityLink.vue"
+import { APIService} from "../APIService";
 
 export default {
   name: "Ressources",
-  components: { ListRessources, ListTools, InfosLink},
+  components: { ListRessources, ListTools, InfosLink, CommunityLink},
   data() {
     return {
       tools: [
@@ -46,9 +49,27 @@ export default {
           link: "https://jestjs.io/",
           name: "Jest"
         }
-      ]
+      ],
+
+      urlCommunity: []
     };
   },
+
+  methods: {
+    getDataCommunityLink()
+    {
+      APIService.getLinkCommunity(this.project.id).then(data =>{
+        this.urlCommunity = data;
+      })
+    }
+  },
+  openSourceUrl() {
+    window.location.href = this.project.source_url;
+  },
+  created() {
+    this.getDataCommunityLink();
+  }
+
   //computed: mapState(["editMode"])
 };
 </script>

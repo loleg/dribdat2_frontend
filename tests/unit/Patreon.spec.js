@@ -9,6 +9,7 @@ describe('Patreon.vue', () => {
             propsData: { link }
         })
 
+
         expect(wrapper.find('a').text()).toEqual(link);
 
     })
