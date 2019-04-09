@@ -26,7 +26,7 @@ ul {
 }
 
 li {
-  font: 200 18px/1.5  Verdana, Geneva, sans-serif;;
+  font: 200 18px/1.5 Verdana, Geneva, sans-serif;
   border-bottom: 1px solid #ccc;
   height: 38px;
   vertical-align: middle;

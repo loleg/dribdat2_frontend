@@ -1,19 +1,18 @@
 <template>
   <div class="RT">
-    <ListRessources :ressources="ressources" :edit-mode="editMode"></ListRessources>
-    <list-tools :tools="tools" :editMode="editMode"></list-tools>
+    <ListRessources :ressources="ressources"></ListRessources>
+    <list-tools :tools="tools"></list-tools>
     <div class="contentLeft">
-      <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/" :edit-mode="editMode"></InfosLink>
+      <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/"></InfosLink>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+//import { mapState } from "vuex";
 import ListRessources from "../components/Ressources/ListRessources.vue";
 import ListTools from "../components/Ressources/ListTools.vue";
 import InfosLink from "../components/Ressources/InfosLink.vue";
-
 
 export default {
   name: "Ressources",
@@ -23,14 +22,17 @@ export default {
       tools: [
         {
           id: 1,
+          link: "https://github.com/",
           name: "GitHub"
         },
         {
           id: 2,
+          link: "https://vuejs.org/",
           name: "VueJS"
         },
         {
           id: 3,
+          link: "https://jestjs.io/",
           name: "Jest"
         }
       ],
@@ -50,7 +52,7 @@ export default {
       ]
     };
   },
-  computed: mapState(["editMode"])
+  //computed: mapState(["editMode"])
 };
 </script>
 

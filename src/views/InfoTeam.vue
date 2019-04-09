@@ -1,17 +1,11 @@
 <template>
   <div class="infoTeam">
-    <HeadlineStatus :status="project.phase" :editMode="editMode"></HeadlineStatus>
+    <HeadlineStatus :status="project.phase"></HeadlineStatus>
     <ChallengeListPersons :list="persons"></ChallengeListPersons>
 
     <div>
-      <label for="validationSourceCode">Source code</label>
-            <input type="text" class="form-control" :class="{'btn btn-primary' : !editMode }"
-             id="validationSourceCode" :value="project.source_url"
-             placeholder="https://github.com/project/repository"
-             v-on:click="openSourceUrl()" required>
-      <div class="invalid-feedback">
-        Please provide a source code link
-      </div>
+      <h3 for="validationSourceCode">Source code</h3>
+      <button class="btn btn-primary" v-on:click="openSourceUrl()">{{project.source_url}}</button>
     </div>
     <div class="container">
       <div class="add-feedback" :class="{'open': formOpen}">
@@ -24,7 +18,7 @@
         </form>
       </div>
     </div>
-     <Timeline :activities="activities" ></Timeline>
+    <Timeline :activities="activities"></Timeline>
   </div>
 </template>
 
@@ -34,7 +28,7 @@ import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
 import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
 import Timeline from "../components/InfoTeam/Timeline";
 import { APIService } from "../APIService";
-import { mapState } from "vuex";
+//import { mapState } from "vuex";
 
 export default {
   name: "InfoTeam",
@@ -91,36 +85,30 @@ export default {
         }
       ],
 
-        activities: [],
+      activities: [],
 
-
-        cancel: function() {
-            this.formOpen = false;
-            this.resetForm();
-        }
-
-
+      cancel: function() {
+        this.formOpen = false;
+        this.resetForm();
+      }
     };
   },
-    methods: {
-        getDataActivity() {
-            APIService.getActivityList(this.project.id).then(data => {
-                this.activities = data;
-            });
-        },
-        openSourceUrl (){
-             window.location.href = this.project.source_url
-        }
+  methods: {
+    getDataActivity() {
+      APIService.getActivityList(this.project.id).then(data => {
+        this.activities = data;
+      });
     },
-    created() {
-        this.getDataActivity();
-    },
-  computed: mapState(['editMode'])
+    openSourceUrl() {
+      window.location.href = this.project.source_url;
+    }
+  },
+  created() {
+    this.getDataActivity();
+  }
+  //computed: mapState(["editMode"])
 };
 </script>
 
 <style scoped>
-
-
-
 </style>

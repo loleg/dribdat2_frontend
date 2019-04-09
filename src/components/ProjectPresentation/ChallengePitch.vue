@@ -1,6 +1,6 @@
 <template>
   <div class="pitch">
-    <div v-if="editMode">
+    <!--<div v-if="editMode">
       <input class="input-pitch" type="text" :placeholder="embedLink(this.challenge_pitch)">
       <button type="button" class="btn btn-primary" @click="modify">Modify</button>
     </div>
@@ -8,6 +8,9 @@
       <div class="resp-container">
         <iframe class="rest-iframe" :src="embedLink(this.pitch)"></iframe>
       </div>
+    </div>-->
+    <div class="resp-container">
+      <iframe class="rest-iframe" :src="challenge_pitch"></iframe>
     </div>
   </div>
 </template>
@@ -15,8 +18,7 @@
 <script>
 export default {
   props: {
-    pitch: String,
-    editMode: Boolean
+    pitch: String
   },
   data() {
     return {
@@ -24,10 +26,10 @@ export default {
     };
   },
   methods: {
-    modify() {
+    /*modify() {
       this.pitch = this.embedLink(this.challenge_pitch);
-    },
-    embedLink(link = 'https://www.youtube.com/watch?v=Vh5FW5hSZyI') {
+    },*/
+    embedLink(link = "https://www.youtube.com/watch?v=Vh5FW5hSZyI") {
       if (link.includes("youtube.com/watch")) {
         // youtube video
         let yt_video_id = link.split("=")[1];
@@ -41,6 +43,9 @@ export default {
         return link;
       }
     }
+  },
+  mounted: function () {
+    this.challenge_pitch = this.embedLink(this.pitch);
   }
 };
 </script>
