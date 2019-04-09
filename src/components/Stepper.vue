@@ -2,7 +2,7 @@
     <div class="bs-stepper vertical" id="progress-stepper">
         <div class="bs-stepper-header" role="tablist">
             <div v-for="(item, key) in steps">
-                <div v-if="key != 0">I</div>
+                <!--div v-if="key != 0">I</div-->
                 <div class="step" data-target="#information-part">
                     <button type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger">
                         <span class="bs-stepper-circle" v-bind:class="[key < currentStep ? activeBackground : '' ]">

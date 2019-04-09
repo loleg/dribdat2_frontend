@@ -7,7 +7,7 @@ Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 
 let github_apiURL = 'https://api.github.com/repos'
-let path = '/repos/ChallengeHunt/challengehunt'
+//let path = '/repos/ChallengeHunt/challengehunt'
 const Backend_API_URL = 'http://127.0.0.1:5000/api'
 
 export default new Vuex.Store({
@@ -16,14 +16,15 @@ export default new Vuex.Store({
         github_repoPath: '/repos/ChallengeHunt/challengehunt',
         project: {},
         custom_project: {
-            name: "name",
-            summary: "summary",
+            name: "getaround.io",
+            summary: "We want to get people to be more concerned about their health. The average person does not exercise enough. With this project we hope to motivate people to be more active.",
             challenge: {
-                name: "challengeName"
+                name: "Help people be more active"
             },
             id: 1,
-            //pitch: "http://example.com",
-            phase : "hello"
+            pitch: "'https://www.youtube.com/watch?v=Vh5FW5hSZyI'",
+            phase : 4,
+            status: "Looking for designers"
         },
         contributors: [],
         issues: [],
@@ -42,7 +43,8 @@ export default new Vuex.Store({
         },
         SET_CUSTOM_PROJECT(state, custom_project) {
             state.custom_project = custom_project.project
-            state.custom_project.challenge = {name: 'challenge name'} //TODO challenge has to be provided by the API
+            state.custom_project.challenge = {name: 'Help people create awesome hackathons'} //TODO challenge has to be provided by the API
+            state.custom_project.progress = 3
             //state.custom_project.pitch = 'http://example.com' //TODO pitch has to be provided by the API
         },
         SET_PROJECT_LIST(state, projectList) {

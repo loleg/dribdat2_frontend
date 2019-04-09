@@ -1,5 +1,6 @@
 <template>
   <div class="summary">
+    <h3>Summary: </h3>
     <p v-if="!editMode">{{ summary }}</p>
     <input type="text" v-model="summary" v-if="editMode" placeholder="Description of the challenge">
   </div>

@@ -30,9 +30,6 @@ export default {
     ChallengePitch
   },
   props: ["project"],
-  mounted() {
-    this.$store.dispatch("setModeDisplay");
-  },
   computed: mapState(["editMode"])
 };
 </script>

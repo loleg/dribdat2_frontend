@@ -27,7 +27,7 @@ export default {
     modify() {
       this.pitch = this.embedLink(this.challenge_pitch);
     },
-    embedLink(link) {
+    embedLink(link = 'https://www.youtube.com/watch?v=Vh5FW5hSZyI') {
       if (link.includes("youtube.com/watch")) {
         // youtube video
         let yt_video_id = link.split("=")[1];

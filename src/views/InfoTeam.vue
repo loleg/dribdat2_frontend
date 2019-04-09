@@ -6,7 +6,7 @@
     <div>
       <label for="validationSourceCode">Source code</label>
             <input type="text" class="form-control" :class="{'btn btn-primary' : !editMode }"
-             id="validationSourceCode" :value="custom_project.source_url"
+             id="validationSourceCode" :value="project.source_url"
              placeholder="https://github.com/project/repository"
              v-on:click="openSourceUrl()" required>
       <div class="invalid-feedback">
@@ -109,16 +109,13 @@ export default {
             });
         },
         openSourceUrl (){
-             window.location.href = this.$store.state.custom_project.source_url
+             window.location.href = this.project.source_url
         }
     },
     created() {
         this.getDataActivity();
     },
-  mounted() {
-    this.$store.dispatch("setModeDisplay");
-  },
-  computed: mapState(['editMode', 'custom_project'])
+  computed: mapState(['editMode'])
 };
 </script>
 

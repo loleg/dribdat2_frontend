@@ -1,11 +1,11 @@
 <template>
     <div id="project">
 
-        <navigation :id="this.id" :edit-mode="editMode"></navigation>
+        <navigation :id="this.id"></navigation>
 
 
-        <div class="content" v-bind:style="{ backgroundColor: blue}">
-            <router-view  :project="custom_project"></router-view>
+        <div class="content">
+            <router-view :project="custom_project"></router-view>
         </div>
 
     </div>
@@ -21,14 +21,14 @@
         props: ["id"],
         data: function () {
             return {
-                backgroundColor: " #89a7af"
+                blue: " #89a7af"
             }
         },
         components: {Navigation},
         mounted() {
             this.$store.dispatch("loadCustomProject", this.id);
         },
-        computed: mapState(["custom_project", "editMode"]),
+        computed: mapState(["custom_project"]),
 
 
     };
