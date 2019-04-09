@@ -21,13 +21,15 @@
     "chart.js": "^2.8.0",
     "jquery": "^3.3.1",
     "register-service-worker": "^1.6.2",
+    "sass-loader": "^7.1.0",
+    "save": "^2.3.3",
     "vue": "^2.6.6",
     "vue-a11y-dialog": "^0.4.2",
     "vue-axios": "^2.1.4",
     "vue-jquery": "^1.0.6",
     "vue-media-embed": "^1.0.0",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
@@ -46,7 +48,6 @@
     "eslint-plugin-vue": "^5.0.0",
     "fibers": "^3.1.1",
     "sass": "^1.17.2",
-    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21",
     "vue2-slideout-panel": "^2.2.2"
   },

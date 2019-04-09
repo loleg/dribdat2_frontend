@@ -51,23 +51,26 @@
         background-color: #616163;
         position: fixed;
         height: 100%;
-        border: 1px groove #89a7af;
+        border: 1px groove  #89a7af;
         border-radius: 5px;
         font-family: Verdana, Geneva, sans-serif;
     }
 
-    .sidebar a {
+    .sidebar a  {
         display: block;
         color: #f9f9f9;
-        padding: 15px;
+        padding : 15px;
         text-decoration: none;
         border-radius: 2px;
+
+
 
 
     }
 
 
-    .sidebar a:hover {
+
+    .sidebar a:hover{
         background-color: #89a7af;
         color: #f9f9f9;
 
@@ -75,13 +78,14 @@
     }
 
 
-    @media screen and (max-width: 700px) {
 
+    @media screen and (max-width: 700px) {
         .sidebar {
 
             width: 100%;
             position: relative;
             border: none;
+
 
         }
 
@@ -96,6 +100,7 @@
             display: inline;
         }
     }
+
 
 
 </style>
