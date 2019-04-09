@@ -1,5 +1,5 @@
 <template>
-  <div class="edit_button float-right">
+  <div class="edit_button">
     <div v-if="!editMode">
       <button type="button" class="btn btn-dark" @click="edit">
         <i class="icon-pencil"></i>

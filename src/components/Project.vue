@@ -1,59 +1,43 @@
 <template>
-    <div id="project">
+  <div id="project">
+    <navigation :id="this.id"></navigation>
 
-        <navigation :id="this.id"></navigation>
-
-
-        <div class="content">
-            <router-view :project="custom_project"></router-view>
-        </div>
-
+    <div class="content">
+      <router-view :project="custom_project"></router-view>
     </div>
+  </div>
 </template>
 
 <script>
-    import {mapState} from "vuex";
+import { mapState } from "vuex";
+import Navigation from "./Navigation.vue";
 
-    import Navigation from "./Navigation.vue"
-
-    export default {
-        name: "Project",
-        props: ["id"],
-        data: function () {
-            return {
-                blue: " #89a7af"
-            }
-        },
-        components: {Navigation},
-        mounted() {
-            this.$store.dispatch("loadCustomProject", this.id);
-        },
-        computed: mapState(["custom_project"]),
-
-
+export default {
+  name: "Project",
+  props: ["id"],
+  data: function() {
+    return {
+      blue: " #89a7af"
     };
+  },
+  components: { Navigation },
+  mounted() {
+    this.$store.dispatch("loadCustomProject", this.id);
+  },
+  computed: mapState(["custom_project"])
+};
 </script>
 
-
 <style scoped>
+.content {
+  margin-left: 200px;
+  padding: 1px 20px;
+}
 
-
-    .content {
-        margin-left: 200px;
-        padding: 1px 20px;
-    }
-
-    @media screen and (max-width: 700px) {
-        .content {
-            margin-left: 0px;
-            padding: 1px 20px;
-        }
-
-    }
-
-
-
-
-
-
+@media screen and (max-width: 700px) {
+  .content {
+    margin-left: 0px;
+    padding: 1px 20px;
+  }
+}
 </style>
