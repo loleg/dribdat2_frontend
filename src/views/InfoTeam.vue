@@ -24,7 +24,7 @@
         </form>
       </div>
     </div>
-     <Timeline :activities="activities" ></Timeline>
+     <Patreon link="www.patreon.com/"></Patreon>
   </div>
 </template>
 
@@ -32,14 +32,14 @@
 import HeadlineStatus from "../components/InfoTeam/HeadlineStatus";
 import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
 import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
-import Timeline from "../components/InfoTeam/Timeline";
+import Patreon from "../components/InfoTeam/Patreon";
 import { APIService } from "../APIService";
 import { mapState } from "vuex";
 
 export default {
   name: "InfoTeam",
   components: {
-    Timeline,
+    Patreon,
     HeadlineStatus,
     ChallengeListPersons,
     ChallengeFeedback
