@@ -1,6 +1,6 @@
 <template>
     <div class="challenge-title">
-        <h2>{{ title }}</h2>
+        <h2>Challenge : {{ title }}</h2>
     </div>
 </template>
 

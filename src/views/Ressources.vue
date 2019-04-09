@@ -50,9 +50,6 @@ export default {
       ]
     };
   },
-  mounted() {
-    this.$store.dispatch("setModeDisplay");
-  },
   computed: mapState(["editMode"])
 };
 </script>

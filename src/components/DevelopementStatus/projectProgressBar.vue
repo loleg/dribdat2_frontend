@@ -1,7 +1,7 @@
 <template>
     <div id="projectProgressBar">
         <div class="card" >
-            <h5 class="card-header ">In progress</h5>
+            <h5 class="card-header ">Progress</h5>
             <div class="card-body d-flex justify-content-center">
                 <stepper :steps="steps" :current-step="currentStep" ></stepper>
             </div>

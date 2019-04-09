@@ -1,6 +1,6 @@
 <template>
     <div class="developmentStatus">
-        <project-progress-bar></project-progress-bar>
+        <project-progress-bar :current-step="project.progress"></project-progress-bar>
         <div id="accordion">
             <div class="card">
                 <div class="card-header" id="headingIssues" >
