@@ -1,5 +1,5 @@
 <template>
-        <div class="sidebar">
+        <div class="sidebar d-flex">
 
             <a>
                 <router-link :to="{ name: 'presentation', params: { id:id }}">
@@ -37,9 +37,7 @@
         name: "Navigation",
         props: ["id"],
         components: {EditButton},
-        computed: mapState(["editMode"]),
-
-
+        computed: mapState(["editMode"])
     }
 </script>
 
@@ -54,6 +52,7 @@
         border: 1px groove  #89a7af;
         border-radius: 5px;
         font-family: Verdana, Geneva, sans-serif;
+        flex-flow: column;
     }
 
     .sidebar a  {
@@ -81,11 +80,11 @@
 
     @media screen and (max-width: 700px) {
         .sidebar {
-
             width: 100%;
             position: relative;
             border: none;
-
+            flex-flow: row;
+            justify-content: space-between;
 
         }
 
