@@ -1,33 +1,79 @@
 <template>
-    <div id="challenge-list">
-        <ul v-for="project in projectList" v-bind:key="project.id">
-            <li>
-                <router-link :to="{ name: 'presentation', params: { id: project.id }}">{{ project.name }}</router-link>
-            </li>
-        </ul>
-    </div>
-
+  <div id="challenge-list">
+    <ul v-for="project in projectList" v-bind:key="project.id">
+      <li>
+        <router-link :to="{ name: 'presentation', params: { id: project.id }}">{{ project.name }}</router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-    import {mapState} from 'vuex'
+import { mapState } from "vuex";
 
-    export default {
-        name: 'ProjectList',
-        data() {
-            return {
-                'projects' : []
-            }
-        },
-        created() {
-            this.$store.dispatch('loadProjectList')
-        },
-        computed: mapState([
-            'projectList'
-        ])
-    }
+export default {
+  name: "ProjectList",
+  data() {
+    return {
+      projects: []
+    };
+  },
+  created() {
+    this.$store.dispatch("loadProjectList");
+  },
+  computed: mapState(["projectList"])
+};
 </script>
 
 <style scoped>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 35px;
+}
 
+li {
+  font: 200 18px/1.5 Verdana, Geneva, sans-serif;
+  border-bottom: 1px solid #ccc;
+  height: 38px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #f9f9f9;
+  display: block;
+
+  -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -o-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
+  transition: font-size 0.2s ease, background-color 0.2s ease;
+}
+
+li:last-child {
+  border: none;
+}
+
+li:hover {
+  font-size: 21px;
+  color: #019eba;
+}
+
+li a {
+  text-decoration: none;
+  color: #f9f9f9;
+  display: block;
+
+  -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -o-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
+  transition: font-size 0.2s ease, background-color 0.2s ease;
+}
+
+li a:hover {
+  font-size: 21px;
+  color: #019eba;
+}
 </style>

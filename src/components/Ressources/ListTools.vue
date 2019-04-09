@@ -1,15 +1,17 @@
 <template>
   <div class="tools">
     <h3>TOOLS USED DURING THIS CHALLENGE</h3>
-    <div v-if="!editMode">
+    <!--<div v-if="!editMode">
       <ul>
-        <li v-for="tool in tools" :key="tool.id">{{ tool.name }}</li>
+        <li v-for="tool in tools" :key="tool.id">
+          <a :href="tool.link">{{ tool.name }}</a>
+        </li>
       </ul>
     </div>
     <div v-else>
       <ul>
         <li v-for="tool in tools" :key="tool.id">
-          {{ tool.name }}
+          <a :href="tool.link">{{ tool.name }}</a>
           <button type="button" class="btn btn-danger" @click="remove(tool)">
             <i class="icon-remove"></i>
           </button>
@@ -17,13 +19,18 @@
       </ul>
       <input class="input-tools" type="text" v-model="tool" placeholder="Insert a new tool">
       <button type="button" class="btn btn-primary" @click="add">Add</button>
-    </div>
+    </div>-->
+    <ul>
+      <li v-for="tool in tools" :key="tool.key">
+        <a :href="tool.link">{{ tool.name }}</a>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["tools", "editMode"],
+  props: ["tools"],
   data() {
     return {
       tool: ""
@@ -74,7 +81,7 @@ ul {
 }
 
 li {
-  font: 200 18px/1.5 Verdana, Geneva, sans-serif;;
+  font: 200 18px/1.5 Verdana, Geneva, sans-serif;
   border-bottom: 1px solid #ccc;
   height: 38px;
   width: 100%;
@@ -100,6 +107,23 @@ li:hover {
   color: #019eba;
 }
 
+li a {
+  text-decoration: none;
+  color: #f9f9f9;
+  display: block;
+
+  -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -o-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
+  transition: font-size 0.2s ease, background-color 0.2s ease;
+}
+
+li a:hover {
+  font-size: 21px;
+  color: #019eba;
+}
+
 @media screen and (min-width: 300px) and (max-width: 767px) {
   h3 {
     font-size: 120%;
@@ -110,8 +134,8 @@ li:hover {
   }
 }
 /*
-    Tablets part
-    */
+  Tablets part
+*/
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h3 {
     font-size: 110%;
@@ -123,8 +147,8 @@ li:hover {
 }
 
 /*
-Part for the computer
- */
+  Part for the computer
+*/
 @media screen and (min-width: 1200px) {
   h3 {
     font-size: 120%;

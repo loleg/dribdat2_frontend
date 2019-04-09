@@ -2,7 +2,7 @@
   <div>
     <h3>CHALLENGE REPRESENTED BY :</h3>
     <ul>
-      <li v-for="person in list" :key="person.id">
+      <li v-for="person in list" :key="person.key">
         <a :href="person.link">{{ person.firstname + ' ' + person.lastname }}</a>
       </li>
     </ul>
@@ -26,7 +26,7 @@ ul {
 }
 
 li {
-  font: 200 18px/1.5  Verdana, Geneva, sans-serif;;
+  font: 200 18px/1.5 Verdana, Geneva, sans-serif;
   border-bottom: 1px solid #ccc;
   height: 38px;
   vertical-align: middle;

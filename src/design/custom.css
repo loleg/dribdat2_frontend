@@ -30,17 +30,15 @@
 }
 
 .btn-primary {
-    color:  black;
+    color: black;
     background-color: #bee1e2;
     border-color: #bee1e2;
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-    color:  black;
-    background-color:#bee1e2;;
-    border-color: #bee1e2;;
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    color: black;
+    background-color: #bee1e2;
+    ;
+    border-color: #bee1e2;
+    ;
 }

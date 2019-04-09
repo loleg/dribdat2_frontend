@@ -8,11 +8,14 @@ import { faLightbulb } from '@fortawesome/free-solid-svg-icons'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import { faFileCode } from '@fortawesome/free-solid-svg-icons'
 import { faLink } from '@fortawesome/free-solid-svg-icons'
+import { faMoneyBillAlt } from '@fortawesome/free-solid-svg-icons'
+import { faDollarSign} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
 
-library.add(faLightbulb,faUsers,faFileCode,faLink)
+
+library.add(faLightbulb,faUsers,faFileCode,faLink, faMoneyBillAlt,faDollarSign)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 

@@ -30,15 +30,15 @@
 </template>
 
 <script>
-    import EditButton from "./EditButton.vue";
-    import {mapState} from "vuex";
+import EditButton from "./EditButton.vue";
+import { mapState } from "vuex";
 
-    export default {
-        name: "Navigation",
-        props: ["id"],
-        components: {EditButton},
-        computed: mapState(["editMode"])
-    }
+export default {
+  name: "Navigation",
+  props: ["id"],
+  components: { EditButton },
+  computed: mapState(["editMode"])
+};
 </script>
 
 <style scoped>

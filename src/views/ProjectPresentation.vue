@@ -1,19 +1,19 @@
 <template>
   <div class="projectPresentation">
-    <ProjectTitle :title="project.name" :editMode="editMode"></ProjectTitle>
+    <ProjectTitle :title="project.name"></ProjectTitle>
     <TitleChallenge :title="project.challenge.name"></TitleChallenge>
-    <ChallengePitch :pitch="project.pitch" :editMode="editMode"></ChallengePitch>
-    <SummaryPitch :summary="project.summary" :edit-mode="editMode"></SummaryPitch>
+    <ChallengePitch :pitch="project.pitch"></ChallengePitch>
+    <SummaryPitch :summary="project.summary"></SummaryPitch>
     <!-- https://www.dailymotion.com/video/xkq3cr -->
     <!-- https://www.youtube.com/watch?v=zihJTimjdls -->
     <div class="contentLeft">
-      <SocialLink class="LinkSocial" link="www.facebook.com" :edit-mode="editMode"></SocialLink>
+      <SocialLink class="LinkSocial" link="www.facebook.com"></SocialLink>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+//import { mapState } from "vuex";
 import TitleChallenge from "../components/ProjectPresentation/TitleChallenge";
 import SummaryPitch from "../components/ProjectPresentation/SummaryPitch";
 import ProjectTitle from "../components/ProjectPresentation/ProjectTitle";
@@ -30,7 +30,7 @@ export default {
     ChallengePitch
   },
   props: ["project"],
-  computed: mapState(["editMode"])
+  //computed: mapState(["editMode"])
 };
 </script>
 
