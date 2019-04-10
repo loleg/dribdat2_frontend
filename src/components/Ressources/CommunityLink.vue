@@ -1,9 +1,17 @@
 <template>
-    <div>
+    <div class="community-link">
         <p > You can reach us on slack ! </p>
-        <a :href="urlCommunity">
-        <img src="../../assets/slack.png"/>
+
+        <a :href=" urlCommunity">
+
+            <img src="../../assets/slack.png"/>
+          <!--  {{urlCommunity}}-->
         </a>
+
+       <!-- <a href="urlCommunity">
+            {{urlCommunity}}
+        <img src="../../assets/slack.png"/>
+        </a>-->
     </div>
 </template>
 
@@ -15,6 +23,9 @@
 </script>
 
 <style scoped>
+    div{
+        text-align: left;
+    }
     p {
 
         color: #f9f9f9;
@@ -24,9 +35,14 @@
         text-align: left;
 
     }
+    a
+    {
+        color : transparent;
+    }
     img{
         height: 32px;
         width: 32px;
+
     }
 
 </style>

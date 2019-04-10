@@ -34,11 +34,20 @@ export class APIService {
         }).then(response => response.data);
     }
 
-    static getLinkCommunity  (id)
+    static getLinkCommunity  (idEvent)
     {
+        let eventId
+        if(idEvent == null)
+        {
+            eventId = 'current'
+        }
+        else {
+            eventId = idEvent
+        }
 
-        const url = `${API_URL}/event/${id}/projects.json`;
+        const url = `${API_URL}/event/${eventId}/projects.json`;
         return axios.get(url, {
+
             method: 'GET',
             mode: 'no-cors',
             headers: {
