@@ -22,7 +22,7 @@ export default new Vuex.Store({
                 name: "Help people be more active"
             },
             id: 1,
-            pitch: "'https://www.youtube.com/watch?v=Vh5FW5hSZyI'",
+            pitch: "https://www.youtube.com/embed/x6-JhKUkupY",
             phase : 4,
             status: "Looking for designers"
         },
@@ -45,7 +45,7 @@ export default new Vuex.Store({
             state.custom_project = custom_project.project
             state.custom_project.challenge = {name: 'Help people create awesome hackathons'} //TODO challenge has to be provided by the API
             state.custom_project.progress = 3
-            //state.custom_project.pitch = 'http://example.com' //TODO pitch has to be provided by the API
+            state.custom_project.pitch = 'https://www.youtube.com/embed/x6-JhKUkupY' //TODO pitch has to be provided by the API
         },
         SET_PROJECT_LIST(state, projectList) {
             state.projectList = projectList;

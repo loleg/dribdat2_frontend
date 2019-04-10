@@ -10,7 +10,7 @@
       </div>
     </div>-->
     <div class="resp-container">
-      <iframe class="rest-iframe" :src="challenge_pitch"></iframe>
+      <iframe class="rest-iframe" :src="pitch"></iframe>
     </div>
   </div>
 </template>
@@ -21,15 +21,13 @@ export default {
     pitch: String
   },
   data() {
-    return {
-      challenge_pitch: this.embedLink(this.pitch)
-    };
+    return {};
   },
   methods: {
     /*modify() {
       this.pitch = this.embedLink(this.challenge_pitch);
     },*/
-    embedLink(link = "https://www.youtube.com/watch?v=Vh5FW5hSZyI") {
+    /*embedLink(link = "https://www.youtube.com/watch?v=Vh5FW5hSZyI") {
       if (link.includes("youtube.com/watch")) {
         // youtube video
         let yt_video_id = link.split("=")[1];
@@ -42,10 +40,7 @@ export default {
         // other
         return link;
       }
-    }
-  },
-  mounted: function () {
-    this.challenge_pitch = this.embedLink(this.pitch);
+    }*/
   }
 };
 </script>

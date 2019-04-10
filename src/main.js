@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faLightbulb } from '@fortawesome/free-solid-svg-icons'
+import { faLightbulb, faTicketAlt} from '@fortawesome/free-solid-svg-icons'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import { faFileCode } from '@fortawesome/free-solid-svg-icons'
 import { faLink } from '@fortawesome/free-solid-svg-icons'
@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
 
-library.add(faLightbulb,faUsers,faFileCode,faLink, faMoneyBillAlt,faDollarSign)
+library.add(faLightbulb,faUsers,faFileCode,faLink, faMoneyBillAlt,faDollarSign, faTicketAlt)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 
