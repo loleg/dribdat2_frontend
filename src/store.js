@@ -46,15 +46,9 @@ export default new Vuex.Store({
         SET_PROJECT(state, project) {
             state.project = project
         },
-        SET_COMMUNITY(state, urlCommunity)
-        {
-            state.urlCommunity = urlCommunity
-        },
         SET_CUSTOM_PROJECT(state, custom_project) {
-
             state.custom_project = custom_project.project
             state.custom_project.challenge = {name: 'Help people create awesome hackathons'} //TODO challenge has to be provided by the API
-            state.custom_project.progress = 3
             state.custom_project.event = custom_project.event
             //state.custom_project.pitch = 'http://example.com' //TODO pitch has to be provided by the API
         },
@@ -102,13 +96,13 @@ export default new Vuex.Store({
                     commit('SET_CUSTOM_PROJECT', custom_project)
                 })
         },
-        loadProjectList({commit}, event) {
+        loadProjectList({commit},event) {
             let eventId = event || 'current'
 
             var url = `${Backend_API_URL}/event/${eventId}/challenges.json`
 
-            if (eventId === 'current') {
-                url = `${Backend_API_URL}/event/current/challenges.json`;
+            if(eventId === 'current'){
+                url = `${Backend_API_URL}/event/current/challenges.json` ;
             }
 
             axios
@@ -124,18 +118,17 @@ export default new Vuex.Store({
                     commit('SET_PROJECT_LIST', response.data.challenges)
                 })
         },
-
-        setModeEdit({commit}) {
+        setModeEdit({commit}){
             commit('SET_EDITABLE', true)
         },
 
-        setModeDisplay({commit}) {
+        setModeDisplay({commit}){
             commit('SET_EDITABLE', false)
         }
     },
     getters: {
         projectSourceAPI_Path: state => {
-            return state.custom_project.source_url.replace('https://github.com', '')
+            return  state.custom_project.source_url.replace('https://github.com', '')
         },
     }
 })

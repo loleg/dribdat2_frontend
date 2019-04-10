@@ -1,7 +1,7 @@
 <template>
   <div class="bs-stepper vertical" id="progress-stepper">
     <div class="bs-stepper-header" role="tablist">
-      <div v-for="(item, key) in steps" :key="item.key">
+      <div v-for="(item, key) in steps" :key="item.key" class="d-flex">
         <!--div v-if="key != 0">I</div-->
         <div class="step" data-target="#information-part">
           <button
