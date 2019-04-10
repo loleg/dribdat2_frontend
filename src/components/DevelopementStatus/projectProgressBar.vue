@@ -4,6 +4,7 @@
       <h5 class="card-header">Progress</h5>
       <div class="card-body d-flex justify-content-center">
         <stepper :steps="steps" :current-step="currentStep"></stepper>
+        <challenge-feedback :id="test1"></challenge-feedback>
       </div>
     </div>
   </div>
@@ -11,9 +12,10 @@
 
 <script>
 import Stepper from "../Stepper";
+import ChallengeFeedback from "../InfoTeam/ChallengeFeedback";
 export default {
   name: "projectProgressBar",
-  components: { Stepper },
+  components: {ChallengeFeedback, Stepper },
   props: ["currentStep"],
   data: function() {
     return {

@@ -44,7 +44,6 @@ export default new Vuex.Store({
         SET_CUSTOM_PROJECT(state, custom_project) {
             state.custom_project = custom_project.project
             state.custom_project.challenge = {name: 'Help people create awesome hackathons'} //TODO challenge has to be provided by the API
-            state.custom_project.progress = 3
             //state.custom_project.pitch = 'http://example.com' //TODO pitch has to be provided by the API
         },
         SET_PROJECT_LIST(state, projectList) {
