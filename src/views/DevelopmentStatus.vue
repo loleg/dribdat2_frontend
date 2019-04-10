@@ -1,5 +1,9 @@
 <template>
+
   <div class="developmentStatus">
+
+      <edit-button :editMode="editMode"></edit-button>
+
     <project-progress-bar :current-step="project.progress"></project-progress-bar>
     <div id="accordion">
       <div class="card">
@@ -62,8 +66,10 @@ import { mapState } from "vuex";
 import ContributionsBadge from "../components/DevelopementStatus/contributionsBadge";
 import IssuesBadge from "../components/DevelopementStatus/issuesBadge";
 import ProjectProgressBar from "../components/DevelopementStatus/projectProgressBar";
+import EditButton from "../components/EditButton";
 
 export default {
+
   head: {
     script: [
       {
@@ -75,7 +81,8 @@ export default {
   components: {
     ProjectProgressBar,
     IssuesBadge,
-    ContributionsBadge
+    ContributionsBadge,
+    EditButton
   },
   props: ["project"],
   data: () => {
@@ -97,7 +104,7 @@ export default {
     }
   },
   mounted() {},
-  computed: mapState(["custom_project", "issues", "contributors"])
+  computed: mapState(["custom_project", "issues", "contributors","editMode"])
 };
 </script>
 
@@ -108,4 +115,6 @@ export default {
   background-color: #89a7af;
   color: #f9f9f9;
 }
+
+
 </style>
