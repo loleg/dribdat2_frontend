@@ -10,7 +10,7 @@ describe('Patreon.vue', () => {
         })
 
 
-        expect(wrapper.find('a').text()).toEqual(link);
+        expect(wrapper.find('a').attributes('href')).toEqual('//' + link);
 
     })
 })

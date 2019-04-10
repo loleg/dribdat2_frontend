@@ -4,7 +4,8 @@
     <list-tools :tools="tools"></list-tools>
     <div class="contentLeft">
       <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/"></InfosLink>
-      <CommunityLink :urlCommunity="urlCommunity"></CommunityLink>
+      <CommunityLink urlCommunity="https://dataletsch.slack.com/messages"></CommunityLink>
+      <!--<CommunityLink :urlCommunity="urlCommunity"></CommunityLink>-->
     </div>
   </div>
 </template>
@@ -20,6 +21,7 @@ import { APIService} from "../APIService";
 export default {
   name: "Ressources",
   components: { ListRessources, ListTools, InfosLink, CommunityLink},
+
   data() {
     return {
       tools: [
@@ -58,14 +60,12 @@ export default {
   methods: {
     getDataCommunityLink()
     {
-      APIService.getLinkCommunity(this.project.id).then(data =>{
+      APIService.getLinkCommunity(this.event.id).then(data =>{
         this.urlCommunity = data;
       })
     }
   },
-  openSourceUrl() {
-    window.location.href = this.project.source_url;
-  },
+
   created() {
     this.getDataCommunityLink();
   }
