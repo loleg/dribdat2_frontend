@@ -51,6 +51,9 @@ export default new Vuex.Store({
         },
         SET_EDITABLE(state, editMode) {
             state.editMode = editMode;
+        },
+        SET_PROJECT_PROGRESS(state, progress) {
+            state.custom_project.progress = progress
         }
     },
     actions: {
@@ -118,6 +121,31 @@ export default new Vuex.Store({
 
         setModeDisplay({commit}){
             commit('SET_EDITABLE', false)
+        },
+        setProjectProgress({commit}, progress){
+            if(progress < -1 || progress > 7) return
+
+            const url = `${Backend_API_URL}/project/push.json` ;
+
+            commit('SET_PROJECT_PROGRESS', progress)
+
+            axios
+                .put(url, {
+                    method: 'PUT',
+                    mode: 'no-cors',
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json',
+                    },
+                    data: {
+                        project: this.state.custom_project
+                    }
+                })
+                .then(response => {
+                    if(response.status === 200){
+                        commit('SET_PROJECT_PROGRESS', progress)
+                    }
+                })
         }
     },
     getters: {
