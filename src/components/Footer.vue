@@ -1,210 +1,198 @@
 <template>
   <!-- Site footer -->
-  <footer class="site-footer">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <footer id="myFooter">
+    <link
+      rel="stylesheet"
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"
+    >
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <h6>About</h6>
-          <p class="text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, in vitae nihil ipsam laudantium mollitia unde! Similique harum aliquam eligendi deleniti ducimus dolorem, laudantium earum labore odit a architecto saepe!
-          </p>
-        </div>
-
-        <div class="col-xs-6 col-md-3">
-          <h6>Event</h6>
-          <ul class="footer-links">
+        <div class="col-sm-6">
+          <h5>Event</h5>
+          <ul>
             <li>
-              <a href="http://scanfcode.com/category/c-language/">Home Page</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="http://scanfcode.com/category/c-language/">Buy Ticket</a>
+              <a href="https://www.starticket.ch/fr" target="_blank">Buy tickets</a>
             </li>
           </ul>
         </div>
-
-        <div class="col-xs-6 col-md-3">
-          <h6>Challenge</h6>
-          <ul class="footer-links">
+        <div class="col-sm-6">
+          <h5>Challenge</h5>
+          <ul>
             <li>
-              <a href="http://scanfcode.com/about/">Slack</a>
+              <a href="http://www.patreon.com" target="_blank">Patreon</a>
+            </li>
+            <li>
+              <a :href="this.project.contact_url" target="_blank">Community</a>
             </li>
           </ul>
+        </div>
+        <div class="col-sm-12">
+          <div class="social-networks">
+            <a href="https://twitter.com" class="twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com" class="facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </div>
         </div>
       </div>
-      <hr>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">
-            Copyright &copy; 2017 All Rights Reserved by
-            <a href="#">Scanfcode</a>.
-          </p>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li>
-              <a class="facebook" href="#">
-                <i class="fa fa-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a class="twitter" href="#">
-                <i class="fa fa-twitter"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="footer-copyright">
+      <p>© 2019 Dribdat</p>
     </div>
   </footer>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["project"]
+};
 </script>
 
 <style scoped>
-.site-footer {
-  background-color: #38393f;
-  padding: 45px 0 20px;
-  font-size: 15px;
-  line-height: 24px;
-  color: #ffffff;
-  width: 100%;
+#myFooter {
+  background-color: #3c3d41;
+  color: white;
+  padding-top: 30px;
+  margin-top: 30px;
 }
-.site-footer hr {
-  border-top-color: #bbb;
-  opacity: 0.5;
+
+#myFooter .footer-copyright {
+  background-color: #333333;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: center;
 }
-.site-footer hr.small {
-  margin: 20px 0;
+
+#myFooter .row {
+  margin-bottom: 40px;
 }
-.site-footer h6 {
-  color: #fff;
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-top: 5px;
-  letter-spacing: 2px;
+
+#myFooter .navbar-brand {
+  margin-top: 45px;
+  height: 65px;
 }
-.site-footer a {
-  color: #e4e4e4;
+
+#myFooter .footer-copyright p {
+  margin: 10px;
+  color: #ccc;
 }
-.site-footer a:hover {
-  color: #3366cc;
-  text-decoration: none;
-}
-.footer-links {
+
+#myFooter ul {
+  list-style-type: none;
   padding-left: 0;
-  list-style: none;
+  line-height: 1.7;
 }
-.footer-links li {
-  display: block;
+
+#myFooter h5 {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  margin-top: 30px;
+  text-transform: uppercase;
 }
-.footer-links a {
-  color: #737373;
+
+#myFooter h5:after {
+  position: absolute;
+  content: '';
+  border-bottom: 1px solid #d2d7da;
+  width: 70%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  left: 50%;
 }
-.footer-links a:active,
-.footer-links a:focus,
-.footer-links a:hover {
-  color: #3366cc;
+
+#myFooter h2 a {
+  font-size: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+#myFooter a {
+  color: #d2d1d1;
   text-decoration: none;
 }
-.footer-links.inline li {
-  display: inline-block;
+
+#myFooter a:hover,
+#myFooter a:focus {
+  text-decoration: none;
+  color: white;
 }
-.site-footer .social-icons {
-  text-align: right;
+
+#myFooter .social-networks {
+  text-align: center;
+  padding-top: 30px;
 }
-.site-footer .social-icons a {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  margin-left: 6px;
-  margin-right: 0;
-  border-radius: 100%;
-  background-color: #33353d;
+
+#myFooter .social-networks a {
+  font-size: 25px;
+  color: #f9f9f9;
+  padding: 10px;
+  transition: 0.2s;
 }
-.copyright-text {
-  margin: 0;
+
+#myFooter .social-networks a:hover {
+  text-decoration: none;
 }
-@media (max-width: 991px) {
-  .site-footer [class^="col-"] {
-    margin-bottom: 30px;
-  }
+
+#myFooter .facebook:hover {
+  color: #0077e2;
 }
-@media (max-width: 767px) {
-  .site-footer {
-    padding-bottom: 0;
-  }
-  .site-footer .copyright-text,
-  .site-footer .social-icons {
+
+#myFooter .google:hover {
+  color: #ef1a1a;
+}
+
+#myFooter .twitter:hover {
+  color: #00aced;
+}
+
+#myFooter .btn {
+  color: white;
+  background-color: #d84b6b;
+  border-radius: 20px;
+  border: none;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  line-height: 25px;
+}
+
+@media screen and (max-width: 767px) {
+  #myFooter {
     text-align: center;
   }
 }
-.social-icons {
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
+
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+
+html {
+  height: 100%;
 }
-.social-icons li {
-  display: inline-block;
-  margin-bottom: 4px;
+
+body {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  height: 100%;
 }
-.social-icons li.title {
-  margin-right: 15px;
-  text-transform: uppercase;
-  color: #96a2b2;
-  font-weight: 700;
-  font-size: 13px;
+
+.content {
+  flex: 1 0 auto;
+  -webkit-flex: 1 0 auto;
+  min-height: 200px;
 }
-.social-icons a {
-  background-color: #eceeef;
-  color: #818a91;
-  font-size: 16px;
-  display: inline-block;
-  line-height: 44px;
-  width: 44px;
-  height: 44px;
-  text-align: center;
-  margin-right: 8px;
-  border-radius: 100%;
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-.social-icons a:active,
-.social-icons a:focus,
-.social-icons a:hover {
-  color: #fff;
-  background-color: #29aafe;
-}
-.social-icons.size-sm a {
-  line-height: 34px;
-  height: 34px;
-  width: 34px;
-  font-size: 14px;
-}
-.social-icons a.facebook:hover {
-  background-color: #3b5998;
-}
-.social-icons a.twitter:hover {
-  background-color: #00aced;
-}
-.social-icons a.linkedin:hover {
-  background-color: #007bb6;
-}
-.social-icons a.dribbble:hover {
-  background-color: #ea4c89;
-}
-@media (max-width: 767px) {
-  .social-icons li.title {
-    display: block;
-    margin-right: 0;
-    font-weight: 600;
-  }
+
+#myFooter {
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
 }
 </style>
 

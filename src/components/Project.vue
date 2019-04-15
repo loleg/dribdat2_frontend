@@ -4,7 +4,7 @@
 
     <div class="content">
       <router-view :project="custom_project"></router-view>
-      <!--<Footer></Footer>-->
+      <Footer :project="custom_project"></Footer>
     </div>
     
   </div>

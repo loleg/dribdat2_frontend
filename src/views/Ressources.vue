@@ -6,7 +6,7 @@
       <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/"></InfosLink>
       <CommunityLink urlCommunity="https://dataletsch.slack.com/messages"></CommunityLink>
       <!--<CommunityLink :urlCommunity="urlCommunity"></CommunityLink>-->
-      <TicketService></TicketService>
+      <!--<TicketService></TicketService>-->
     </div>
   </div>
 </template>
@@ -17,12 +17,12 @@ import ListRessources from "../components/Ressources/ListRessources.vue";
 import ListTools from "../components/Ressources/ListTools.vue";
 import InfosLink from "../components/Ressources/InfosLink.vue";
 import CommunityLink from "../components/Ressources/CommunityLink.vue";
-import TicketService from "../components/Ressources/TicketService.vue";
+//import TicketService from "../components/Ressources/TicketService.vue";
 import { APIService } from "../APIService";
 
 export default {
   name: "Ressources",
-  components: { ListRessources, ListTools, InfosLink, CommunityLink, TicketService },
+  components: { ListRessources, ListTools, InfosLink, CommunityLink, /*TicketService*/ },
 
   data() {
     return {
