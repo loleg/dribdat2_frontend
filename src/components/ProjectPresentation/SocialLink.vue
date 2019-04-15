@@ -4,7 +4,10 @@
       <b>Project link in social network :</b>
     </p>
     <!--<a v-if="!editMode" :href="'//' + link">{{link}}</a>-->
-    <a :href="'//' + link">{{link}}</a>
+
+    <a :href="'//' + link">
+      <img src="../../assets/facebook.png" />
+    </a>
     <!--<input v-if="editMode" type="url" v-model="link" v-bind:href="'//' + link">-->
   </div>
 </template>
@@ -28,4 +31,11 @@ export default {
   font-size: 80%;
   text-align: left;
 }
+
+  img{
+    margin-left: -10px;
+    margin-top: -15px;
+    height: 50px;
+    width: 50px;
+  }
 </style>

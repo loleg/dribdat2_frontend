@@ -34,28 +34,7 @@ export class APIService {
         }).then(response => response.data);
     }
 
-    static getLinkCommunity  (idEvent)
-    {
-        let eventId
-        if(idEvent == null)
-        {
-            eventId = 'current'
-        }
-        else {
-            eventId = idEvent
-        }
 
-        const url = `${API_URL}/event/${eventId}/projects.json`;
-        return axios.get(url, {
-
-            method: 'GET',
-            mode: 'no-cors',
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json',
-            }
-        }).then(response => response.data.event.community_url);
-    }
     static getProjectList (event) {
         let eventId = event || 'current'
 

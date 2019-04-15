@@ -4,25 +4,23 @@
     <list-tools :tools="tools"></list-tools>
     <div class="contentLeft">
       <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/"></InfosLink>
-      <CommunityLink urlCommunity="https://dataletsch.slack.com/messages"></CommunityLink>
-      <!--<CommunityLink :urlCommunity="urlCommunity"></CommunityLink>-->
-      <!--<TicketService></TicketService>-->
+      <!--<CommunityLink urlCommunity="https://dataletsch.slack.com/messages"></CommunityLink>-->
+      <CommunityLink :urlCommunity="this.project.event.community_url"></CommunityLink>
     </div>
   </div>
 </template>
 
 <script>
-//import { mapState } from "vuex";
+import { mapState } from "vuex";
 import ListRessources from "../components/Ressources/ListRessources.vue";
 import ListTools from "../components/Ressources/ListTools.vue";
 import InfosLink from "../components/Ressources/InfosLink.vue";
-import CommunityLink from "../components/Ressources/CommunityLink.vue";
-//import TicketService from "../components/Ressources/TicketService.vue";
-import { APIService } from "../APIService";
+import CommunityLink from "../components/Ressources/CommunityLink.vue"
 
 export default {
   name: "Ressources",
-  components: { ListRessources, ListTools, InfosLink, CommunityLink, /*TicketService*/ },
+  props: ["project"],
+  components: { ListRessources, ListTools, InfosLink, CommunityLink},
 
   data() {
     return {
@@ -54,22 +52,8 @@ export default {
           name: "Jest"
         }
       ],
-
-      urlCommunity: []
     };
   },
-
-  methods: {
-    getDataCommunityLink() {
-      APIService.getLinkCommunity(this.event.id).then(data => {
-        this.urlCommunity = data;
-      });
-    }
-  },
-
-  created() {
-    this.getDataCommunityLink();
-  }
 
   //computed: mapState(["editMode"])
 };

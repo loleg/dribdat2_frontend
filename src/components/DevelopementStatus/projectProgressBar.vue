@@ -2,9 +2,11 @@
   <div id="projectProgressBar">
     <div class="card">
       <h5 class="card-header">Progress</h5>
-      <div class="card-body d-flex justify-content-center">
+
+      <div class="card-body d-flex flex-column justify-content-between">
         <stepper :steps="steps" :current-step="currentStep"></stepper>
-        <challenge-feedback :id="test1"></challenge-feedback>
+
+        <challenge-feedback :id="1"></challenge-feedback>
       </div>
     </div>
   </div>

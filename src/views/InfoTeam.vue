@@ -4,8 +4,7 @@
         <ChallengeListPersons :list="getPersons()"></ChallengeListPersons>
 
         <div>
-            <h3 for="validationSourceCode">Source code</h3>
-            <button class="btn btn-primary" v-on:click="openSourceUrl()">{{project.source_url}}</button>
+            <button class="btn btn-primary" v-on:click="openSourceUrl()">Source code</button>
         </div>
         <div class="container">
             <div class="add-feedback" :class="{'open': formOpen}">

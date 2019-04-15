@@ -24,21 +24,13 @@
         <p class="textHide">Ressources</p>
       </router-link>
     </a>
-    <a>
-      <edit-button :editMode="editMode"></edit-button>
-    </a>
   </div>
 </template>
 
 <script>
-import EditButton from "./EditButton.vue";
-import { mapState } from "vuex";
-
 export default {
   name: "Navigation",
-  props: ["id"],
-  components: { EditButton },
-  computed: mapState(["editMode"])
+  props: ["id"]
 };
 </script>
 
