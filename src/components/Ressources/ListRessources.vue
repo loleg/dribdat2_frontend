@@ -23,8 +23,10 @@
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>-->
     <ul>
+      <i v-if="!ressources.length">There are no resources at the moment</i>
       <li v-for="ressource in ressources" :key="ressource.key">
         <a :href="ressource.link">{{ ressource.name }}</a>
+
       </li>
     </ul>
   </div>
@@ -55,6 +57,12 @@ export default {
 </script>
 
 <style scoped>
+
+  i{
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #ff9999;
+  }
 .ressources {
   margin-top: 20px;
 }

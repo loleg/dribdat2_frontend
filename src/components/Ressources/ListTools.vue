@@ -20,6 +20,7 @@
       <input class="input-tools" type="text" v-model="tool" placeholder="Insert a new tool">
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>-->
+    <i v-if="!tools.length">There are no tools at the moment</i>
     <ul>
       <li v-for="tool in tools" :key="tool.key">
         <a :href="tool.link">{{ tool.name }}</a>
@@ -53,6 +54,13 @@ export default {
 </script>
 
 <style scoped>
+
+  i{
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #ff9999;
+  }
+
 .tools {
   margin-top: 20px;
 }
