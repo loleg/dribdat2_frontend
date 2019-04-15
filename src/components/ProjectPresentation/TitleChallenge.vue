@@ -1,5 +1,5 @@
 <template>
-  <div class="challenge-title">
+  <div v-show="title !== ''" class="challenge-title">
     <h2>Challenge : {{ title }}</h2>
   </div>
 </template>
@@ -9,6 +9,8 @@ export default {
   name: "TitleChallenge",
   props: ["title"]
 };
+
+
 </script>
 
 <style scoped>
@@ -29,11 +31,13 @@ export default {
 */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   .challenge-title {
+
     font-size: 30px;
     text-align: center;
     color: #f9f9f9;
     font-family: Verdana, Geneva, sans-serif;
     margin-bottom: 25px;
+
   }
 }
 /*
@@ -45,8 +49,7 @@ export default {
     text-align: center;
     color: #f9f9f9;
     font-family: Verdana, Geneva, sans-serif;
-    margin-bottom: 25px;
-    margin-top: -15px;
+    margin-bottom: 75px;
   }
 }
 </style>

@@ -5,9 +5,12 @@
     </p>
     <!--<a v-if="!editMode" :href="'//' + link">{{link}}</a>-->
 
-    <a :href="'//' + link">
+    <a v-if="link !== ''" :href="'//' + link">
       <img src="../../assets/facebook.png" />
     </a>
+    <i class="text-error" v-else>
+      There is no link for social networks yet
+    </i>
     <!--<input v-if="editMode" type="url" v-model="link" v-bind:href="'//' + link">-->
   </div>
 </template>
@@ -21,7 +24,7 @@ export default {
 
 <style scoped>
 .title-link {
-  color: #89a7af;
+  color: #f9f9f9;
   text-decoration: underline #89a7af;
   font-family: Verdana, Geneva, sans-serif;
   font-size: 12px;
@@ -30,7 +33,17 @@ export default {
 .social-link {
   font-size: 80%;
   text-align: left;
+  color: #89a7af;
 }
+
+  .text-error{
+
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+
+
+  }
+
 
   img{
     margin-left: -10px;
