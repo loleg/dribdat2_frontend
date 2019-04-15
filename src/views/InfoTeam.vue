@@ -44,7 +44,10 @@
                 formOpen: false,
 
                 // need to get persons from API
-                persons: [ //TODO remove the persons array
+                persons: [   ],
+
+                // To use when we can retrieve the data from the API
+                persons_demo: [
                     {
                         firstname: "Mickaël",
                         lastname: "Coluccia",
@@ -94,6 +97,7 @@
             },
             openSourceUrl() {
                 window.location.href = this.project.source_url;
+
             },
             getPersons (){
                 return this.$store.state.contributors

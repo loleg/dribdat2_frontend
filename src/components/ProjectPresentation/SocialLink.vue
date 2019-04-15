@@ -33,13 +33,14 @@ export default {
 .social-link {
   font-size: 80%;
   text-align: left;
-  color: #89a7af;
+  color: #ff9999;
 }
 
   .text-error{
 
     font-size: 12px;
     font-family: Verdana, Geneva, sans-serif;
+
 
 
   }
