@@ -23,7 +23,7 @@ export default new Vuex.Store({
                 name: ""
             },
             id: 1,
-            pitch: "'https://www.youtube.com/watch?v=Vh5FW5hSZyI'",
+            pitch: "'https://www.youtube.com/embed/0lwOmIHcSno'",
             phase: 4,
             status: "Looking for designers",
             event: {
@@ -51,7 +51,7 @@ export default new Vuex.Store({
             state.custom_project = custom_project.project
             state.custom_project.challenge = {name: ''}
             state.custom_project.event = custom_project.event
-            //state.custom_project.pitch = 'http://example.com' //TODO pitch has to be provided by the API
+            state.custom_project.pitch = 'https://www.youtube.com/embed/0lwOmIHcSno' //TODO pitch has to be provided by the API
         },
         SET_PROJECT_LIST (state, projectList) {
             state.projectList = projectList;

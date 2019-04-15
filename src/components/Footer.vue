@@ -27,6 +27,9 @@
             <li>
               <a :href="this.project.contact_url" target="_blank">Community</a>
             </li>
+            <li>
+              <a :href="linkproject" target="_blank">Previous version</a>
+            </li>
           </ul>
         </div>
         <div class="col-sm-12">
@@ -49,7 +52,12 @@
 
 <script>
 export default {
-  props: ["project"]
+  props: ["project"],
+  data() {
+    return {
+      linkproject: "https://hack.opendata.ch/project/" + this.project["id"]
+    }
+  }
 };
 </script>
 
@@ -70,6 +78,7 @@ export default {
 
 #myFooter .row {
   margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 #myFooter .navbar-brand {
