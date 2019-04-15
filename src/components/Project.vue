@@ -4,13 +4,16 @@
 
     <div class="content">
       <router-view :project="custom_project"></router-view>
+      <Footer :project="custom_project"></Footer>
     </div>
+    
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import Navigation from "./Navigation.vue";
+import Footer from "./Footer.vue";
 
 export default {
   name: "Project",
@@ -20,7 +23,7 @@ export default {
       blue: " #89a7af"
     };
   },
-  components: { Navigation },
+  components: { Navigation, Footer },
   mounted() {
     this.$store.dispatch("loadCustomProject", this.id);
   },

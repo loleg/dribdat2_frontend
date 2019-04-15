@@ -1,101 +1,82 @@
 <template>
-        <div class="sidebar d-flex">
-
-            <a>
-                <router-link :to="{ name: 'presentation', params: { id:id }}">
-                    <font-awesome-icon icon="lightbulb"/>
-                    <p class="textHide">Project</p></router-link>
-            </a>
-            <a>
-
-                <router-link :to="{ name: 'team', params: { id:id }}">
-                    <font-awesome-icon icon="users"/>
-                    <p class="textHide">Team</p></router-link>
-            </a>
-            <a>
-
-                <router-link :to="{ name: 'development', params: { id:id }}">
-                    <font-awesome-icon icon="file-code"/>
-                    <p class="textHide">Status</p></router-link>
-            </a>
-            <a>
-                <router-link :to="{ name: 'ressources', params: { id:id }}">
-                    <font-awesome-icon icon="link"/>
-                    <p class="textHide">Ressources</p></router-link>
-            </a>
-        </div>
+  <div class="sidebar d-flex">
+    <a>
+      <router-link :to="{ name: 'presentation', params: { id:id }}">
+        <font-awesome-icon icon="lightbulb"/>
+        <p class="textHide">Project</p>
+      </router-link>
+    </a>
+    <a>
+      <router-link :to="{ name: 'team', params: { id:id }}">
+        <font-awesome-icon icon="users"/>
+        <p class="textHide">Team</p>
+      </router-link>
+    </a>
+    <a>
+      <router-link :to="{ name: 'development', params: { id:id }}">
+        <font-awesome-icon icon="file-code"/>
+        <p class="textHide">Status</p>
+      </router-link>
+    </a>
+    <a>
+      <router-link :to="{ name: 'ressources', params: { id:id }}">
+        <font-awesome-icon icon="link"/>
+        <p class="textHide">Ressources</p>
+      </router-link>
+    </a>
+  </div>
 </template>
 
 <script>
-
-
 export default {
   name: "Navigation",
-  props: ["id"],
-
+  props: ["id"]
 };
 </script>
 
 <style scoped>
+.sidebar {
+  width: 180px;
+  background-color: #616163;
+  position: fixed;
+  height: 100%;
+  border: 1px groove #89a7af;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, sans-serif;
+  flex-flow: column;
+}
 
-    .sidebar {
+.sidebar a {
+  display: block;
+  color: #f9f9f9;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 2px;
+}
 
-        width: 180px;
-        background-color: #616163;
-        position: fixed;
-        height: 100%;
-        border: 1px groove  #89a7af;
-        border-radius: 5px;
-        font-family: Verdana, Geneva, sans-serif;
-        flex-flow: column;
-        margin-bottom: 15px;
-    }
+.sidebar a:hover {
+  background-color: #89a7af;
+  color: #f9f9f9;
+}
 
-    .sidebar a  {
-        display: block;
-        color: #f9f9f9;
-        padding : 15px;
-        text-decoration: none;
-        border-radius: 2px;
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    border: none;
+    flex-flow: row;
+    justify-content: space-between;
+  }
 
+  .sidebar a {
+    float: left;
+    padding: 8px;
+  }
 
-
-
-    }
-
-
-
-    .sidebar a:hover{
-        background-color: #89a7af;
-        color: #f9f9f9;
-
-
-    }
-
-
-
-    @media screen and (max-width: 700px) {
-        .sidebar {
-            width: 100%;
-            position: relative;
-            border: none;
-            flex-flow: row;
-            justify-content: space-between;
-
-        }
-
-        .sidebar a {
-            float: left;
-            padding: 8px;
-        }
-
-        .textHide {
-            font-size: 0px;
-            line-height: 0px;
-            display: inline;
-        }
-    }
-
-
-
+  .textHide {
+    font-size: 0px;
+    line-height: 0px;
+    display: inline;
+  }
+}
 </style>

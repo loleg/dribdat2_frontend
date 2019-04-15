@@ -20,8 +20,7 @@ Part for the mobile
 */
 
 @media screen and (min-width: 300px) and (max-width: 760px) {
-
-  h3{
+  h3 {
     font-size: 16px;
   }
   .summary {
@@ -45,12 +44,9 @@ Tablets part
     font-size: 15px;
   }
 
-  h3{
+  h3 {
     font-size: 20px;
   }
-
-
-
 }
 
 /*
@@ -58,13 +54,11 @@ Part for the computer
 */
 
 @media screen and (min-width: 1200px) {
-
   .summary {
     text-align: justify;
     color: #f9f9f9;
     font-family: Verdana, Geneva, sans-serif;
-    margin-top: -90px;
+    margin-top: 20px;
   }
-
 }
 </style>

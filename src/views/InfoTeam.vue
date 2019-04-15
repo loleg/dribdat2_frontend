@@ -119,4 +119,7 @@
 </script>
 
 <style scoped>
+.open {
+    width: 100%;
+}
 </style>

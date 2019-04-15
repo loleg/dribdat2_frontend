@@ -51,8 +51,6 @@ export default {
           name: "Jest"
         }
       ],
-
-
     };
   },
 

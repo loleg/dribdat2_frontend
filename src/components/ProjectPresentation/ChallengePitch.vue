@@ -9,8 +9,14 @@
         <iframe class="rest-iframe" :src="embedLink(this.pitch)"></iframe>
       </div>
     </div>-->
-    <div  class="resp-container">
-      <iframe class="rest-iframe" :src="challenge_pitch"></iframe>
+    <div class="resp-container">
+      <iframe
+        class="resp-iframe"
+        :src="pitch"
+        gesture="media"
+        allow="encrypted-media"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </template>
@@ -21,15 +27,13 @@ export default {
     pitch: String
   },
   data() {
-    return {
-      challenge_pitch: this.embedLink(this.pitch)
-    };
+    return {};
   },
   methods: {
     /*modify() {
       this.pitch = this.embedLink(this.challenge_pitch);
     },*/
-    embedLink(link = "https://www.youtube.com/watch?v=Vh5FW5hSZyI") {
+    /*embedLink(link = "https://www.youtube.com/watch?v=Vh5FW5hSZyI") {
       if (link.includes("youtube.com/watch")) {
         // youtube video
         let yt_video_id = link.split("=")[1];
@@ -42,10 +46,7 @@ export default {
         // other
         return link;
       }
-    }
-  },
-  mounted: function () {
-    this.challenge_pitch = this.embedLink(this.pitch);
+    }*/
   }
 };
 </script>
@@ -57,24 +58,13 @@ export default {
   padding-top: 56.25%;
 }
 
-.rest-iframe {
+.resp-iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80%;
+  height: 100%;
   border: 0;
-}
-
-input[type="text"],
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
 
 @media screen and (min-width: 1200px) {

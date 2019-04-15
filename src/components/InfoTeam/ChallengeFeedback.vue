@@ -28,6 +28,49 @@ export default {
     this.showDisqus();
   }
 };
+/*import jQuery from 'jquery';
+
+export default {
+  props: ["id"],
+  data() {
+    return {
+      disqus_shortname: "dribdat",
+      disqus_identifier: '', // made of post id &nbsp; guid
+      disqus_url: '' // post permalink
+    };
+  },
+  methods: {
+    loadDisqus(source, identifier, url) {
+      if (window.DISQUS) {
+        jQuery("#disqus_thread").appendTo(source.parent()); // append the HTML to the control parent
+
+        // if Disqus exists, call it's reset method with new parameters
+        this.DISQUS.reset({
+          reload: true,
+          config: function() {
+            this.page.identifier = identifier;
+            this.page.url = url;
+          }
+        });
+      } else {
+        //insert a wrapper in HTML after the relevant "show comments" link
+        jQuery('<div id="disqus_thread"></div>').insertAfter(source);
+        this.disqus_identifier = identifier; // set the identifier argument
+        this.disqus_url = url; // set the permalink argument
+
+        // append the Disqus embed script to HTML
+        var dsq = document.createElement("script");
+        dsq.type = "text/javascript";
+        dsq.async = true;
+        dsq.src = "https://" + this.disqus_shortname + ".disqus.com/embed.js";
+        jQuery("head").appendChild(dsq);
+      }
+    }
+  },
+  created: function () {
+    this.loadDisqus(this.disqus_shortname, this.disqus_identifier, this.disqus_url)
+  }
+};*/
 </script>
 
 <style scoped>
