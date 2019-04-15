@@ -9,7 +9,7 @@
         <iframe class="rest-iframe" :src="embedLink(this.pitch)"></iframe>
       </div>
     </div>-->
-    <div class="resp-container">
+    <div  class="resp-container">
       <iframe class="rest-iframe" :src="challenge_pitch"></iframe>
     </div>
   </div>

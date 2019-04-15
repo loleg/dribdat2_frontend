@@ -40,6 +40,7 @@ export default {
     height: 75%;
     padding: 0;
     margin: 0;
+
   }
 
   .contentLeft {

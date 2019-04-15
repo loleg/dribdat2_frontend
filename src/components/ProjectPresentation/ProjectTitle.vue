@@ -24,6 +24,12 @@ export default {
     color: #f9f9f9;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
+    margin-bottom: 25px;
+
+  }
+
+  h1{
+    font-size: 35px;
   }
 }
 /*
@@ -35,6 +41,8 @@ export default {
     color: #f9f9f9;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
+    margin-bottom: 35px;
+    margin-top: 15px;
   }
 }
 
@@ -47,6 +55,7 @@ export default {
     color: #f9f9f9;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
+
   }
 }
 </style>

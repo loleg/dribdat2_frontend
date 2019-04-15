@@ -19,7 +19,8 @@ export default new Vuex.Store({
             name: "getaround.io",
             summary: "We want to get people to be more concerned about their health. The average person does not exercise enough. With this project we hope to motivate people to be more active.",
             challenge: {
-                name: "Help people be more active"
+                //name: "Help people be more active"
+                name: ""
             },
             id: 1,
             pitch: "'https://www.youtube.com/watch?v=Vh5FW5hSZyI'",
@@ -48,7 +49,7 @@ export default new Vuex.Store({
         },
         SET_CUSTOM_PROJECT(state, custom_project) {
             state.custom_project = custom_project.project
-            state.custom_project.challenge = {name: 'Help people create awesome hackathons'} //TODO challenge has to be provided by the API
+            state.custom_project.challenge = {name: ''}
             state.custom_project.event = custom_project.event
             //state.custom_project.pitch = 'http://example.com' //TODO pitch has to be provided by the API
         },

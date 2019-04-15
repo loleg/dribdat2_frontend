@@ -48,6 +48,7 @@ export default {
         border-radius: 5px;
         font-family: Verdana, Geneva, sans-serif;
         flex-flow: column;
+        margin-bottom: 15px;
     }
 
     .sidebar a  {
