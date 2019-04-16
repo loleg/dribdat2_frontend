@@ -2,7 +2,6 @@
   <div>
     <h3>CHALLENGE REPRESENTED BY :</h3>
     <ul>
-      <li class="text-error" v-if="!list.length">There are no members yet</li>
       <li v-for="person in list" :key="person.key">
         <a :href="person.link">{{ person.name }}</a>
       </li>

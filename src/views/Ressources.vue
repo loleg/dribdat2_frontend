@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import ListRessources from "../components/Ressources/ListRessources.vue";
 import ListTools from "../components/Ressources/ListTools.vue";
 import InfosLink from "../components/Ressources/InfosLink.vue";
