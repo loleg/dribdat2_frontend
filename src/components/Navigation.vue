@@ -38,25 +38,28 @@ export default {
 
 .sidebar {
   width: 180px;
-  background-color: #616163;
+  background-color: #ffffff;
   position: fixed;
   height: 100%;
   border: 1px groove #89a7af;
   border-radius: 5px;
   font-family: Verdana, Geneva, sans-serif;
   flex-flow: column;
+  opacity: 0.8;
+
 }
 
 .sidebar a {
   display: block;
-  color: #f9f9f9;
+  color: #000000;
   padding: 15px;
   text-decoration: none;
   border-radius: 2px;
+
 }
 
 .sidebar a:hover {
-  background-color: #89a7af;
+  background-color: #FA8072;
   color: #f9f9f9;
 }
 

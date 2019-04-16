@@ -26,7 +26,7 @@ Part for the mobile
   .summary {
     margin-top: 20px;
     text-align: justify;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
   }
@@ -39,7 +39,7 @@ Tablets part
   .summary {
     margin-top: 35px;
     text-align: justify;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 15px;
   }
@@ -56,7 +56,7 @@ Part for the computer
 @media screen and (min-width: 1200px) {
   .summary {
     text-align: justify;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     margin-top: 20px;
   }

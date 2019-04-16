@@ -21,7 +21,7 @@ export default {
 @media screen and (min-width: 300px) and (max-width: 767px) {
   div {
     font-size: 100%;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
     margin-bottom: 25px;
@@ -38,7 +38,7 @@ export default {
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   div {
     font-size: 150%;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
     margin-bottom: 35px;
@@ -52,7 +52,7 @@ export default {
 @media screen and (min-width: 1200px) {
   div {
     font-size: 150%;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
 

@@ -21,7 +21,7 @@ export default {
   .challenge-title {
     font-size: 20px;
     text-align: center;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     margin-bottom: 25px;
   }
@@ -34,7 +34,7 @@ export default {
 
     font-size: 30px;
     text-align: center;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     margin-bottom: 25px;
 
@@ -47,7 +47,7 @@ export default {
   .challenge-title {
     font-size: 35px;
     text-align: center;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     margin-bottom: 75px;
   }

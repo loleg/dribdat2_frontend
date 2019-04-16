@@ -69,7 +69,8 @@ export default {
   }
 
 #myFooter {
-  background-color: #4e4e51;
+  background-color: #ffffff;
+  opacity: 0.7;
   color: white;
   margin-top: 40px;
 }
@@ -101,7 +102,7 @@ export default {
 
 #myFooter h5 {
   font-size: 13px;
-  color: white;
+  color: #1E90FF;
   font-weight: bold;
   margin-top: 20px;
   text-transform: uppercase;
@@ -110,7 +111,7 @@ export default {
 #myFooter h5:after {
   position: absolute;
   content: '';
-  border-bottom: 1px solid #d2d7da;
+  border-bottom: 1px solid #333333;
   width: 70%;
   transform: translateX(-50%);
   bottom: -5px;
@@ -120,18 +121,18 @@ export default {
 #myFooter h2 a {
   font-size: 12px;
   text-align: center;
-  color: #fff;
+  color: #333333;
 }
 
 #myFooter a {
-  color: #d2d1d1;
+  color: #333333;
   text-decoration: none;
 }
 
 #myFooter a:hover,
 #myFooter a:focus {
   text-decoration: none;
-  color: white;
+  color: #FA8072;
 }
 
 #myFooter .social-networks {
@@ -141,7 +142,7 @@ export default {
 
 #myFooter .social-networks a {
   font-size: 14px;
-  color: #f9f9f9;
+  color: #333333;
   padding: 10px;
   transition: 0.2s;
 }

@@ -22,7 +22,7 @@ export default {
 
       // chart colors
       var colors = [
-        "#007bff",
+        "#FA8072",
         "#28a745",
         "#333333",
         "#c3e6cb",

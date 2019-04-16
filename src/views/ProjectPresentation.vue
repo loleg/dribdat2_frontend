@@ -1,4 +1,6 @@
 <template>
+
+<div class="content">
   <div class="projectPresentation">
     <ProjectTitle :title="project.name"></ProjectTitle>
     <TitleChallenge :title="project.challenge.name"></TitleChallenge>
@@ -10,7 +12,11 @@
       <SocialLink class="LinkSocial" link="www.facebook.com"></SocialLink>
     </div>
   </div>
+
+  </div>
+
 </template>
+
 
 <script>
 //import { mapState } from "vuex";
@@ -35,13 +41,23 @@ export default {
 </script>
 
 <style scoped>
+
+  .content{
+    background-color: white;
+    opacity: 0.8;
+    width: 100%;
+    margin: 0;
+  }
+
 @media screen {
   .projectPresentation {
     height: 75%;
     padding: 0;
     margin: 0;
 
+
   }
+
 
   .contentLeft {
     text-align: left;

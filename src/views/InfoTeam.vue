@@ -1,4 +1,5 @@
 <template>
+    <div class="content">
     <div class="infoTeam">
         <HeadlineStatus :status="project.phase"></HeadlineStatus>
         <ChallengeListPersons :list="getPersons()"></ChallengeListPersons>
@@ -18,6 +19,7 @@
             </div>
         </div>
         <Patreon link="www.patreon.com/"></Patreon>
+    </div>
     </div>
 </template>
 
@@ -111,5 +113,12 @@
 </script>
 
 <style scoped>
+
+    .content{
+        background-color: white;
+        opacity: 0.8;
+        width: 100%;
+        margin: 0;
+    }
 
 </style>
