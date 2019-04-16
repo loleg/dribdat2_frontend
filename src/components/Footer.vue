@@ -28,7 +28,7 @@
               <a :href="this.project.contact_url" target="_blank">Community</a>
             </li>
             <li>
-              <a :href="linkproject" target="_blank">Previous version</a>
+              <a :href="'https://hack.opendata.ch/project/' + this.project.id" target="_blank">Previous version</a>
             </li>
           </ul>
         </div>
@@ -52,12 +52,7 @@
 
 <script>
 export default {
-  props: ["project"],
-  data() {
-    return {
-      linkproject: "https://hack.opendata.ch/project/" + this.project["id"]
-    }
-  }
+  props: ["project"]
 };
 </script>
 
