@@ -1,6 +1,8 @@
 <template>
   <div class="pitch">
-    <!--<div v-if="editMode">
+    <!-- USED IF WE NEED TO EDIT THE COMPNENT IN THE WEB APP
+
+    <div v-if="editMode">
       <input class="input-pitch" type="text" :placeholder="embedLink(this.challenge_pitch)">
       <button type="button" class="btn btn-primary" @click="modify">Modify</button>
     </div>
@@ -29,23 +31,6 @@ export default {
     return {};
   },
   methods: {
-    /*modify() {
-      this.pitch = this.embedLink(this.challenge_pitch);
-    },*/
-    /*embedLink(link = "https://www.youtube.com/watch?v=Vh5FW5hSZyI") {
-      if (link.includes("youtube.com/watch")) {
-        // youtube video
-        let yt_video_id = link.split("=")[1];
-        return "https://www.youtube.com/embed/" + yt_video_id;
-      } else if (link.includes("dailymotion.com/video")) {
-        // dailymotion video
-        let dm_video_id = this.pitch.split("video/")[1];
-        return "https://www.dailymotion.com/embed/video/" + dm_video_id;
-      } else {
-        // other
-        return link;
-      }
-    }*/
   }
 };
 </script>
@@ -66,15 +51,5 @@ export default {
   border: 0;
 }
 
-@media screen and (min-width: 1200px) {
-  .rest-iframe {
-    height: 75%;
-  }
-}
 
-@media screen and (max-width: 1200px) {
-  .rest-iframe {
-    height: 100%;
-  }
-}
 </style>

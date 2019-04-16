@@ -1,9 +1,12 @@
 <template>
   <div class="summary">
     <h3>Summary :</h3>
-    <!--<p v-if="!editMode">{{ summary }}</p>-->
+    <!-- USED IF WE NEED TO EDIT THE SUMMARY
+
+    <p v-if="!editMode">{{ summary }}</p>
+     <input type="text" v-model="summary" v-if="editMode" placeholder="Description of the challenge">-->
     <p>{{ summary }}</p>
-    <!--<input type="text" v-model="summary" v-if="editMode" placeholder="Description of the challenge">-->
+
   </div>
 </template>
 
@@ -15,9 +18,14 @@ export default {
 </script>
 
 <style scoped>
-/*
-Part for the mobile
-*/
+  /* GENERAL CSS FOR EVERY DEVICE */
+  .summary {
+    text-align: justify;
+    color: #f9f9f9;
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+/*  Part for the mobile  */
 
 @media screen and (min-width: 300px) and (max-width: 760px) {
   h3 {
@@ -32,9 +40,7 @@ Part for the mobile
   }
 }
 
-/*
-Tablets part
-*/
+/*  Tablets part  */
 @media screen and (min-width: 760px) and (max-width: 1200px) {
   .summary {
     margin-top: 35px;
@@ -49,9 +55,7 @@ Tablets part
   }
 }
 
-/*
-Part for the computer
-*/
+/*  Part for the computer  */
 
 @media screen and (min-width: 1200px) {
   .summary {

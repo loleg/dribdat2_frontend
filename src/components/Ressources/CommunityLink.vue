@@ -1,5 +1,6 @@
 <template>
     <div class="community-link">
+        <!-- If we have the link for the community -->
         <p  v-if="urlCommunity !== ''"> You can reach us on slack !
 
             <br/>
@@ -7,6 +8,7 @@
             <img src="../../assets/slack.png"/>
         </a>
         </p>
+        <!-- If we don't have the link for the community, warning message -->
         <i v-else>there is no community yet</i>
 
 

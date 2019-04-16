@@ -3,13 +3,20 @@
     <p class="title-link">
       <b>Project link in social network :</b>
     </p>
-    <!--<a v-if="!editMode" :href="'//' + link">{{link}}</a>-->
 
+    <!-- USED IF WE NEED TO EDIT THE SOCIAL LINK
+
+    <a v-if="!editMode" :href="'//' + link">{{link}}</a>
+    <input v-if="editMode" type="url" v-model="link" v-bind:href="'//' + link">-->
+
+    <!-- If the link isn't empty, we have the icon with the link in it -->
     <a v-if="link !== ''" :href="'//' + link">
       <img src="../../assets/facebook.png">
     </a>
+
+    <!-- If the link is empty, warning message -->
     <i class="text-error" v-else>There is no link for social networks yet</i>
-    <!--<input v-if="editMode" type="url" v-model="link" v-bind:href="'//' + link">-->
+
   </div>
 </template>
 

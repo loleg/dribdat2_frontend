@@ -18,7 +18,8 @@
                 </form>
             </div>
         </div>
-        <Patreon link="www.patreon.com/"></Patreon>
+        <!-- Used if we have a link for the patreon but not implemented yet from API
+        <Patreon link="www.patreon.com/"></Patreon>-->
     </div>
     </div>
 </template>
@@ -27,14 +28,14 @@
     import HeadlineStatus from "../components/InfoTeam/HeadlineStatus";
     import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
     import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
-    import Patreon from "../components/InfoTeam/Patreon";
+   // import Patreon from "../components/InfoTeam/Patreon";
     import SourceCode from "../components/InfoTeam/SourceCode";
     import { mapState } from "vuex";
 
     export default {
         name: "InfoTeam",
         components: {
-            Patreon,
+        //    Patreon,
             HeadlineStatus,
             ChallengeListPersons,
             ChallengeFeedback,

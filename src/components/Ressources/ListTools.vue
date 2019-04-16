@@ -1,7 +1,10 @@
 <template>
   <div class="tools">
     <h3>TOOLS USED DURING THIS CHALLENGE</h3>
-    <!--<div v-if="!editMode">
+    <!--
+          USED FOR THE EDIT MODE
+
+    <div v-if="!editMode">
       <ul>
         <li v-for="tool in tools" :key="tool.id">
           <a :href="tool.link">{{ tool.name }}</a>
@@ -37,6 +40,8 @@ export default {
       tool: ""
     };
   },
+ /*
+      USED FOR THE EDIT MODE
   methods: {
     remove(tool) {
       this.tools.splice(this.tools.indexOf(tool), 1);
@@ -49,12 +54,18 @@ export default {
         name: this.tool
       });
     }
-  }
+  }*/
 };
 </script>
 
 <style scoped>
 
+  /* GENERAL CSS FOR EVERY DEVICE */
+  h3 {
+    font-size: 120%;
+    margin-bottom: 20px;
+    color: #333333;
+  }
   i{
     font-size: 12px;
     font-family: Verdana, Geneva, sans-serif;
@@ -65,6 +76,7 @@ export default {
   margin-top: 20px;
 }
 
+/* USED FOR EDIT MODE
 .btn-danger {
   float: right;
   margin-bottom: 0px !important;
@@ -80,10 +92,9 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
+*/
 ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   margin-bottom: 35px;
 }
@@ -132,37 +143,25 @@ li a:hover {
   color: salmon;
 }
 
+/* Phone part */
 @media screen and (min-width: 300px) and (max-width: 767px) {
   h3 {
     font-size: 120%;
-    color: #000000;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 20px;
   }
 }
-/*
-  Tablets part
-*/
+/* Tablets part */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h3 {
     font-size: 110%;
-    color: #000000;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 30px;
   }
 }
 
-/*
-  Part for the computer
-*/
+/*  Part for the computer */
 @media screen and (min-width: 1200px) {
   h3 {
     font-size: 120%;
-    color: #000000;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 32px;
   }
 }

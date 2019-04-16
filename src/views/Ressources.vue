@@ -4,8 +4,8 @@
     <ListRessources :ressources="ressources"></ListRessources>
     <list-tools :tools="tools"></list-tools>
     <div class="contentLeft">
-      <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/"></InfosLink>
-      <!--<CommunityLink urlCommunity="https://dataletsch.slack.com/messages"></CommunityLink>-->
+      <!-- USED WHEN THE API IS IMPLEMENTED FOR THAT
+      <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/"></InfosLink>-->
       <CommunityLink :urlCommunity="this.project.event.community_url"></CommunityLink>
     </div>
   </div>
@@ -15,13 +15,14 @@
 <script>
 import ListRessources from "../components/Ressources/ListRessources.vue";
 import ListTools from "../components/Ressources/ListTools.vue";
-import InfosLink from "../components/Ressources/InfosLink.vue";
+//import InfosLink from "../components/Ressources/InfosLink.vue";
 import CommunityLink from "../components/Ressources/CommunityLink.vue"
 
 export default {
   name: "Ressources",
   props: ["project"],
-  components: { ListRessources, ListTools, InfosLink, CommunityLink},
+  components: { ListRessources, ListTools,// InfosLink,
+     CommunityLink},
 
   data() {
     return {
