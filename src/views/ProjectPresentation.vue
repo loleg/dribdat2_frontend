@@ -1,11 +1,10 @@
 <template>
   <div class="projectPresentation">
+    <!-- for every :... we pass the data from the API -->
     <ProjectTitle :title="project.name"></ProjectTitle>
     <TitleChallenge :title="project.challenge.name"></TitleChallenge>
     <ChallengePitch :pitch="project.pitch"></ChallengePitch>
     <SummaryPitch :summary="project.summary"></SummaryPitch>
-    <!-- https://www.dailymotion.com/video/xkq3cr -->
-    <!-- https://www.youtube.com/watch?v=zihJTimjdls -->
     <div class="contentLeft">
       <SocialLink class="LinkSocial" link="www.facebook.com"></SocialLink>
     </div>
@@ -35,7 +34,6 @@ export default {
 </script>
 
 <style scoped>
-@media screen {
   .projectPresentation {
     height: 75%;
     padding: 0;
@@ -46,5 +44,5 @@ export default {
   .contentLeft {
     text-align: left;
   }
-}
+
 </style>
