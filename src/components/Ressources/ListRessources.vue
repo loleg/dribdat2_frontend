@@ -1,7 +1,10 @@
 <template>
   <div class="ressources">
     <h3>RESSOURCES USED DURING THIS CHALLENGE</h3>
-    <!--<div v-if="!editMode">
+
+    <!-- USED IF THE EDIT MODE
+
+    <div v-if="!editMode">
       <ul>
         <li v-for="ressource in ressources" :key="ressource.id">{{ ressource.name }}</li>
       </ul>
@@ -23,6 +26,7 @@
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>-->
     <ul>
+      <!-- If we don't have resources, warning message -->
       <i v-if="!ressources.length">There are no resources at the moment</i>
       <li v-for="ressource in ressources" :key="ressource.key">
         <a :href="ressource.link">{{ ressource.name }}</a>
@@ -40,6 +44,9 @@ export default {
       ressource: ""
     };
   },
+  /*
+  USED FOR THE EDIT MODE
+
   methods: {
     remove(ressource) {
       this.ressources.splice(this.ressources.indexOf(ressource), 1);
@@ -52,11 +59,18 @@ export default {
         name: this.ressource
       });
     }
-  }
+  }*/
 };
 </script>
 
 <style scoped>
+
+  /* GENERAL CSS FOR EVERY DEVICE */
+  h3 {
+    color: #f9f9f9;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+  }
 
   i{
     font-size: 12px;
@@ -67,10 +81,12 @@ export default {
   margin-top: 20px;
 }
 
+/* USED FOR THE EDIT MODE
 .btn-danger {
   float: right;
   margin-bottom: 0px !important;
 }
+
 
 input[type="text"],
 select {
@@ -82,10 +98,10 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+  */
 
 ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   margin-bottom: 35px;
 }
@@ -134,37 +150,25 @@ li a:hover {
   color: #019eba;
 }
 
+/* Phone part */
 @media screen and (min-width: 300px) and (max-width: 767px) {
   h3 {
     font-size: 120%;
-    color: #f9f9f9;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 20px;
   }
 }
-/*
-  Tablets part
-*/
+/* Tablets part */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h3 {
     font-size: 110%;
-    color: #f9f9f9;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 30px;
   }
 }
 
-/*
-  Part for the computer
-*/
+/* Part for the computer */
 @media screen and (min-width: 1200px) {
   h3 {
     font-size: 120%;
-    color: #f9f9f9;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 32px;
   }
 }

@@ -1,3 +1,4 @@
+<!-- NOT USED BUT PREPARED IF WE NEED IN THE FUTURE -->
 <template>
   <div>
     <button class="btn btn-light" @click="openLink">
