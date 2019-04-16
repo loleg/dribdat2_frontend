@@ -2,12 +2,17 @@ import axios from 'axios';
 const API_URL = 'http://127.0.0.1:5000/api';
 export class APIService {
 
+    /*
+            USED WHEN WE DIDN'T USE THE STORE.JS (VUEX)
+     */
+
     constructor() {
     }
 
     /*********************
      * GET
      *********************/
+    //GET THE LIST ACTIVITY TO HAVE THE TIMELINE
     static getActivityList (idProject) {
 
         var url = `${API_URL}/project/${idProject}/activity.json`
@@ -22,6 +27,7 @@ export class APIService {
         }).then(response => response.data.activities);
     }
 
+    //GET ONE PROJECT
     static getProject (id) {
         const url = `${API_URL}/project/${id}/info.json`;
         return axios.get(url, {
@@ -35,6 +41,7 @@ export class APIService {
     }
 
 
+    //GET THE LIST OF THE PROJECTS
     static getProjectList (event) {
         let eventId = event || 'current'
 

@@ -6,6 +6,7 @@
         <div>
             <SourceCode :link="project.source_url"></SourceCode>
         </div>
+        <!-- USED IF YOU WANT THE FEEDBACK BUTTON TO COMMUNICATE IN THE TEAM
         <div class="container">
             <div class="add-feedback" :class="{'open': formOpen}">
                 <div class="button-copy" v-show="!formOpen" @click="formOpen = true">Feedback</div>
@@ -16,7 +17,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div>-->
         <!-- Used if we have a link for the patreon but not implemented yet from API
         <Patreon link="www.patreon.com/"></Patreon>-->
     </div>
@@ -25,7 +26,7 @@
 <script>
     import HeadlineStatus from "../components/InfoTeam/HeadlineStatus";
     import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
-    import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
+    //import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
    // import Patreon from "../components/InfoTeam/Patreon";
     import SourceCode from "../components/InfoTeam/SourceCode";
     import { mapState } from "vuex";
@@ -36,7 +37,7 @@
         //    Patreon,
             HeadlineStatus,
             ChallengeListPersons,
-            ChallengeFeedback,
+           // ChallengeFeedback,
             SourceCode
         },
         props: ["project"],
