@@ -1,12 +1,12 @@
 <template>
-  <div id="projectProgressBar">
+  <div id="projectProgressBar" >
     <div class="card">
       <h5 class="card-header">Progress</h5>
 
       <div class="card-body d-flex flex-column justify-content-between">
-        <stepper :steps="steps" :current-step="currentStep"></stepper>
+        <stepper :steps="steps" :current-step="currentStep" v-on:setDisqusStep="onDisqusStep"></stepper>
 
-        <challenge-feedback :id="1"></challenge-feedback>
+        <challenge-feedback ref="disqusComponent" :id="disqusStep"></challenge-feedback>
       </div>
     </div>
   </div>
@@ -21,6 +21,7 @@ export default {
   props: ["currentStep"],
   data: function() {
     return {
+        disqusStep: 1,
       steps: [
         "Idea or challenge description",
         "Team has formed and started a project",
@@ -31,6 +32,13 @@ export default {
         "Project is live an publicly available"
       ]
     };
+  },
+  methods: {
+      onDisqusStep: function (step){
+          console.log(this.$route.fullPath)
+          this.disqusStep = step
+          this.$refs.disqusComponent.reset('newid' + step, 'http://example.com/unique-path-to-article1/', 'Step ' + step, 'en')
+      },
   }
 };
 </script>

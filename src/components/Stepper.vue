@@ -11,7 +11,7 @@
                     role="tab"
                     aria-controls="information-part"
                     id="information-part-trigger"
-                    onclick="">
+                    v-on:click="$emit('setDisqusStep', key)">
             <span
                     class="bs-stepper-circle"
                     v-bind:class="[key < currentStep ? activeBackground : '' ]"

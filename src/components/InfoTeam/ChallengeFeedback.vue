@@ -22,7 +22,18 @@ export default {
         s.setAttribute("data-timestamp", +new Date());
         (d.head || d.body).appendChild(s);
       }
-    }
+    },
+       reset (newIdentifier, newUrl, newTitle, newLanguage) {
+          DISQUS.reset({
+              reload: true,
+              config: function () {
+                  this.page.identifier = newIdentifier;
+                  this.page.url = newUrl;
+                  this.page.title = newTitle;
+                  this.language = newLanguage;
+              }
+          });
+      }
   },
   created: function() {
     this.showDisqus();
