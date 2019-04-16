@@ -14,7 +14,13 @@
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="https://www.starticket.ch/fr" target="_blank">Buy tickets</a>
+              <a :href="this.project.event.webpage_url">Event info page</a>
+            </li>
+            <li>
+              <a href="https://www.starticket.ch/fr" target="_blank">Register to the event</a>
+            </li>
+            <li>
+              <a :href="this.project.event.community_url" target="_blank">Contact</a>
             </li>
           </ul>
         </div>
@@ -22,13 +28,13 @@
           <h5>Challenge</h5>
           <ul>
             <li>
-              <a href="http://www.patreon.com" target="_blank">Patreon</a>
+              <a href="http://www.patreon.com" target="_blank">Support team</a>
             </li>
             <li>
-              <a :href="this.project.contact_url" target="_blank">Community</a>
+              <a :href="this.project.contact_url" target="_blank">Contact team</a>
             </li>
             <li>
-              <a :href="'https://hack.opendata.ch/project/' + this.project.id" target="_blank">Previous version</a>
+              <a :href="'https://hack.opendata.ch/project/' + this.project.id" target="_blank">Leave beta version</a>
             </li>
           </ul>
         </div>
