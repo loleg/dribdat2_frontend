@@ -63,32 +63,33 @@ export default {
 </script>
 
 <style scoped>
+
+  #myFooter li {
+    font-size: 11px;
+  }
+
 #myFooter {
-  background-color: #3c3d41;
+  background-color: #4e4e51;
   color: white;
-  padding-top: 30px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 #myFooter .footer-copyright {
-  background-color: #333333;
+  background-color: #3a3838;
   padding-top: 3px;
   padding-bottom: 3px;
   text-align: center;
+  font-size: 13px;
 }
 
 #myFooter .row {
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   text-transform: uppercase;
 }
 
-#myFooter .navbar-brand {
-  margin-top: 45px;
-  height: 65px;
-}
 
 #myFooter .footer-copyright p {
-  margin: 10px;
+  margin: 8px;
   color: #ccc;
 }
 
@@ -99,7 +100,7 @@ export default {
 }
 
 #myFooter h5 {
-  font-size: 18px;
+  font-size: 13px;
   color: white;
   font-weight: bold;
   margin-top: 30px;
@@ -117,7 +118,7 @@ export default {
 }
 
 #myFooter h2 a {
-  font-size: 50px;
+  font-size: 12px;
   text-align: center;
   color: #fff;
 }
@@ -139,7 +140,7 @@ export default {
 }
 
 #myFooter .social-networks a {
-  font-size: 25px;
+  font-size: 14px;
   color: #f9f9f9;
   padding: 10px;
   transition: 0.2s;
@@ -153,25 +154,13 @@ export default {
   color: #0077e2;
 }
 
-#myFooter .google:hover {
-  color: #ef1a1a;
-}
+
 
 #myFooter .twitter:hover {
   color: #00aced;
 }
 
-#myFooter .btn {
-  color: white;
-  background-color: #d84b6b;
-  border-radius: 20px;
-  border: none;
-  width: 150px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 10px;
-  line-height: 25px;
-}
+
 
 @media screen and (max-width: 767px) {
   #myFooter {
