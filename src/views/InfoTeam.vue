@@ -4,7 +4,8 @@
         <ChallengeListPersons :list="getPersons()"></ChallengeListPersons>
 
         <div>
-            <button class="btn btn-primary" v-on:click="openSourceUrl()">Source code</button>
+            <SourceCode :link="project.source_url"></SourceCode>
+           <!-- <button class="btn btn-primary" v-on:click="openSourceUrl()">Source code</button> -->
         </div>
         <div class="container">
             <div class="add-feedback" :class="{'open': formOpen}">
@@ -26,6 +27,7 @@
     import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
     import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
     import Patreon from "../components/InfoTeam/Patreon";
+    import SourceCode from "../components/InfoTeam/SourceCode";
     import { APIService } from "../APIService";
     import { mapState } from "vuex";
 
@@ -35,7 +37,8 @@
             Patreon,
             HeadlineStatus,
             ChallengeListPersons,
-            ChallengeFeedback
+            ChallengeFeedback,
+            SourceCode
         },
         props: ["project"],
 
