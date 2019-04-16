@@ -14,7 +14,13 @@
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="https://www.starticket.ch/fr" target="_blank">Buy tickets</a>
+              <a :href="this.project.event.webpage_url">Event info page</a>
+            </li>
+            <li>
+              <a href="https://www.starticket.ch/fr" target="_blank">Register to the event</a>
+            </li>
+            <li>
+              <a :href="this.project.event.community_url" target="_blank">Contact</a>
             </li>
           </ul>
         </div>
@@ -22,13 +28,13 @@
           <h5>Challenge</h5>
           <ul>
             <li>
-              <a href="http://www.patreon.com" target="_blank">Patreon</a>
+              <a href="http://www.patreon.com" target="_blank">Support team</a>
             </li>
             <li>
-              <a :href="this.project.contact_url" target="_blank">Community</a>
+              <a :href="this.project.contact_url" target="_blank">Contact team</a>
             </li>
             <li>
-              <a :href="linkproject" target="_blank">Previous version</a>
+              <a :href="'https://hack.opendata.ch/project/' + this.project.id" target="_blank">Leave beta version</a>
             </li>
           </ul>
         </div>
@@ -52,42 +58,38 @@
 
 <script>
 export default {
-  props: ["project"],
-  data() {
-    return {
-      linkproject: "https://hack.opendata.ch/project/" + this.project["id"]
-    }
-  }
+  props: ["project"]
 };
 </script>
 
 <style scoped>
+
+  #myFooter li {
+    font-size: 11px;
+  }
+
 #myFooter {
-  background-color: #3c3d41;
+  background-color: #4e4e51;
   color: white;
-  padding-top: 30px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 #myFooter .footer-copyright {
-  background-color: #333333;
+  background-color: #3a3838;
   padding-top: 3px;
   padding-bottom: 3px;
   text-align: center;
+  font-size: 13px;
 }
 
 #myFooter .row {
-  margin-bottom: 40px;
+  margin-bottom: 12px;
   text-transform: uppercase;
 }
 
-#myFooter .navbar-brand {
-  margin-top: 45px;
-  height: 65px;
-}
 
 #myFooter .footer-copyright p {
-  margin: 10px;
+  margin: 8px;
   color: #ccc;
 }
 
@@ -98,10 +100,10 @@ export default {
 }
 
 #myFooter h5 {
-  font-size: 18px;
+  font-size: 13px;
   color: white;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 20px;
   text-transform: uppercase;
 }
 
@@ -111,12 +113,12 @@ export default {
   border-bottom: 1px solid #d2d7da;
   width: 70%;
   transform: translateX(-50%);
-  bottom: -10px;
+  bottom: -5px;
   left: 50%;
 }
 
 #myFooter h2 a {
-  font-size: 50px;
+  font-size: 12px;
   text-align: center;
   color: #fff;
 }
@@ -138,7 +140,7 @@ export default {
 }
 
 #myFooter .social-networks a {
-  font-size: 25px;
+  font-size: 14px;
   color: #f9f9f9;
   padding: 10px;
   transition: 0.2s;
@@ -152,25 +154,13 @@ export default {
   color: #0077e2;
 }
 
-#myFooter .google:hover {
-  color: #ef1a1a;
-}
+
 
 #myFooter .twitter:hover {
   color: #00aced;
 }
 
-#myFooter .btn {
-  color: white;
-  background-color: #d84b6b;
-  border-radius: 20px;
-  border: none;
-  width: 150px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 10px;
-  line-height: 25px;
-}
+
 
 @media screen and (max-width: 767px) {
   #myFooter {

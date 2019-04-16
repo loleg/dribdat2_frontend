@@ -8,6 +8,7 @@ describe('HeadlineStatus.vue', () => {
         const wrapper = shallowMount(HeadlineStatus, {
             propsData: {status}
         })
-        expect(wrapper.text()).toMatch(status)
+
+        expect(wrapper.find('i').text()).toEqual(status)
     })
 })

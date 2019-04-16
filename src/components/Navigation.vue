@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style scoped>
+
 .sidebar {
   width: 180px;
   background-color: #616163;
