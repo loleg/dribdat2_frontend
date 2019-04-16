@@ -13,7 +13,6 @@
       <iframe
         class="resp-iframe"
         :src="pitch"
-        gesture="media"
         allow="encrypted-media"
         allowfullscreen
       ></iframe>
