@@ -51,5 +51,10 @@ export default {
     margin-left: 0px;
     padding: 1px 20px;
   }
+  .content-bottom {
+
+    margin-top: 70px;
+    margin-left: 1px;
+  }
 }
 </style>

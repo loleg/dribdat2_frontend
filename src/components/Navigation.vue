@@ -35,11 +35,12 @@ export default {
 </script>
 
 <style scoped>
+
 .sidebar {
   width: 180px;
   background-color: #616163;
   position: fixed;
-  height: 94%;
+  height: 100%;
   border: 1px groove #89a7af;
   border-radius: 5px;
   font-family: Verdana, Geneva, sans-serif;
