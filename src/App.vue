@@ -19,6 +19,11 @@ body {
   margin-left: 20px;
   margin-right: 20px;
   background-color: #616163;
+  background-image:url("./assets/9814.png");
+  background-size: cover;
+  background-attachment: fixed;
+
+
 }
 
 .container {
