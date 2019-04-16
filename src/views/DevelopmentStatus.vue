@@ -1,5 +1,5 @@
 <template>
-
+  <div class="content">
   <div class="developmentStatus">
 
       <edit-button :editMode="editMode"></edit-button>
@@ -59,6 +59,8 @@
       </div>
     </div>
   </div>
+  </div>
+
 </template>
 
 <script>
@@ -109,10 +111,18 @@ export default {
 </script>
 
 <style scoped>
-#headingIssues,
+  .content{
+    background-color: white;
+    opacity: 0.8;
+    width: 100%;
+    margin: 0;
+  }
+
+  #headingIssues,
 #headingContributors {
   font-family: Verdana, Geneva, sans-serif;
-  background-color: #89a7af;
+  background-color: #333333;
+
   color: #f9f9f9;
 }
 

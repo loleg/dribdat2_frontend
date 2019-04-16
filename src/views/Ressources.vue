@@ -1,4 +1,5 @@
 <template>
+  <div class="content">
   <div class="RT">
     <ListRessources :ressources="ressources"></ListRessources>
     <list-tools :tools="tools"></list-tools>
@@ -7,6 +8,7 @@
       <InfosLink class="LinkInfos" link="https://sleepy-lalande-c0efaa.netlify.com/"></InfosLink>-->
       <CommunityLink :urlCommunity="this.project.event.community_url"></CommunityLink>
     </div>
+  </div>
   </div>
 </template>
 
@@ -60,4 +62,11 @@ export default {
 </script>
 
 <style scoped>
+
+  .content{
+    background-color: white;
+    opacity: 0.8;
+    width: 100%;
+    margin: 0;
+  }
 </style>

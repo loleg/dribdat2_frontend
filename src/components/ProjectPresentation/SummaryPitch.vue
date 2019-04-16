@@ -33,6 +33,9 @@ export default {
   }
   .summary {
     margin-top: 20px;
+    text-align: justify;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
   }
 }
@@ -41,6 +44,9 @@ export default {
 @media screen and (min-width: 760px) and (max-width: 1200px) {
   .summary {
     margin-top: 35px;
+    text-align: justify;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 15px;
   }
 
@@ -53,6 +59,9 @@ export default {
 
 @media screen and (min-width: 1200px) {
   .summary {
+    text-align: justify;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
     margin-top: 20px;
   }
 }

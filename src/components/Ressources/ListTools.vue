@@ -64,7 +64,7 @@ export default {
   h3 {
     font-size: 120%;
     margin-bottom: 20px;
-    color: #f9f9f9;
+    color: #333333;
   }
   i{
     font-size: 12px;
@@ -128,7 +128,7 @@ li:hover {
 
 li a {
   text-decoration: none;
-  color: #f9f9f9;
+  color: #333333;
   display: block;
 
   -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
@@ -140,7 +140,7 @@ li a {
 
 li a:hover {
   font-size: 21px;
-  color: #019eba;
+  color: salmon;
 }
 
 /* Phone part */

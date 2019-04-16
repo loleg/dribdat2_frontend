@@ -17,10 +17,14 @@ export default {
 </script>
 
 <style scoped>
+/*
+        Part for the mobile
+     */
 
   /* GERNERAL CSS FOR EVERY DEVICE */
   div {
-    color: #f9f9f9;
+    font-size: 100%;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
 
@@ -42,6 +46,9 @@ export default {
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   div {
     font-size: 150%;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
     margin-bottom: 35px;
     margin-top: 15px;
   }
@@ -51,6 +58,8 @@ export default {
 @media screen and (min-width: 1200px) {
   div {
     font-size: 150%;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
     text-align: center;
 
   }

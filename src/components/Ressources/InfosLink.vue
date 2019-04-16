@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .title-link {
-  color: #89a7af;
+  color: #000000;
   text-decoration: underline #89a7af;
   font-family: Verdana, Geneva, sans-serif;
 }

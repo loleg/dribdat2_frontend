@@ -1,4 +1,6 @@
 <template>
+
+<div class="content">
   <div class="projectPresentation">
     <!-- for every :... we pass the data from the API -->
     <ProjectTitle :title="project.name"></ProjectTitle>
@@ -10,6 +12,9 @@
       <SocialLink class="LinkSocial" link="www.facebook.com"></SocialLink>
     </div>-->
   </div>
+
+  </div>
+
 </template>
 
 <script>
@@ -35,6 +40,15 @@ export default {
 </script>
 
 <style scoped>
+
+  .content{
+    background-color: white;
+    opacity: 0.8;
+    width: 100%;
+    margin: 0;
+  }
+
+@media screen {
   .projectPresentation {
     height: 75%;
     padding: 0;

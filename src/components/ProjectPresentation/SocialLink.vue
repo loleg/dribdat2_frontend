@@ -29,8 +29,8 @@ export default {
 
 <style scoped>
 .title-link {
-  color: #f9f9f9;
-  text-decoration: underline #89a7af;
+  color: #333333;
+  text-decoration: underline salmon;
   font-family: Verdana, Geneva, sans-serif;
   font-size: 12px;
   margin-top: 50px;

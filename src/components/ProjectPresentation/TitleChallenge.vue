@@ -28,6 +28,9 @@ export default {
 @media screen and (min-width: 300px) and (max-width: 767px) {
   .challenge-title {
     font-size: 20px;
+    text-align: center;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
     margin-bottom: 25px;
   }
 }
@@ -36,6 +39,9 @@ export default {
   .challenge-title {
 
     font-size: 30px;
+    text-align: center;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
     margin-bottom: 25px;
 
   }
@@ -44,6 +50,9 @@ export default {
 @media screen and (min-width: 1200px) {
   .challenge-title {
     font-size: 35px;
+    text-align: center;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
     margin-bottom: 75px;
   }
 }

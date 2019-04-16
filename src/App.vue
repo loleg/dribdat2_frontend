@@ -19,6 +19,7 @@ body {
   background-image:url("./assets/9814.png");
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 
 
 }
@@ -34,7 +35,8 @@ body {
 .add-feedback {
   &.open {
 
-    background-color: #fafafa;
+    background-color: #ffffff;
+    opacity: 0.8;
     padding: 18px 32px;
     border-radius: 5px;
     width: 700px;
@@ -48,7 +50,8 @@ body {
     }
   }
   transition: all 0.3s ease;
-  background-color: #bee1e2;
+  background-color: #ffffff;
+  opacity: 0.8;
   height: 100px;
   width: 100px;
   border-radius: 72px;

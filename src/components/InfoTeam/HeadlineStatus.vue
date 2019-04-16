@@ -21,7 +21,7 @@ export default {
 /*  GENERAL CSS FOR EVERY DEVICE */
 
   h2{
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
   }
@@ -38,7 +38,7 @@ export default {
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h2 {
     font-size: 180%;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
   }
@@ -48,7 +48,7 @@ export default {
 @media screen and (min-width: 1200px) {
   h2 {
     font-size: 250%;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
   }

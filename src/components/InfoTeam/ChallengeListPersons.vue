@@ -42,7 +42,7 @@ li:last-child {
 
 li a {
   text-decoration: none;
-  color: #f9f9f9;
+  color: #333333;
   display: block;
 
   -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
@@ -54,7 +54,7 @@ li a {
 
 li a:hover {
   font-size: 21px;
-  color: #019eba;
+  color: salmon;
 }
 
 li {
@@ -63,7 +63,7 @@ li {
 
 h3 {
   font-size: 110%;
-  color: #f9f9f9;
+  color: #333333;
   font-family: Verdana, Geneva, sans-serif;
   text-align: center;
 }

@@ -130,12 +130,12 @@ li:last-child {
 
 li:hover {
   font-size: 21px;
-  color: #019eba;
+  color: salmon;
 }
 
 li a {
   text-decoration: none;
-  color: #f9f9f9;
+  color: #333333;
   display: block;
 
   -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
@@ -147,13 +147,16 @@ li a {
 
 li a:hover {
   font-size: 21px;
-  color: #019eba;
+  color: salmon;
 }
 
 /* Phone part */
 @media screen and (min-width: 300px) and (max-width: 767px) {
   h3 {
     font-size: 120%;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
     margin-bottom: 20px;
   }
 }
@@ -161,6 +164,9 @@ li a:hover {
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h3 {
     font-size: 110%;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
     margin-bottom: 30px;
   }
 }
@@ -169,6 +175,9 @@ li a:hover {
 @media screen and (min-width: 1200px) {
   h3 {
     font-size: 120%;
+    color: #000000;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
     margin-bottom: 32px;
   }
 }

@@ -34,7 +34,7 @@
 
     p {
 
-        color: #f9f9f9;
+        color: #333333;
         font-family: Verdana, Geneva, sans-serif;
         font-size: 15px;
         margin-top: 45px;
