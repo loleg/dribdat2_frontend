@@ -44,7 +44,7 @@ export default {
 
 h5 {
   font-family: Verdana, Geneva, sans-serif;
-  background-color: #333333;
+  background-color: salmon;
   color: #f9f9f9;
 }
 </style>

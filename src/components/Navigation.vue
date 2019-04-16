@@ -38,14 +38,14 @@ export default {
 
 .sidebar {
   width: 180px;
-  background-color: #ffffff;
+  background-color: #f4fcfc;
   position: fixed;
   height: 100%;
-  border: 1px groove #89a7af;
-  border-radius: 5px;
+  border: 1px groove #333333;
+  border-radius: 10px;
   font-family: Verdana, Geneva, sans-serif;
   flex-flow: column;
-  opacity: 0.8;
+  opacity: 0.87;
 
 }
 
@@ -56,11 +56,14 @@ export default {
   text-decoration: none;
   border-radius: 2px;
 
+
 }
 
 .sidebar a:hover {
   background-color: #FA8072;
   color: #f9f9f9;
+  border-radius: 10px;
+
 }
 
 @media screen and (max-width: 700px) {

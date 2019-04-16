@@ -69,10 +69,12 @@ export default {
   }
 
 #myFooter {
-  background-color: #ffffff;
-  opacity: 0.7;
+  background-color: #f4fcfc;
+  opacity: 0.87;
   color: white;
   margin-top: 40px;
+  border: 1px groove #333333;
+  border-radius: 10px;
 }
 
 #myFooter .footer-copyright {
@@ -102,7 +104,7 @@ export default {
 
 #myFooter h5 {
   font-size: 13px;
-  color: #1E90FF;
+  color: salmon;
   font-weight: bold;
   margin-top: 20px;
   text-transform: uppercase;
@@ -141,7 +143,7 @@ export default {
 }
 
 #myFooter .social-networks a {
-  font-size: 14px;
+  font-size: 30px;
   color: #333333;
   padding: 10px;
   transition: 0.2s;
@@ -159,6 +161,7 @@ export default {
 
 #myFooter .twitter:hover {
   color: #00aced;
+
 }
 
 
