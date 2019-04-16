@@ -5,7 +5,6 @@
 
         <div>
             <SourceCode :link="project.source_url"></SourceCode>
-           <!-- <button class="btn btn-primary" v-on:click="openSourceUrl()">Source code</button> -->
         </div>
         <div class="container">
             <div class="add-feedback" :class="{'open': formOpen}">
@@ -28,7 +27,6 @@
     import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
     import Patreon from "../components/InfoTeam/Patreon";
     import SourceCode from "../components/InfoTeam/SourceCode";
-    import { APIService } from "../APIService";
     import { mapState } from "vuex";
 
     export default {
@@ -93,15 +91,7 @@
             };
         },
         methods: {
-            getDataActivity() {
-                APIService.getActivityList(this.project.id).then(data => {
-                    this.activities = data;
-                });
-            },
-            openSourceUrl() {
-                window.location.href = this.project.source_url;
-
-            },
+            //Get the contibutors to send in the ChallengeListPerson
             getPersons (){
                 return this.$store.state.contributors
                     .map(cont =>
@@ -115,14 +105,11 @@
         },
         created() {
             this.$store.dispatch("loadContributors")
-            this.getDataActivity();
         },
         computed: mapState(["contributors"])
     };
 </script>
 
 <style scoped>
-.open {
-    width: 100%;
-}
+
 </style>
