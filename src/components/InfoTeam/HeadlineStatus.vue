@@ -17,21 +17,24 @@ export default {
 </script>
 
 <style scoped>
-/*
-        Part for the mobile
-     */
 
-@media screen and (min-width: 300px) and (max-width: 767px) {
-  h2 {
-    font-size: 150%;
+/*  GENERAL CSS FOR EVERY DEVICE */
+
+  h2{
     color: #f9f9f9;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
   }
+
+
+/*   Part for the mobile  */
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  h2 {
+    font-size: 150%;
+  }
 }
-/*
-        Tablets part
-        */
+/*  Tablets part  */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h2 {
     font-size: 180%;
@@ -41,9 +44,7 @@ export default {
   }
 }
 
-/*
-    Part for the computer
-     */
+/*  Part for the computer */
 @media screen and (min-width: 1200px) {
   h2 {
     font-size: 250%;

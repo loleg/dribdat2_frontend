@@ -2,7 +2,7 @@
   <div>
     <h3>CHALLENGE REPRESENTED BY :</h3>
     <ul>
-      <li v-for="person in list" :key="person.key">
+      <li v-for="person in list"  :key="person.key">
         <a :href="person.link">{{ person.name }}</a>
       </li>
     </ul>
@@ -20,17 +20,11 @@ export default {
 
 <style scoped>
 
-  .text-error{
-    color: #ff9999;
-    font-style: italic;
-    font-size: 14px;
-  }
+/*  GENERAL CSS FOR EVERY DEVICE  */
 
 ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
-  margin-bottom: 35px;
 }
 
 li {
@@ -67,41 +61,33 @@ li {
   width: 100%;
 }
 
-/*
-      Part for the mobile
-   */
+h3 {
+  font-size: 110%;
+  color: #f9f9f9;
+  font-family: Verdana, Geneva, sans-serif;
+  text-align: center;
+}
+
+/*  part for the mobile  */
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
   h3 {
-    font-size: 110%;
-    color: #f9f9f9;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
+
     margin-bottom: 20px;
   }
 }
-/*
-    Tablets part
-    */
+/*  Tablets part  */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h3 {
-    font-size: 100%;
-    color: #f9f9f9;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
+
     margin-bottom: 30px;
   }
 }
 
-/*
-Part for the computer
- */
+/*   Part for the computer  */
 @media screen and (min-width: 1200px) {
   h3 {
-    font-size: 110%;
-    color: #f9f9f9;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
+
     margin-bottom: 32px;
   }
 }
