@@ -39,7 +39,7 @@ export default {
   width: 180px;
   background-color: #616163;
   position: fixed;
-  height: 100%;
+  height: 94%;
   border: 1px groove #89a7af;
   border-radius: 5px;
   font-family: Verdana, Geneva, sans-serif;

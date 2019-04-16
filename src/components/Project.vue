@@ -4,9 +4,12 @@
 
     <div class="content">
       <router-view :project="custom_project"></router-view>
-      <Footer :project="custom_project"></Footer>
+
     </div>
-    
+    <div class="content-bottom">
+    <Footer :project="custom_project"></Footer>
+    </div>
+
   </div>
 </template>
 
@@ -35,6 +38,12 @@ export default {
 .content {
   margin-left: 200px;
   padding: 1px 20px;
+}
+
+.content-bottom {
+
+  margin-top: 70px;
+  margin-left: 210px;
 }
 
 @media screen and (max-width: 700px) {

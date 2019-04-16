@@ -83,7 +83,7 @@ export default {
 }
 
 #myFooter .row {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-transform: uppercase;
 }
 
@@ -103,7 +103,7 @@ export default {
   font-size: 13px;
   color: white;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 20px;
   text-transform: uppercase;
 }
 
@@ -113,7 +113,7 @@ export default {
   border-bottom: 1px solid #d2d7da;
   width: 70%;
   transform: translateX(-50%);
-  bottom: -10px;
+  bottom: -5px;
   left: 50%;
 }
 
