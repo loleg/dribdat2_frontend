@@ -1,11 +1,11 @@
 <template>
-  <div class="summary">
+  <div >
     <h3>Summary :</h3>
     <!-- USED IF WE NEED TO EDIT THE SUMMARY
 
     <p v-if="!editMode">{{ summary }}</p>
      <input type="text" v-model="summary" v-if="editMode" placeholder="Description of the challenge">-->
-    <p>{{ summary }}</p>
+    <p align="left"> {{ summary }}</p>
 
   </div>
 </template>
@@ -17,52 +17,37 @@ export default {
 };
 </script>
 
+
+
 <style scoped>
   /* GENERAL CSS FOR EVERY DEVICE */
-  .summary {
-    text-align: justify;
-    color: #f9f9f9;
+
+  h3 {
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  p {
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
   }
 
 /*  Part for the mobile  */
 
-@media screen and (min-width: 300px) and (max-width: 760px) {
-  h3 {
-    font-size: 16px;
-  }
-  .summary {
-    margin-top: 20px;
-    text-align: justify;
-    color: #333333;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 12px;
+@media screen and (min-width: 300px) and (max-width: 767px) {
+
+  p {
+    font-size: 90%;
   }
 }
 
 /*  Tablets part  */
-@media screen and (min-width: 760px) and (max-width: 1200px) {
-  .summary {
-    margin-top: 35px;
-    text-align: justify;
-    color: #333333;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 15px;
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  p {
+    font-size: 105%;
   }
 
-  h3 {
-    font-size: 20px;
-  }
 }
 
-/*  Part for the computer  */
 
-@media screen and (min-width: 1200px) {
-  .summary {
-    text-align: justify;
-    color: #333333;
-    font-family: Verdana, Geneva, sans-serif;
-    margin-top: 20px;
-  }
-}
 </style>

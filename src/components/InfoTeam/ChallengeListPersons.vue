@@ -61,12 +61,7 @@ li {
   width: 100%;
 }
 
-h3 {
-  font-size: 110%;
-  color: #333333;
-  font-family: Verdana, Geneva, sans-serif;
-  text-align: center;
-}
+
 
 /*  part for the mobile  */
 
