@@ -130,8 +130,6 @@ export default {
     color: #ffffff;
     background-color: #6c757d;
     border-radius: 5px;
-
-
 }
 
 
