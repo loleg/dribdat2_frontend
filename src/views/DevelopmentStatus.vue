@@ -44,7 +44,7 @@
               aria-expanded="false"
               aria-controls="collapse-contributors"
             >Contributors</a>
-        
+
         </div>
         <div
           id="collapse-contributors"
