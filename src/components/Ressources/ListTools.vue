@@ -24,11 +24,13 @@
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>-->
     <i v-if="!tools.length">There are no tools at the moment</i>
+    <div class="list">
     <ul>
       <li v-for="tool in tools" :key="tool.key">
         <a :href="tool.link">{{ tool.name }}</a>
       </li>
     </ul>
+    </div>
   </div>
 </template>
 
@@ -89,55 +91,6 @@ select {
   box-sizing: border-box;
 }
 */
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 35px;
-}
-
-li {
-  font: 200 18px/1.5 Verdana, Geneva, sans-serif;
-  border-bottom: 1px solid #ccc;
-  height: 38px;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: #f9f9f9;
-  display: block;
-
-  -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -o-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
-  transition: font-size 0.2s ease, background-color 0.2s ease;
-}
-
-li:last-child {
-  border: none;
-}
-
-li:hover {
-  font-size: 21px;
-  color: #019eba;
-}
-
-li a {
-  text-decoration: none;
-  color: #333333;
-  display: block;
-
-  -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -o-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
-  transition: font-size 0.2s ease, background-color 0.2s ease;
-}
-
-li a:hover {
-  font-size: 21px;
-  color: salmon;
-}
 
 /* Phone part */
 @media screen and (min-width: 300px) and (max-width: 767px) {

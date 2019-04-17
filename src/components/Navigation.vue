@@ -36,6 +36,13 @@ export default {
 
 <style scoped>
 
+  :root{
+    --salmon-color: salmon;
+    --color-title-text:33333 ;
+    --font-family: Verdana, Geneva, sans-serif ;
+    --black-color: black;
+  }
+
 .sidebar {
   width: 180px;
   background-color: #f4fcfc;
@@ -43,7 +50,7 @@ export default {
   height: 100%;
   border: 1px groove #333333;
   border-radius: 10px;
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: var(--font-family);
   flex-flow: column;
   opacity: 0.87;
 
@@ -51,7 +58,7 @@ export default {
 
 .sidebar a {
   display: block;
-  color: #000000;
+  color: var(--black-color);
   padding: 15px;
   text-decoration: none;
   border-radius: 2px;
@@ -59,14 +66,14 @@ export default {
 }
 
 .sidebar a:hover {
-  background-color: #FA8072;
+  background-color: var(--salmon-color);
   color: #f9f9f9;
   border-radius: 10px;
 
 }
 
 .sidebar a:focus{
-  background-color: salmon;
+  background-color: var(--salmon-color);
   color: #f9f9f9;
   border-radius: 10px;
 

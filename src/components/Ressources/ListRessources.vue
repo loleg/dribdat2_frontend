@@ -25,14 +25,16 @@
       <input type="text" v-model="ressource" placeholder="Insert a new ressources">
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>-->
+    <div class="list">
     <ul>
       <!-- If we don't have resources, warning message -->
-      <i v-if="!ressources.length">There are no resources at the moment</i>
+      <i class="text-error" v-if="!ressources.length">There are no resources at the moment</i>
       <li v-for="ressource in ressources" :key="ressource.key">
         <a :href="ressource.link">{{ ressource.name }}</a>
 
       </li>
     </ul>
+  </div>
   </div>
 </template>
 
@@ -71,15 +73,9 @@ export default {
     color: #ffffff;
     background-color: #6c757d;
     border-radius: 5px;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
   }
 
-  i{
-    font-size: 12px;
-    font-family: Verdana, Geneva, sans-serif;
-    color: #ff9999;
-  }
+
 .ressources {
   margin-top: 20px;
 }
@@ -103,84 +99,12 @@ select {
 }
   */
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 35px;
-}
 
-li {
-  font: 200 18px/1.5 Verdana, Geneva, sans-serif;
-  border-bottom: 1px solid #ccc;
-  height: 38px;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: #f9f9f9;
-  display: block;
-
-  -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -o-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
-  transition: font-size 0.2s ease, background-color 0.2s ease;
-}
-
-li:last-child {
-  border: none;
-}
-
-li:hover {
-  font-size: 21px;
-  color: salmon;
-}
-
-li a {
-  text-decoration: none;
-  color: #333333;
-  display: block;
-
-  -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -o-transition: font-size 0.2s ease, background-color 0.2s ease;
-  -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
-  transition: font-size 0.2s ease, background-color 0.2s ease;
-}
-
-li a:hover {
-  font-size: 21px;
-  color: salmon;
-}
-
-/* Phone part */
-@media screen and (min-width: 300px) and (max-width: 767px) {
-  h3 {
-    font-size: 120%;
-    color: #333333;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-}
-/* Tablets part */
-@media screen and (min-width: 767px) and (max-width: 1200px) {
-  h3 {
-    font-size: 110%;
-    color: #333333;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-}
 
 /* Part for the computer */
 @media screen and (min-width: 1200px) {
   h3 {
-    font-size: 120%;
     color: #000000;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 32px;
   }
 }
