@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>CHALLENGE REPRESENTED BY :</h3>
+    <h2>Challenge represented by : </h2>
     <ul>
       <li v-for="person in list"  :key="person.key">
         <a :href="person.link">{{ person.name }}</a>
@@ -21,6 +21,8 @@ export default {
 <style scoped>
 
 /*  GENERAL CSS FOR EVERY DEVICE  */
+
+
 
 ul {
   list-style-type: none;
@@ -66,14 +68,14 @@ li {
 /*  part for the mobile  */
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
-  h3 {
+  h2 {
 
     margin-bottom: 20px;
   }
 }
 /*  Tablets part  */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
-  h3 {
+  h2 {
 
     margin-bottom: 30px;
   }
@@ -81,7 +83,7 @@ li {
 
 /*   Part for the computer  */
 @media screen and (min-width: 1200px) {
-  h3 {
+  h2 {
 
     margin-bottom: 32px;
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="ressources">
-    <h3>RESSOURCES USED DURING THIS CHALLENGE</h3>
+    <h2>Ressources used during this challenge : </h2>
 
     <!-- USED IF THE EDIT MODE
 
@@ -66,8 +66,11 @@ export default {
 <style scoped>
 
   /* GENERAL CSS FOR EVERY DEVICE */
-  h3 {
-    color: #f9f9f9;
+
+  h2 {
+    color: #ffffff;
+    background-color: #6c757d;
+    border-radius: 5px;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
   }
