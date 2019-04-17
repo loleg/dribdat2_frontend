@@ -131,6 +131,4 @@ export default {
     background-color: #6c757d;
     border-radius: 5px;
 }
-
-
 </style>
