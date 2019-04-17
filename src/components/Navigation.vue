@@ -56,7 +56,6 @@ export default {
   text-decoration: none;
   border-radius: 2px;
 
-
 }
 
 .sidebar a:hover {
@@ -65,6 +64,18 @@ export default {
   border-radius: 10px;
 
 }
+
+.sidebar a:focus{
+  background-color: salmon;
+  color: #f9f9f9;
+  border-radius: 10px;
+
+}
+
+
+
+
+
 
 @media screen and (max-width: 700px) {
   .sidebar {
@@ -83,6 +94,8 @@ export default {
     float: left;
     padding: 8px;
   }
+
+
 
   .textHide {
     font-size: 0px;

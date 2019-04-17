@@ -2,13 +2,14 @@
   <div class="content">
   <div class="developmentStatus">
 
-      <edit-button :editMode="editMode"></edit-button>
+     <!-- <edit-button :editMode="editMode"></edit-button> -->
+    <h1>Development status </h1>
 
     <project-progress-bar :current-step="project.progress"></project-progress-bar>
     <div id="accordion">
       <div class="card">
         <div class="card-header" id="headingIssues">
-          <h5>
+          <h2>
             <a
               class="card-link"
               v-on:click="loadIssues()"
@@ -17,7 +18,7 @@
               aria-expanded="false"
               aria-controls="collapse-issues"
             >Open Issues</a>
-          </h5>
+          </h2>
         </div>
         <div
           id="collapse-issues"
@@ -68,7 +69,7 @@ import { mapState } from "vuex";
 import ContributionsBadge from "../components/DevelopementStatus/contributionsBadge";
 import IssuesBadge from "../components/DevelopementStatus/issuesBadge";
 import ProjectProgressBar from "../components/DevelopementStatus/projectProgressBar";
-import EditButton from "../components/EditButton";
+//import EditButton from "../components/EditButton";
 
 export default {
 
@@ -84,7 +85,7 @@ export default {
     ProjectProgressBar,
     IssuesBadge,
     ContributionsBadge,
-    EditButton
+    //EditButton
   },
   props: ["project"],
   data: () => {
@@ -126,10 +127,8 @@ export default {
   #headingIssues,
 #headingContributors {
   font-family: Verdana, Geneva, sans-serif;
-  background-color: #333333;
-
-  color: #f9f9f9;
+    color: #ffffff;
+    background-color: #6c757d;
+    border-radius: 5px;
 }
-
-
 </style>
