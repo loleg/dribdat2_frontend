@@ -154,13 +154,13 @@ export default {
 }
 
 #myFooter .facebook:hover {
-  color: #0077e2;
+  color: #FA8072;
 }
 
 
 
 #myFooter .twitter:hover {
-  color: #00aced;
+  color: #FA8072;
 
 }
 
