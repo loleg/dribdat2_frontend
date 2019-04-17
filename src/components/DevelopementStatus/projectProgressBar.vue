@@ -1,11 +1,12 @@
 <template>
+  <div id="projectProgressBar" >
   <div id="projectProgressBar">
     <h2 >Progress</h2>
     <div class="card">
       <div class="card-body d-flex flex-column justify-content-between">
-        <stepper :steps="steps" :current-step="currentStep"></stepper>
+        <stepper :steps="steps" :current-step="currentStep" v-on:setDisqusStep="onDisqusStep"></stepper>
 
-        <challenge-feedback :id="1"></challenge-feedback>
+        <challenge-feedback v-show="!isDisqusHidden" ref="disqusComponent" :id="disqusStep" :uniqueUrl="this.$route.fullPath" :title="steps[disqusStep]"></challenge-feedback>
       </div>
     </div>
   </div>
@@ -20,6 +21,8 @@ export default {
   props: ["currentStep"],
   data: function() {
     return {
+        isDisqusHidden: true,
+        disqusStep: 0,
       steps: [
         "Idea or challenge description",
         "Team has formed and started a project",
@@ -30,6 +33,23 @@ export default {
         "Project is live an publicly available"
       ]
     };
+  },
+  methods: {
+      onDisqusStep: function (step){
+          this.disqusStep = step
+          console.log('discusStep' + this.disqusStep + ' currentStep' + this.currentStep)
+          if(this.disqusStep >= this.currentStep) {
+              this.isDisqusHidden = true
+          }
+          else {
+              this.isDisqusHidden = false
+              let newIdentifier = this.$route.fullPath + /step/ + step
+              let newUrl = 'http://dribdat' + this.$route.fullPath + /step/ + step;
+
+              this.$refs.disqusComponent.reset(newIdentifier, newUrl, 'Step ' + step, 'en')
+          }
+
+      },
   }
 };
 </script>
