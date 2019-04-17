@@ -9,7 +9,7 @@
     <div id="accordion">
       <div class="card">
         <div class="card-header" id="headingIssues">
-          <h2>
+
             <a
               class="card-link"
               v-on:click="loadIssues()"
@@ -18,7 +18,7 @@
               aria-expanded="false"
               aria-controls="collapse-issues"
             >Open Issues</a>
-          </h2>
+
         </div>
         <div
           id="collapse-issues"
@@ -35,7 +35,7 @@
       </div>
       <div class="card">
         <div class="card-header" id="headingContributors">
-          <h5>
+
             <a
               class="card-link"
               v-on:click="loadContributors()"
@@ -44,7 +44,7 @@
               aria-expanded="false"
               aria-controls="collapse-contributors"
             >Contributors</a>
-          </h5>
+        
         </div>
         <div
           id="collapse-contributors"
@@ -130,5 +130,43 @@ export default {
     color: #ffffff;
     background-color: #6c757d;
     border-radius: 5px;
-}
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 140%;
+    padding: 10px;
+
+  }
+
+  @media screen and (min-width: 300px) and (max-width: 767px) {
+    #headingIssues {
+      font-size: 100%;
+    }
+  }
+
+  /*  Tablets part  */
+  @media screen and (min-width: 767px) and (max-width: 1200px) {
+    #headingIssues {
+      font-size: 100%;
+    }
+  }
+
+  @media screen and (min-width: 300px) and (max-width: 767px) {
+    #headingContributors {
+      font-size: 100%;
+    }
+  }
+
+  /*  Tablets part  */
+  @media screen and (min-width: 767px) and (max-width: 1200px) {
+    #headingContributors{
+      font-size: 100%;
+    }
+  }
+
+
+
+
+
+
+
 </style>
