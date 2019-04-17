@@ -115,9 +115,6 @@
     opacity: 0.87;
     width: 100%;
     margin: 0;
-    -webkit-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
-    box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
     border: 1px groove #333333;
     border-radius: 10px;
   }
