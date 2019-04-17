@@ -4,7 +4,6 @@
     <div class="card">
       <div class="card-body d-flex flex-column justify-content-between">
         <stepper :steps="steps" :current-step="currentStep" v-on:setDisqusStep="onDisqusStep"></stepper>
-
         <challenge-feedback v-show="!isDisqusHidden" ref="disqusComponent" :id="disqusStep" :uniqueUrl="this.$route.fullPath" :title="steps[disqusStep]"></challenge-feedback>
       </div>
     </div>
