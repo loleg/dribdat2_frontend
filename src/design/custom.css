@@ -2,6 +2,15 @@
   DEFAULT BOOTSTRAP STYLES
 **************************/
 
+/*
+    DIFFRENT GENERAL ITEM
+ */
+:root{
+--color-title-text: 333333;
+}
+/*
+* CUSTOM FOR THE BUTTON
+ */
 .btn {
     display: inline-block;
     padding: 6px 12px;
@@ -43,3 +52,58 @@
     border-color: #ffffff;
     ;
 }
+
+/*
+* CUSTOM FOR THE DIFFERENT TITLE
+ */
+
+
+
+
+h1{
+    color: var(--color-title-text);
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-size: 300%;
+
+}
+h2{
+    color: var(--color-title-text);
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-size: 250%;
+}
+
+
+/*   Part for the mobile  */
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+    h2 {
+        font-size: 170%;
+    }
+}
+/*  Tablets part  */
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+    h2 {
+        font-size: 220%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -73,6 +73,10 @@ export default {
     border: none;
     flex-flow: row;
     justify-content: space-between;
+    margin-bottom: 20px;
+    border: 1px groove #333333;
+    border-radius: 10px;
+
   }
 
   .sidebar a {

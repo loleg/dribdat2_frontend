@@ -17,25 +17,12 @@ export default {
 </script>
 
 <style scoped>
-/*
-        Part for the mobile
-     */
 
-  /* GERNERAL CSS FOR EVERY DEVICE */
-  div {
-    font-size: 100%;
-    color: #333333;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
-
-  }
 /* Part for the mobile */
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
   div {
     font-size: 100%;
-    margin-bottom: 25px;
-
   }
 
   h1{
@@ -45,10 +32,10 @@ export default {
 /* Tablets part */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   div {
-    font-size: 150%;
+    /*font-size: 150%;
     color: #333333;
     font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
+    text-align: center;*/
     margin-bottom: 35px;
     margin-top: 15px;
   }
@@ -57,10 +44,10 @@ export default {
 /* part for the computer  */
 @media screen and (min-width: 1200px) {
   div {
-    font-size: 150%;
+   /* font-size: 150%;
     color: #333333;
     font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
+    text-align: center;*/
 
   }
 }

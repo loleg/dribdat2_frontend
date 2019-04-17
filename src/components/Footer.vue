@@ -66,6 +66,7 @@ export default {
 
   #myFooter li {
     font-size: 11px;
+
   }
 
 #myFooter {
@@ -75,6 +76,7 @@ export default {
   margin-top: 40px;
   border: 1px groove #333333;
   border-radius: 10px;
+  height: 75%;
 }
 
 #myFooter .footer-copyright {

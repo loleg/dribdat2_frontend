@@ -1,6 +1,8 @@
 <template>
   <div id="project">
+    <div class="content-top">
     <navigation :id="this.id"></navigation>
+    </div>
 
     <div class="content">
       <router-view :project="custom_project"></router-view>
@@ -35,6 +37,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .content {
   margin-left: 200px;
   padding: 1px 20px;
@@ -42,19 +46,26 @@ export default {
 
 .content-bottom {
 
-  margin-top: 70px;
-  margin-left: 210px;
+  /*margin-top: 70px;
+  margin-left: 210px;*/
+  margin-left: 200px;
+  padding: 1px 20px;
 }
 
 @media screen and (max-width: 700px) {
   .content {
-    margin-left: 0px;
+    margin: 0 auto;
     padding: 1px 20px;
   }
   .content-bottom {
 
-    margin-top: 70px;
+    margin-top: 20px;
     margin-left: 1px;
+  }
+  .content-top{
+    margin-top: 20px;
+    margin-left: 18px;
+    margin-right: 18px;
   }
 }
 </style>
