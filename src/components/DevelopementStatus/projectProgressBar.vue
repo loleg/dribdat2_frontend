@@ -6,7 +6,7 @@
       <div class="card-body d-flex flex-column justify-content-between">
         <stepper :steps="steps" :current-step="currentStep" v-on:setDisqusStep="onDisqusStep"></stepper>
 
-        <challenge-feedback ref="disqusComponent" :id="disqusStep"></challenge-feedback>
+        <challenge-feedback v-show="!isDisqusHidden" ref="disqusComponent" :id="disqusStep" :uniqueUrl="this.$route.fullPath" :title="steps[disqusStep]"></challenge-feedback>
       </div>
     </div>
   </div>
@@ -21,7 +21,8 @@ export default {
   props: ["currentStep"],
   data: function() {
     return {
-        disqusStep: 1,
+        isDisqusHidden: true,
+        disqusStep: 0,
       steps: [
         "Idea or challenge description",
         "Team has formed and started a project",
@@ -35,9 +36,19 @@ export default {
   },
   methods: {
       onDisqusStep: function (step){
-          console.log(this.$route.fullPath)
           this.disqusStep = step
-          this.$refs.disqusComponent.reset('newid' + step, 'http://example.com/unique-path-to-article1/', 'Step ' + step, 'en')
+          console.log('discusStep' + this.disqusStep + ' currentStep' + this.currentStep)
+          if(this.disqusStep >= this.currentStep) {
+              this.isDisqusHidden = true
+          }
+          else {
+              this.isDisqusHidden = false
+              let newIdentifier = this.$route.fullPath + /step/ + step
+              let newUrl = 'http://dribdat' + this.$route.fullPath + /step/ + step;
+
+              this.$refs.disqusComponent.reset(newIdentifier, newUrl, 'Step ' + step, 'en')
+          }
+
       },
   }
 };
