@@ -1,7 +1,6 @@
 <template>
-  <div id="projectProgressBar" >
   <div id="projectProgressBar">
-    <h2 >Progress</h2>
+    <h2>Progress</h2>
     <div class="card">
       <div class="card-body d-flex flex-column justify-content-between">
         <stepper :steps="steps" :current-step="currentStep" v-on:setDisqusStep="onDisqusStep"></stepper>
