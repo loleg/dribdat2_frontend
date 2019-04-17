@@ -17,7 +17,7 @@
                     data-target="#collapse-issues"
                     aria-expanded="false"
                     aria-controls="collapse-issues"
-            ><h2>Open Issues</h2></a>
+            >Open Issues</a>
 
           </div>
           <div
@@ -42,7 +42,7 @@
                     data-target="#collapse-contributors"
                     aria-expanded="false"
                     aria-controls="collapse-contributors"
-            ><h2>Contributors</h2></a>
+            >Contributors</a>
           </div>
           <div
                   id="collapse-contributors"
@@ -144,7 +144,7 @@
   /*  Tablets part  */
   @media screen and (min-width: 767px) and (max-width: 1200px) {
     #headingIssues {
-      font-size: 100%;
+      font-size: 120%;
     }
   }
 
@@ -157,15 +157,9 @@
   /*  Tablets part  */
   @media screen and (min-width: 767px) and (max-width: 1200px) {
     #headingContributors{
-      font-size: 100%;
+      font-size: 120%;
     }
   }
-
-  h2{
-      margin: -10px;
-  }
-
-
 
 
 
