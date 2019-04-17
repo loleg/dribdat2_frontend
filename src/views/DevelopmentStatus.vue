@@ -17,7 +17,7 @@
                     data-target="#collapse-issues"
                     aria-expanded="false"
                     aria-controls="collapse-issues"
-            >Open Issues</a>
+            ><h2>Open Issues</h2></a>
 
           </div>
           <div
@@ -42,7 +42,7 @@
                     data-target="#collapse-contributors"
                     aria-expanded="false"
                     aria-controls="collapse-contributors"
-            >Contributors</a>
+            ><h2>Contributors</h2></a>
           </div>
           <div
                   id="collapse-contributors"
@@ -161,6 +161,9 @@
     }
   }
 
+  h2{
+      margin: -10px;
+  }
 
 
 

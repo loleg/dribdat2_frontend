@@ -8,6 +8,8 @@
 :root{
 --color-title-text: 333333;
 --font-family: Verdana, Geneva, sans-serif;
+--salmon-color : salmon;
+--white-color: white;
 }
 /*
 * CUSTOM FOR THE BUTTON
@@ -40,17 +42,17 @@
 }
 
 .btn-primary {
-    color: #ffffff;
+    color: var(--white-color);
     background-color: #333333;
     border-color: #333333;
 }
 
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
-    color: #ffffff;
-    background-color: salmon;
+    color: var(--white-color);
+    background-color: var(--salmon-color);
     ;
-    border-color: #ffffff;
+    border-color: var(--salmon-color);
     ;
 }
 
@@ -70,18 +72,7 @@ h1{
     font-size: 250%;
 
 }
-/* Second title */
-h2 {
-    color: #ffffff;
-    font-family: var(--font-family);
-    text-align: center;
-    margin-bottom: 25px;
-    margin-top: 25px;
-    font-size: 140%;
-    background-color: #6c757d;
-    padding: 10px;
-    border-radius: 5px;
-}
+
 
 
 
@@ -98,12 +89,23 @@ h2 {
 /*  Tablets part  */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
     h1 {
-        font-size: 160%;
+        font-size: 220%;
+
     }
 }
 
-
-
+/* Second title */
+h2 {
+    color: var(--white-color);
+    font-family: var(--font-family);
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-size: 140%;
+    background-color: #6c757d;
+    padding: 10px;
+    border-radius: 5px;
+}
 /*   Part for the mobile  */
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
@@ -114,7 +116,7 @@ h2 {
 /*  Tablets part  */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
     h2 {
-        font-size: 100%;
+        font-size: 120%;
     }
 }
 
@@ -136,6 +138,69 @@ h3 {
         font-size: 130%;
     }
 }
+h5 {
+    font-family: var(--font-family);
+    color: var(--white-color);
+    background-color: #6c757d;
+}
+/* warning message*/
+.text-error{
+    font-size: 12px;
+    font-family: var(--font-family);
+    color: var(--salmon-color);
+}
+
+/* CUSTOM LIST */
+.list ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 35px;
+}
+
+.list li {
+    font: 200 18px/1.5 var(--font-family);
+    border-bottom: 1px solid #ccc;
+    height: 38px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--color-title-text);
+    display: block;
+
+    -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
+    -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
+    -o-transition: font-size 0.2s ease, background-color 0.2s ease;
+    -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
+    transition: font-size 0.2s ease, background-color 0.2s ease;
+}
+
+.list li:last-child {
+    border: none;
+}
+
+.list li:hover {
+    font-size: 21px;
+    color: var(--salmon-color);
+}
+
+.list li a {
+    text-decoration: none;
+    color: var(--color-title-text);
+    display: block;
+
+    -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
+    -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
+    -o-transition: font-size 0.2s ease, background-color 0.2s ease;
+    -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
+    transition: font-size 0.2s ease, background-color 0.2s ease;
+}
+
+.list li a:hover {
+    font-size: 21px;
+    color: var(--salmon-color);
+}
+
 
 
 

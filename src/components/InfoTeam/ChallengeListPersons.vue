@@ -1,11 +1,13 @@
 <template>
   <div>
     <h2>Challenge represented by : </h2>
+    <div class="list">
     <ul>
       <li v-for="person in list"  :key="person.key">
         <a :href="person.link">{{ person.name }}</a>
       </li>
     </ul>
+    </div>
     </div>
 
 </template>

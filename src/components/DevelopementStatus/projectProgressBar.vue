@@ -56,12 +56,8 @@ export default {
 #projectProgressBar {
   margin-top: 5%;
   margin-bottom: 5%;
-  font-family: Verdana, Geneva, sans-serif;
 }
 
-h5 {
-  font-family: Verdana, Geneva, sans-serif;
-  color: #ffffff;
-  background-color: #6c757d;
-}
+
+
 </style>
