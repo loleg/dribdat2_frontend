@@ -96,6 +96,7 @@ body {
     text-align: center;
     color: #2c3e50;
 
+    
     padding: 0 auto;
     margin-left: 250px;
     margin-right: 250px;
