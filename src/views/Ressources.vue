@@ -1,5 +1,6 @@
 <template>
   <div class="content">
+    <h1>Ressources and tools</h1>
   <div class="RT">
     <ListRessources :ressources="ressources"></ListRessources>
     <list-tools :tools="tools"></list-tools>

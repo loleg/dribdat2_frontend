@@ -1,6 +1,6 @@
 <template>
   <div class="tools">
-    <h3>TOOLS USED DURING THIS CHALLENGE</h3>
+    <h2>Tools used during this challenge : </h2>
     <!--
           USED FOR THE EDIT MODE
 
@@ -61,11 +61,7 @@ export default {
 <style scoped>
 
   /* GENERAL CSS FOR EVERY DEVICE */
-  h3 {
-    font-size: 120%;
-    margin-bottom: 20px;
-    color: #333333;
-  }
+
   i{
     font-size: 12px;
     font-family: Verdana, Geneva, sans-serif;

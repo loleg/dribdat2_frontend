@@ -1,8 +1,7 @@
 <template>
   <div id="projectProgressBar">
+    <h2 >Progress</h2>
     <div class="card">
-      <h5 class="card-header">Progress</h5>
-
       <div class="card-body d-flex flex-column justify-content-between">
         <stepper :steps="steps" :current-step="currentStep"></stepper>
 
@@ -44,7 +43,7 @@ export default {
 
 h5 {
   font-family: Verdana, Geneva, sans-serif;
-  background-color: salmon;
-  color: #f9f9f9;
+  color: #ffffff;
+  background-color: #6c757d;
 }
 </style>

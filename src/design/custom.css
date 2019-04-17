@@ -65,33 +65,52 @@ h1{
     color: var(--color-title-text);
     font-family: var(--font-family);
     text-align: center;
-    margin-bottom: 25px;
-    margin-top: 25px;
-    font-size: 300%;
+    margin-bottom: 35px;
+    margin-top: 35px;
+    font-size: 250%;
 
 }
 /* Second title */
-h2{
-    color: var(--color-title-text);
+h2 {
+    color: #ffffff;
     font-family: var(--font-family);
     text-align: center;
     margin-bottom: 25px;
     margin-top: 25px;
-    font-size: 250%;
+    font-size: 140%;
+    background-color: #6c757d;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 
 /*   Part for the mobile  */
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
+    h1 {
+        font-size: 200%;
+    }
+}
+/*  Tablets part  */
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+    h1 {
+        font-size: 160%;
+    }
+}
+
+
+
+/*   Part for the mobile  */
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
     h2 {
-        font-size: 170%;
+        font-size: 100%;
     }
 }
 /*  Tablets part  */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
     h2 {
-        font-size: 220%;
+        font-size: 100%;
     }
 }
 
