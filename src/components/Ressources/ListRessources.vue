@@ -1,6 +1,6 @@
 <template>
   <div class="ressources">
-    <h2>Ressources used during this challenge : </h2>
+    <h2>Resources used during this challenge : </h2>
 
     <!-- USED IF THE EDIT MODE
 

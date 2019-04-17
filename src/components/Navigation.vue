@@ -21,7 +21,7 @@
     <a>
       <router-link :to="{ name: 'ressources', params: { id:id }}">
         <font-awesome-icon icon="link"/>
-        <p class="textHide">Ressources</p>
+        <p class="textHide">Resources</p>
       </router-link>
     </a>
   </div>
@@ -78,11 +78,6 @@ export default {
   border-radius: 10px;
 
 }
-
-
-
-
-
 
 @media screen and (max-width: 700px) {
   .sidebar {
