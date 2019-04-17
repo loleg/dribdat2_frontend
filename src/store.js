@@ -19,10 +19,11 @@ export default new Vuex.Store({
             name: "getaround.io",
             summary: "We want to get people to be more concerned about their health. The average person does not exercise enough. With this project we hope to motivate people to be more active.",
             challenge: {
-                name: "Help people be more active"
+                //name: "Help people be more active"
+                name: ""
             },
             id: 1,
-            pitch: "'https://www.youtube.com/watch?v=Vh5FW5hSZyI'",
+            pitch: "'https://www.youtube.com/embed/0lwOmIHcSno'",
             phase: 4,
             status: "Looking for designers",
             event: {
@@ -37,33 +38,33 @@ export default new Vuex.Store({
         editMode: false
     },
     mutations: {
-        SET_CONTRIBUTORS(state, contributors) {
+        SET_CONTRIBUTORS (state, contributors) {
             state.contributors = contributors
         },
-        SET_ISSUES(state, issues) {
+        SET_ISSUES (state, issues) {
             state.issues = issues
         },
-        SET_PROJECT(state, project) {
+        SET_PROJECT (state, project) {
             state.project = project
         },
-        SET_CUSTOM_PROJECT(state, custom_project) {
+        SET_CUSTOM_PROJECT (state, custom_project) {
             state.custom_project = custom_project.project
-            state.custom_project.challenge = {name: 'Help people create awesome hackathons'} //TODO challenge has to be provided by the API
+            state.custom_project.challenge = {name: ''}
             state.custom_project.event = custom_project.event
-            //state.custom_project.pitch = 'http://example.com' //TODO pitch has to be provided by the API
+            state.custom_project.pitch = 'https://www.youtube.com/embed/0lwOmIHcSno' //TODO pitch has to be provided by the API
         },
-        SET_PROJECT_LIST(state, projectList) {
+        SET_PROJECT_LIST (state, projectList) {
             state.projectList = projectList;
         },
-        SET_EDITABLE(state, editMode) {
+        SET_EDITABLE (state, editMode) {
             state.editMode = editMode;
         },
-        SET_PROJECT_PROGRESS(state, progress) {
+        SET_PROJECT_PROGRESS (state, progress) {
             state.custom_project.progress = progress
         }
     },
     actions: {
-        loadContributors({commit, state}) {
+        loadContributors ({ commit, state }) {
             axios
                 .get(github_apiURL
                     + state.custom_project.source_url.replace('https://github.com', '')
@@ -73,7 +74,7 @@ export default new Vuex.Store({
                     commit('SET_CONTRIBUTORS', contributors)
                 })
         },
-        loadIssues({commit, state}) {
+        loadIssues ({ commit, state }) {
             axios
                 .get(github_apiURL
                     + state.custom_project.source_url.replace('https://github.com', '')
@@ -83,7 +84,7 @@ export default new Vuex.Store({
                     commit('SET_ISSUES', issues)
                 })
         },
-        loadProject({commit}) {
+        loadProject ({ commit }) {
             axios
                 .get('http://127.0.0.1:5000/api/project/' + '1' + '/info.json')
                 .then(r => r.data)
@@ -91,7 +92,7 @@ export default new Vuex.Store({
                     commit('SET_PROJECT', project)
                 })
         },
-        loadCustomProject({commit}, id) {
+        loadCustomProject ({ commit }, id) {
             axios
                 .get('http://127.0.0.1:5000/api/project/' + id + '/info.json')
                 .then(r => r.data)
@@ -99,13 +100,13 @@ export default new Vuex.Store({
                     commit('SET_CUSTOM_PROJECT', custom_project)
                 })
         },
-        loadProjectList({commit},event) {
+        loadProjectList ({ commit }, event) {
             let eventId = event || 'current'
 
             var url = `${Backend_API_URL}/event/${eventId}/challenges.json`
 
-            if(eventId === 'current'){
-                url = `${Backend_API_URL}/event/current/challenges.json` ;
+            if (eventId === 'current') {
+                url = `${Backend_API_URL}/event/current/challenges.json`;
             }
 
             axios
@@ -121,17 +122,17 @@ export default new Vuex.Store({
                     commit('SET_PROJECT_LIST', response.data.challenges)
                 })
         },
-        setModeEdit({commit}){
+        setModeEdit ({ commit }) {
             commit('SET_EDITABLE', true)
         },
 
-        setModeDisplay({commit}){
+        setModeDisplay ({ commit }) {
             commit('SET_EDITABLE', false)
         },
-        setProjectProgress({commit}, progress){
-            if(progress < -1 || progress > 7) return
+        setProjectProgress ({ commit }, progress) {
+            if (progress < -1 || progress > 7) return
 
-            const url = `${Backend_API_URL}/project/push.json` ;
+            const url = `${Backend_API_URL}/project/push.json`;
 
             commit('SET_PROJECT_PROGRESS', progress)
 
@@ -148,7 +149,7 @@ export default new Vuex.Store({
                     }
                 })
                 .then(response => {
-                    if(response.status === 200){
+                    if (response.status === 200) {
                         commit('SET_PROJECT_PROGRESS', progress)
                     }
                 })
@@ -156,7 +157,7 @@ export default new Vuex.Store({
     },
     getters: {
         projectSourceAPI_Path: state => {
-            return  state.custom_project.source_url.replace('https://github.com', '')
+            return state.custom_project.source_url.replace('https://github.com', '')
         },
     }
 })

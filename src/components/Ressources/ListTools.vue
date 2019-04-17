@@ -1,7 +1,10 @@
 <template>
   <div class="tools">
-    <h3>TOOLS USED DURING THIS CHALLENGE</h3>
-    <!--<div v-if="!editMode">
+    <h2>Tools used during this challenge : </h2>
+    <!--
+          USED FOR THE EDIT MODE
+
+    <div v-if="!editMode">
       <ul>
         <li v-for="tool in tools" :key="tool.id">
           <a :href="tool.link">{{ tool.name }}</a>
@@ -20,6 +23,7 @@
       <input class="input-tools" type="text" v-model="tool" placeholder="Insert a new tool">
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>-->
+    <i v-if="!tools.length">There are no tools at the moment</i>
     <ul>
       <li v-for="tool in tools" :key="tool.key">
         <a :href="tool.link">{{ tool.name }}</a>
@@ -36,6 +40,8 @@ export default {
       tool: ""
     };
   },
+ /*
+      USED FOR THE EDIT MODE
   methods: {
     remove(tool) {
       this.tools.splice(this.tools.indexOf(tool), 1);
@@ -48,15 +54,25 @@ export default {
         name: this.tool
       });
     }
-  }
+  }*/
 };
 </script>
 
 <style scoped>
+
+  /* GENERAL CSS FOR EVERY DEVICE */
+
+  i{
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #ff9999;
+  }
+
 .tools {
   margin-top: 20px;
 }
 
+/* USED FOR EDIT MODE
 .btn-danger {
   float: right;
   margin-bottom: 0px !important;
@@ -72,10 +88,9 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
+*/
 ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   margin-bottom: 35px;
 }
@@ -109,7 +124,7 @@ li:hover {
 
 li a {
   text-decoration: none;
-  color: #f9f9f9;
+  color: #333333;
   display: block;
 
   -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
@@ -121,40 +136,28 @@ li a {
 
 li a:hover {
   font-size: 21px;
-  color: #019eba;
+  color: salmon;
 }
 
+/* Phone part */
 @media screen and (min-width: 300px) and (max-width: 767px) {
   h3 {
     font-size: 120%;
-    color: #f9f9f9;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 20px;
   }
 }
-/*
-  Tablets part
-*/
+/* Tablets part */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h3 {
     font-size: 110%;
-    color: #f9f9f9;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 30px;
   }
 }
 
-/*
-  Part for the computer
-*/
+/*  Part for the computer */
 @media screen and (min-width: 1200px) {
   h3 {
     font-size: 120%;
-    color: #f9f9f9;
-    font-family: Verdana, Geneva, sans-serif;
-    text-align: center;
     margin-bottom: 32px;
   }
 }

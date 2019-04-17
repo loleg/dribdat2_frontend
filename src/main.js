@@ -3,16 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
+
+//Libray to use the different icon in the web app
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faLightbulb } from '@fortawesome/free-solid-svg-icons'
-import { faUsers } from '@fortawesome/free-solid-svg-icons'
-import { faFileCode } from '@fortawesome/free-solid-svg-icons'
-import { faLink } from '@fortawesome/free-solid-svg-icons'
-import { faMoneyBillAlt } from '@fortawesome/free-solid-svg-icons'
-import { faDollarSign} from '@fortawesome/free-solid-svg-icons'
+import { faLightbulb, faUsers, faFileCode, faLink, faMoneyBillAlt,faDollarSign} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-
 
 
 library.add(faLightbulb,faUsers,faFileCode,faLink, faMoneyBillAlt,faDollarSign)

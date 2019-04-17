@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
-
+// Add the different principal component to the router
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,

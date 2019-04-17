@@ -1,7 +1,10 @@
 <template>
   <div class="ressources">
-    <h3>RESSOURCES USED DURING THIS CHALLENGE</h3>
-    <!--<div v-if="!editMode">
+    <h2>Ressources used during this challenge : </h2>
+
+    <!-- USED IF THE EDIT MODE
+
+    <div v-if="!editMode">
       <ul>
         <li v-for="ressource in ressources" :key="ressource.id">{{ ressource.name }}</li>
       </ul>
@@ -23,8 +26,11 @@
       <button type="button" class="btn btn-primary" @click="add">Add</button>
     </div>-->
     <ul>
+      <!-- If we don't have resources, warning message -->
+      <i v-if="!ressources.length">There are no resources at the moment</i>
       <li v-for="ressource in ressources" :key="ressource.key">
         <a :href="ressource.link">{{ ressource.name }}</a>
+
       </li>
     </ul>
   </div>
@@ -38,6 +44,9 @@ export default {
       ressource: ""
     };
   },
+  /*
+  USED FOR THE EDIT MODE
+
   methods: {
     remove(ressource) {
       this.ressources.splice(this.ressources.indexOf(ressource), 1);
@@ -50,19 +59,37 @@ export default {
         name: this.ressource
       });
     }
-  }
+  }*/
 };
 </script>
 
 <style scoped>
+
+  /* GENERAL CSS FOR EVERY DEVICE */
+
+  h2 {
+    color: #ffffff;
+    background-color: #6c757d;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+  }
+
+  i{
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #ff9999;
+  }
 .ressources {
   margin-top: 20px;
 }
 
+/* USED FOR THE EDIT MODE
 .btn-danger {
   float: right;
   margin-bottom: 0px !important;
 }
+
 
 input[type="text"],
 select {
@@ -74,10 +101,10 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+  */
 
 ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   margin-bottom: 35px;
 }
@@ -88,6 +115,7 @@ li {
   height: 38px;
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   color: #f9f9f9;
   display: block;
@@ -105,38 +133,52 @@ li:last-child {
 
 li:hover {
   font-size: 21px;
-  color: #019eba;
+  color: salmon;
 }
 
+li a {
+  text-decoration: none;
+  color: #333333;
+  display: block;
+
+  -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -o-transition: font-size 0.2s ease, background-color 0.2s ease;
+  -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
+  transition: font-size 0.2s ease, background-color 0.2s ease;
+}
+
+li a:hover {
+  font-size: 21px;
+  color: salmon;
+}
+
+/* Phone part */
 @media screen and (min-width: 300px) and (max-width: 767px) {
   h3 {
     font-size: 120%;
-    color: #f9f9f9;
+    color: #333333;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
     margin-bottom: 20px;
   }
 }
-/*
-        Tablets part
-        */
+/* Tablets part */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   h3 {
     font-size: 110%;
-    color: #f9f9f9;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #333333;
+    font-family: Verdana, Geneva, sans-serif;
     text-align: center;
     margin-bottom: 30px;
   }
 }
 
-/*
-    Part for the computer
-     */
+/* Part for the computer */
 @media screen and (min-width: 1200px) {
   h3 {
     font-size: 120%;
-    color: #f9f9f9;
+    color: #000000;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
     margin-bottom: 32px;

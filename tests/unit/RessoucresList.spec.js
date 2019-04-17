@@ -5,15 +5,15 @@ describe('ListRessources.vue', () => {
     it('list is diplayed', () => {
         const ressources = [
             {
-                id: 1,
+                link: "https://github.com/",
                 name: "GitHub"
             },
             {
-                id: 2,
+                link: "https://vuejs.org/",
                 name: "VueJS"
             },
             {
-                id: 3,
+                link: "https://jestjs.io/",
                 name: "Jest"
             }
         ]

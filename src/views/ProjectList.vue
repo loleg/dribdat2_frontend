@@ -1,4 +1,5 @@
 <template>
+  <div class="content">
   <div id="challenge-list">
     <ul v-for="project in projectList" v-bind:key="project.id">
       <li>
@@ -6,6 +7,8 @@
       </li>
     </ul>
   </div>
+  </div>
+
 </template>
 
 <script>
@@ -26,6 +29,18 @@ export default {
 </script>
 
 <style scoped>
+
+  .content{
+    background-color: #f4fcfc;
+    opacity: 0.87;
+    width: 100%;
+    margin: 0;
+    -webkit-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+    box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+    border: 1px groove #333333;
+    border-radius: 10px;
+  }
 ul {
   list-style-type: none;
   margin: 0;
@@ -62,7 +77,7 @@ li:hover {
 
 li a {
   text-decoration: none;
-  color: #f9f9f9;
+  color: #333333;
   display: block;
 
   -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;

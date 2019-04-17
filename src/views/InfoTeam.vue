@@ -1,11 +1,13 @@
 <template>
+    <div class="content">
     <div class="infoTeam">
         <HeadlineStatus :status="project.phase"></HeadlineStatus>
         <ChallengeListPersons :list="getPersons()"></ChallengeListPersons>
 
         <div>
-            <button class="btn btn-primary" v-on:click="openSourceUrl()">Source code</button>
+            <SourceCode :link="project.source_url"></SourceCode>
         </div>
+        <!-- USED IF YOU WANT THE FEEDBACK BUTTON TO COMMUNICATE IN THE TEAM
         <div class="container">
             <div class="add-feedback" :class="{'open': formOpen}">
                 <div class="button-copy" v-show="!formOpen" @click="formOpen = true">Feedback</div>
@@ -16,26 +18,29 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <Patreon link="www.patreon.com/"></Patreon>
+        </div>-->
+        <!-- Used if we have a link for the patreon but not implemented yet from API
+        <Patreon link="www.patreon.com/"></Patreon>-->
+    </div>
     </div>
 </template>
 
 <script>
     import HeadlineStatus from "../components/InfoTeam/HeadlineStatus";
     import ChallengeListPersons from "../components/InfoTeam/ChallengeListPersons";
-    import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
-    import Patreon from "../components/InfoTeam/Patreon";
-    import { APIService } from "../APIService";
+    //import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
+   // import Patreon from "../components/InfoTeam/Patreon";
+    import SourceCode from "../components/InfoTeam/SourceCode";
     import { mapState } from "vuex";
 
     export default {
         name: "InfoTeam",
         components: {
-            Patreon,
+        //    Patreon,
             HeadlineStatus,
             ChallengeListPersons,
-            ChallengeFeedback
+           // ChallengeFeedback,
+            SourceCode
         },
         props: ["project"],
 
@@ -44,7 +49,10 @@
                 formOpen: false,
 
                 // need to get persons from API
-                persons: [ //TODO remove the persons array
+                persons: [   ],
+
+                // To use when we can retrieve the data from the API
+                persons_demo: [
                     {
                         firstname: "Mickaël",
                         lastname: "Coluccia",
@@ -87,14 +95,7 @@
             };
         },
         methods: {
-            getDataActivity() {
-                APIService.getActivityList(this.project.id).then(data => {
-                    this.activities = data;
-                });
-            },
-            openSourceUrl() {
-                window.location.href = this.project.source_url;
-            },
+            //Get the contibutors to send in the ChallengeListPerson
             getPersons (){
                 return this.$store.state.contributors
                     .map(cont =>
@@ -108,11 +109,23 @@
         },
         created() {
             this.$store.dispatch("loadContributors")
-            this.getDataActivity();
         },
         computed: mapState(["contributors"])
     };
 </script>
 
 <style scoped>
+
+    .content{
+        background-color: #f4fcfc;
+        opacity: 0.87;
+        width: 100%;
+        margin: 0;
+        -webkit-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+        box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+        border: 1px groove #333333;
+        border-radius: 10px;
+    }
+
 </style>

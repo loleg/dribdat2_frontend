@@ -1,15 +1,20 @@
 <template>
+
+<div class="content">
   <div class="projectPresentation">
+    <!-- for every :... we pass the data from the API -->
     <ProjectTitle :title="project.name"></ProjectTitle>
     <TitleChallenge :title="project.challenge.name"></TitleChallenge>
     <ChallengePitch :pitch="project.pitch"></ChallengePitch>
     <SummaryPitch :summary="project.summary"></SummaryPitch>
-    <!-- https://www.dailymotion.com/video/xkq3cr -->
-    <!-- https://www.youtube.com/watch?v=zihJTimjdls -->
+    <!-- Used if we have a link for the social media but not implemented yet from API
     <div class="contentLeft">
       <SocialLink class="LinkSocial" link="www.facebook.com"></SocialLink>
-    </div>
+    </div>-->
   </div>
+
+  </div>
+
 </template>
 
 <script>
@@ -18,12 +23,12 @@ import TitleChallenge from "../components/ProjectPresentation/TitleChallenge";
 import SummaryPitch from "../components/ProjectPresentation/SummaryPitch";
 import ProjectTitle from "../components/ProjectPresentation/ProjectTitle";
 import ChallengePitch from "../components/ProjectPresentation/ChallengePitch";
-import SocialLink from "../components/ProjectPresentation/SocialLink";
+//import SocialLink from "../components/ProjectPresentation/SocialLink";
 
 export default {
   name: "ProjectPresentation",
   components: {
-    SocialLink,
+    //SocialLink,
     TitleChallenge,
     SummaryPitch,
     ProjectTitle,
@@ -35,15 +40,31 @@ export default {
 </script>
 
 <style scoped>
+
+  .content{
+    background-color: #f4fcfc;
+    opacity: 0.87;
+    width: 100%;
+    margin: 0;
+    -webkit-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+    box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+    border: 1px groove #333333;
+    border-radius: 10px;
+  }
+
 @media screen {
   .projectPresentation {
     height: 75%;
     padding: 0;
     margin: 0;
-  }
 
+  }
+}
+
+  /* Used for the social link
   .contentLeft {
     text-align: left;
   }
-}
+*/
 </style>

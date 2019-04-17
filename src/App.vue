@@ -14,11 +14,14 @@ export default {
 
 <style lang="scss">
 body {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 20px 20px;
   background-color: #616163;
+  background-image:url("./assets/9814.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+
 }
 
 .container {
@@ -32,7 +35,8 @@ body {
 .add-feedback {
   &.open {
 
-    background-color: #fafafa;
+    background-color: #ffffff;
+    opacity: 0.8;
     padding: 18px 32px;
     border-radius: 5px;
     width: 700px;
@@ -46,7 +50,8 @@ body {
     }
   }
   transition: all 0.3s ease;
-  background-color: #bee1e2;
+  background-color: #ffffff;
+  opacity: 0.8;
   height: 100px;
   width: 100px;
   border-radius: 72px;
@@ -85,72 +90,19 @@ body {
 
 @media screen and (min-width: 1200px) {
   #app {
-    font-family: Arial;
+    font-family: Verdana;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
 
-    margin: 0 auto;
+
     padding: 0 auto;
     margin-left: 250px;
     margin-right: 250px;
   }
 
-  #nav {
-    border-bottom: #f9f9f9 1px solid;
-    margin-bottom: 4px;
-    ul {
-      list-style-type: none;
-      margin: 5px;
-      padding: 0;
-      overflow: hidden;
-      background-color: #616163;
-      margin-bottom: -5px;
-    }
-    li {
-      float: left;
-    }
-    li a {
-      display: block;
-      text-align: center;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #f9f9f9;
-      font-size: 16px;
-      padding-left: 1px;
 
-      //Vertical line
-      margin-right: 8px;
-      margin-left: 8px;
-      border-right: 1px solid #f9f9f9;
-      height: 32px;
-      margin-bottom: 5px;
-
-      &.router-link-exact-active {
-        color: #f9f9f9;
-      }
-    }
-
-    .icon-pencil {
-      margin-right: 0;
-      color: white;
-    }
-
-    //Used to not have the margin in left in 8px
-    li:first-child a {
-      margin-left: 0px;
-    }
-    //Used to not have the border for the last router
-    li:last-child a {
-      border-right: none;
-    }
-
-    li a:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 /*
@@ -170,54 +122,6 @@ body {
     margin-right: 20px;
   }
 
-  #nav {
-    border-bottom: #f9f9f9 1px solid;
-
-    ul {
-      list-style-type: none;
-      margin: 5px;
-      padding: 0;
-      overflow: hidden;
-      background-color: #616163;
-      margin-bottom: -8px;
-    }
-    li {
-      float: left;
-    }
-    li a {
-      display: block;
-      text-align: center;
-      padding: 10px 20px;
-      padding-left: 1px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #f9f9f9;
-      font-size: 15px;
-
-      //Vertical line
-      margin-right: 8px;
-      margin-left: 8px;
-      border-right: 1px solid #f9f9f9;
-      height: 12px;
-      margin-top: -8px;
-
-      &.router-link-exact-active {
-        color: #f9f9f9;
-      }
-    }
-
-    //Used to not have the margin in left in 8px
-    li:first-child a {
-      margin-left: 0px;
-    }
-    //Used to not have the border for the last router
-    li:last-child a {
-      border-right: none;
-    }
-    li a:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 /*
@@ -236,53 +140,6 @@ body {
     padding: 0 auto;
   }
 
-  #nav {
-    border-bottom: #f9f9f9 1px solid;
-    margin-bottom: 2px;
-    ul {
-      list-style-type: none;
-      margin: 1px;
-      padding: 0;
-      overflow: hidden;
-      background-color: #616163;
-    }
-    li {
-      float: left;
-    }
-    li a {
-      display: block;
-      text-align: center;
-      padding: 10px 10px;
-      padding-left: 1px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #f9f9f9;
-      font-size: 13px;
-      margin-top: -8px;
-      margin-bottom: -8px;
 
-      //Vertical line
-      margin-right: 3px;
-      margin-left: 3px;
-      border-right: 1px solid #f9f9f9;
-      height: 12px;
-
-      &.router-link-exact-active {
-        color: #f9f9f9;
-      }
-    }
-
-    //Used to not have the margin in left in 8px
-    li:first-child a {
-      margin-left: 0px;
-    }
-    //Used to not have the border for the last router
-    li:last-child a {
-      border-right: none;
-    }
-    li a:hover {
-      text-decoration: underline;
-    }
-  }
 }
 </style>

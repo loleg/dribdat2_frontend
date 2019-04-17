@@ -1,14 +1,15 @@
 <template>
-
+  <div class="content">
   <div class="developmentStatus">
 
-      <edit-button :editMode="editMode"></edit-button>
+     <!-- <edit-button :editMode="editMode"></edit-button> -->
+    <h1>Development status </h1>
 
     <project-progress-bar :current-step="project.progress"></project-progress-bar>
     <div id="accordion">
       <div class="card">
         <div class="card-header" id="headingIssues">
-          <h5>
+          <h2>
             <a
               class="card-link"
               v-on:click="loadIssues()"
@@ -17,7 +18,7 @@
               aria-expanded="false"
               aria-controls="collapse-issues"
             >Open Issues</a>
-          </h5>
+          </h2>
         </div>
         <div
           id="collapse-issues"
@@ -59,6 +60,8 @@
       </div>
     </div>
   </div>
+  </div>
+
 </template>
 
 <script>
@@ -66,7 +69,7 @@ import { mapState } from "vuex";
 import ContributionsBadge from "../components/DevelopementStatus/contributionsBadge";
 import IssuesBadge from "../components/DevelopementStatus/issuesBadge";
 import ProjectProgressBar from "../components/DevelopementStatus/projectProgressBar";
-import EditButton from "../components/EditButton";
+//import EditButton from "../components/EditButton";
 
 export default {
 
@@ -82,7 +85,7 @@ export default {
     ProjectProgressBar,
     IssuesBadge,
     ContributionsBadge,
-    EditButton
+    //EditButton
   },
   props: ["project"],
   data: () => {
@@ -109,12 +112,23 @@ export default {
 </script>
 
 <style scoped>
-#headingIssues,
+  .content{
+    background-color: #f4fcfc;
+    opacity: 0.87;
+    width: 100%;
+    margin: 0;
+    -webkit-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+    box-shadow: 0px 13px 168px -30px rgba(0,0,0,1);
+    border: 1px groove #333333;
+    border-radius: 10px;
+  }
+
+  #headingIssues,
 #headingContributors {
   font-family: Verdana, Geneva, sans-serif;
-  background-color: #89a7af;
-  color: #f9f9f9;
+    color: #ffffff;
+    background-color: #6c757d;
+    border-radius: 5px;
 }
-
-
 </style>
