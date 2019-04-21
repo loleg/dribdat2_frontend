@@ -11,10 +11,10 @@
         <iframe class="rest-iframe" :src="embedLink(this.pitch)"></iframe>
       </div>
     </div>-->
-    <div class="resp-container">
+    <div v-if="is_webembed" class="resp-container">
       <iframe
         class="resp-iframe"
-        :src="pitch"
+        :src="sanitized_url"
         allow="encrypted-media"
         allowfullscreen
       ></iframe>
@@ -25,12 +25,42 @@
 <script>
 export default {
   props: {
-    pitch: String
+    pitch: String,
+    is_webembed: Boolean
   },
   data() {
     return {};
   },
   methods: {
+    /*modify() {
+      this.pitch = this.embedLink(this.challenge_pitch);
+    },*/
+    /*embedLink(link = "https://www.youtube.com/watch?v=Vh5FW5hSZyI") {
+      if (link.includes("youtube.com/watch")) {
+        // youtube video
+        let yt_video_id = link.split("=")[1];
+        return "https://www.youtube.com/embed/" + yt_video_id;
+      } else if (link.includes("dailymotion.com/video")) {
+        // dailymotion video
+        let dm_video_id = this.pitch.split("video/")[1];
+        return "https://www.dailymotion.com/embed/video/" + dm_video_id;
+      } else {
+        // other
+        return link;
+      }
+    }*/
+  },
+  computed: {
+    sanitized_url: function() {
+        let url = this.pitch;
+        let link = "";
+        if(this.pitch !== undefined && url.includes("<iframe"))
+        {
+            url = this.pitch.split("=\"")[1];
+            link = url.split("\">")[0];
+        }
+        return link;
+    }
   }
 };
 </script>
@@ -49,6 +79,7 @@ export default {
   width: 100%;
   height: 100%;
   border: 0;
+    opacity: 1 !important;
 }
 
 

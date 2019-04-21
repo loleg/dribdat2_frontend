@@ -5,7 +5,7 @@
     <!-- for every :... we pass the data from the API -->
     <ProjectTitle :title="project.name"></ProjectTitle>
     <TitleChallenge :title="project.challenge.name"></TitleChallenge>
-    <ChallengePitch :pitch="project.pitch"></ChallengePitch>
+    <ChallengePitch :pitch="project.pitch" :is_webembed="project.is_webembed"></ChallengePitch>
     <SummaryPitch :summary="project.summary"></SummaryPitch>
     <!-- Used if we have a link for the social media but not implemented yet from API
     <div class="contentLeft">
@@ -42,8 +42,10 @@ export default {
 <style scoped>
 
   .content{
-    background-color: #f4fcfc;
-    opacity: 0.87;
+    /*background-color: #f4fcfc;
+
+    opacity: 0.87;*/
+    background-color: rgba(244,252,252,0.87);
     width: 100%;
     margin: 0;
     border: 1px groove #333333;
@@ -52,11 +54,11 @@ export default {
 
 @media screen {
   .projectPresentation {
-    height: 75%;
-    padding: 0;
-    margin: 0;
-
+      height: 75%;
+      padding: 0;
+      margin: 0;
   }
+
 }
 
   /* Used for the social link

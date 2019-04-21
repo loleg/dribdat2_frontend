@@ -85,7 +85,7 @@ export default {
   padding-bottom: 3px;
   text-align: center;
   font-size: 13px;
-  border-radius: 5px;
+  border-radius: 9px;
 }
 
 #myFooter .row {

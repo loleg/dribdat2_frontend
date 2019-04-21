@@ -65,8 +65,9 @@ export default {
 <style scoped>
 
   .content{
-    background-color: #f4fcfc;
-    opacity: 0.87;
+    /*background-color: #f4fcfc;
+    opacity: 0.87;*/
+    background-color: rgba(244,252,252,0.87);
     width: 100%;
     margin: 0;
     border: 1px groove #333333;

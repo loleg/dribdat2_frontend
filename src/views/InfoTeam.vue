@@ -2,7 +2,7 @@
     <div class="content">
     <div class="infoTeam">
         <HeadlineStatus :status="project.phase"></HeadlineStatus>
-        <ChallengeListPersons :list="getPersons()"></ChallengeListPersons>
+        <ChallengeListPersons :list="project.team"></ChallengeListPersons>
 
         <div>
             <SourceCode :link="project.source_url"></SourceCode>
@@ -31,7 +31,6 @@
     //import ChallengeFeedback from "../components/InfoTeam/ChallengeFeedback";
    // import Patreon from "../components/InfoTeam/Patreon";
     import SourceCode from "../components/InfoTeam/SourceCode";
-    import { mapState } from "vuex";
 
     export default {
         name: "InfoTeam",
@@ -95,22 +94,9 @@
             };
         },
         methods: {
-            //Get the contibutors to send in the ChallengeListPerson
-            getPersons (){
-                return this.$store.state.contributors
-                    .map(cont =>
-                    {
-                        return {
-                            name : cont.author.login,
-                            link : cont.author.html_url
-                        }
-                    })
-            }
+
+
         },
-        created() {
-            this.$store.dispatch("loadContributors")
-        },
-        computed: mapState(["contributors"])
     };
 </script>
 

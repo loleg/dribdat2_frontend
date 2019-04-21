@@ -3,7 +3,7 @@
     <h2>Challenge represented by : </h2>
     <div class="list">
     <ul>
-      <li v-for="person in list"  :key="person.key">
+      <li v-for="person in persons" :key="person.id">
         <a :href="person.link">{{ person.name }}</a>
       </li>
     </ul>
@@ -16,7 +16,20 @@
 export default {
   props: {
     list: Array
-  }
+  },
+    computed: {
+      persons: function () {
+          let persons = this.list;
+          if(this.list === undefined || this.list.length == 0){
+              persons = [
+                  {link: "",
+                  id: 0,
+                  name: "No one has joined this project yet."}
+              ]
+          }
+          return persons;
+      }
+    }
 };
 </script>
 

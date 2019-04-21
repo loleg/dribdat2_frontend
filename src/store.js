@@ -14,13 +14,34 @@ export default new Vuex.Store({
     state: {
         github_BaseURL: '',
         github_repoPath: '/repos/ChallengeHunt/challengehunt',
-        project: {},
+        project: {
+            id: null,
+            name: "",
+            summary: "",
+            pitch: "",
+            is_webembed: false,
+            phase: null,
+            status: "",
+            repository : "",
+            event: {
+                id: null,
+                name: "",
+                community: ""
+            },
+            challenge: {
+                id: null,
+                name: ""
+            },
+            team: [
+
+            ]
+        },
         custom_project: {
             name: "getaround.io",
             summary: "We want to get people to be more concerned about their health. The average person does not exercise enough. With this project we hope to motivate people to be more active.",
             challenge: {
                 //name: "Help people be more active"
-                name: ""
+                name: "Help people be more active"
             },
             id: 1,
             pitch: "'https://www.youtube.com/embed/0lwOmIHcSno'",
@@ -51,7 +72,10 @@ export default new Vuex.Store({
             state.custom_project = custom_project.project
             state.custom_project.challenge = {name: ''}
             state.custom_project.event = custom_project.event
-            state.custom_project.pitch = 'https://www.youtube.com/embed/0lwOmIHcSno' //TODO pitch has to be provided by the API
+            state.custom_project.pitch = custom_project.pitch
+            state.custom_project.is_webembed = custom_project.is_webembed
+            state.custom_project.team = custom_project.team
+            state.custom_project.phase = custom_project.phase
         },
         SET_PROJECT_LIST (state, projectList) {
             state.projectList = projectList;
@@ -69,7 +93,7 @@ export default new Vuex.Store({
                 .get(github_apiURL
                     + state.custom_project.source_url.replace('https://github.com', '')
                     + '/stats/contributors')
-                .then(r => r.data)
+                .then(r => r.data.project)
                 .then(contributors => {
                     commit('SET_CONTRIBUTORS', contributors)
                 })

@@ -29,7 +29,16 @@ export default {
         "Prototype is deployed",
         "Prototype is presented",
         "Project is live an publicly available"
-      ]
+      ],
+        custom_steps: {
+            Challenge:   'This is an idea or challenge description',
+            Researching: 'A team has formed and started a project',
+            Sketching:   'Research has been done to define the scope',
+            Prototyping: 'Initial designs have been sketched and shared',
+            Launching:   'A prototype of the idea has been developed',
+            Promoting:   'The prototype has been deployed and presented',
+            Supporting:  'This project is live and available to the public',
+        }
     };
   },
   methods: {
