@@ -93,7 +93,7 @@ export default new Vuex.Store({
                 .get(github_apiURL
                     + state.custom_project.source_url.replace('https://github.com', '')
                     + '/stats/contributors')
-                .then(r => r.data.project)
+                .then(r => r.data)
                 .then(contributors => {
                     commit('SET_CONTRIBUTORS', contributors)
                 })
