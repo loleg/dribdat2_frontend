@@ -4,7 +4,8 @@
     <div class="card">
       <div class="card-body d-flex flex-column justify-content-between">
         <stepper :steps="steps" :current-step="currentStep" v-on:setDisqusStep="onDisqusStep"></stepper>
-        <challenge-feedback v-show="!isDisqusHidden" ref="disqusComponent" :id="disqusStep" :uniqueUrl="this.$route.fullPath" :title="steps[disqusStep]"></challenge-feedback>
+        <!-- <challenge-feedback v-show="!isDisqusHidden" ref="disqusComponent" :id="disqusStep" :uniqueUrl="this.$route.fullPath" :title="steps[disqusStep]"></challenge-feedback> -->
+        <challenge-feedback ref="disqusComponent" :id="disqusStep" :uniqueUrl="this.$route.fullPath" :title="steps[disqusStep]"></challenge-feedback>
       </div>
     </div>
   </div>
@@ -51,7 +52,7 @@ export default {
           else {
               this.isDisqusHidden = false
               let newIdentifier = this.$route.fullPath + /step/ + step
-              let newUrl = 'http://dribdat' + this.$route.fullPath + /step/ + step;
+              let newUrl = 'https ://dribdat' + this.$route.fullPath + /step/ + step;
 
               this.$refs.disqusComponent.reset(newIdentifier, newUrl, 'Step ' + step, 'en')
           }
