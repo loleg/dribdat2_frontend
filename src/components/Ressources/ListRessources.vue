@@ -1,89 +1,112 @@
 <template>
-    <div class="ressources">
-        <h3>RESSOURCES USED DURING THIS CHALLENGE</h3>
-        <ul>
-            <li v-for="ressource in ressources" :key="ressource.id">{{ ressource.name }}</li>
-        </ul>
+  <div class="ressources">
+    <h2>Resources used during this challenge : </h2>
+
+    <!-- USED IF THE EDIT MODE
+
+    <div v-if="!editMode">
+      <ul>
+        <li v-for="ressource in ressources" :key="ressource.id">{{ ressource.name }}</li>
+      </ul>
     </div>
+    <div v-else>
+      <ul>
+        <li v-for="ressource in ressources" :key="ressource.id">
+          {{ ressource.name }}
+          <button
+            type="button"
+            class="btn btn-danger"
+            @click="remove(ressource)"
+          >
+            <i class="icon-remove"></i>
+          </button>
+        </li>
+      </ul>
+      <input type="text" v-model="ressource" placeholder="Insert a new ressources">
+      <button type="button" class="btn btn-primary" @click="add">Add</button>
+    </div>-->
+    <div class="list">
+    <ul>
+      <!-- If we don't have resources, warning message -->
+      <i class="text-error" v-if="!ressources.length">There are no resources at the moment</i>
+      <li v-for="ressource in ressources" :key="ressource.key">
+        <a :href="ressource.link">{{ ressource.name }}</a>
+
+      </li>
+    </ul>
+  </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        props: ["ressources"]
+export default {
+  props: ["ressources"],
+  data() {
+    return {
+      ressource: ""
     };
+  },
+  /*
+  USED FOR THE EDIT MODE
+
+  methods: {
+    remove(ressource) {
+      this.ressources.splice(this.ressources.indexOf(ressource), 1);
+    },
+    add() {
+      let idRessource = this.ressources[this.ressources.length - 1]["id"];
+      if (idRessource == null) idRessource = 1;
+      this.ressources.push({
+        id: idRessource + 1,
+        name: this.ressource
+      });
+    }
+  }*/
+};
 </script>
 
 <style scoped>
-    .ressources {
-        margin-top: 20px;
-    }
 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        margin-bottom: 35px;
-    }
+  /* GENERAL CSS FOR EVERY DEVICE */
 
-    li {
-        font: 200 18px/1.5 Helvetica, Verdana, sans-serif;
-        border-bottom: 1px solid #ccc;
-        height: 38px;
-        width: 100%;
-        margin-top: 10px;
-        text-decoration: none;
-        color: #f9f9f9;
-        display: block;
+  h2 {
+    color: #ffffff;
+    background-color: #6c757d;
+    border-radius: 5px;
+  }
 
-        -webkit-transition: font-size 0.2s ease, background-color 0.2s ease;
-        -moz-transition: font-size 0.2s ease, background-color 0.2s ease;
-        -o-transition: font-size 0.2s ease, background-color 0.2s ease;
-        -ms-transition: font-size 0.2s ease, background-color 0.2s ease;
-        transition: font-size 0.2s ease, background-color 0.2s ease;
-    }
 
-    li:last-child {
-        border: none;
-    }
+.ressources {
+  margin-top: 20px;
+}
 
-    li:hover {
-        font-size: 21px;
-        color: #019eba;
-    }
+/* USED FOR THE EDIT MODE
+.btn-danger {
+  float: right;
+  margin-bottom: 0px !important;
+}
 
-    @media screen and (min-width: 300px) and (max-width: 767px) {
-        h3 {
-            font-size: 120%;
-            color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    }
-    /*
-        Tablets part
-        */
-    @media screen and (min-width: 767px) and (max-width: 1200px) {
-        h3 {
-            font-size: 110%;
-            color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-    }
 
-    /*
-    Part for the computer
-     */
-    @media screen and (min-width: 1200px) {
-        h3 {
-            font-size: 120%;
-            color: #f9f9f9;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-            text-align: center;
-            margin-bottom: 32px;
-        }
-    }
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+  */
+
+
+
+/* Part for the computer */
+@media screen and (min-width: 1200px) {
+  h3 {
+    color: #000000;
+    margin-bottom: 32px;
+  }
+}
 </style>
 

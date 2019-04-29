@@ -1,11 +1,14 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+/*import { shallowMount, createLocalVue } from '@vue/test-utils'
 import ProjectPresentation from '@/views/ProjectPresentation.vue'
-import Vuex from 'vuex'
+import Vuex from 'vuex'*/
+
+import { shallowMount} from '@vue/test-utils'
+import ProjectPresentation from '@/views/ProjectPresentation.vue'
 
 describe('ProjectPresentation.vue', () => {
     it('the project presentation contains the components summaryPitch', () => {
 
-        const localVue = createLocalVue()
+       /* const localVue = createLocalVue()
 
         localVue.use(Vuex)
 
@@ -16,7 +19,7 @@ describe('ProjectPresentation.vue', () => {
             actions:{
                 setModeDisplay: jest.fn()
             }
-        })
+        })*/
 
         const project = {
             name: 'name',
@@ -26,12 +29,12 @@ describe('ProjectPresentation.vue', () => {
             },
             pitch: 'http://example.com'
         }
-        const wrapper = shallowMount(ProjectPresentation,{
+      const wrapper = shallowMount(ProjectPresentation,{
             propsData: {
                 project
             },
-            store: store,
-            localVue: localVue
+        /*      store: store,
+            localVue: localVue*/
         })
 
         expect(wrapper.find('.project-title h1'))

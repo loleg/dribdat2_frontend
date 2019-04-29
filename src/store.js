@@ -6,23 +6,52 @@ import VueAxios from 'vue-axios'
 Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 
-let github_apiURL = 'https://api.github.com'
-let path = '/repos/ChallengeHunt/challengehunt'
+let github_apiURL = 'https://api.github.com/repos'
+//let path = '/repos/ChallengeHunt/challengehunt'
 const Backend_API_URL = 'https://dribdat2.herokuapp.com/api'
 
 export default new Vuex.Store({
     state: {
         github_BaseURL: '',
         github_repoPath: '/repos/ChallengeHunt/challengehunt',
-        project: {},
-        custom_project: {
-            name: "name",
-            summary: "summary",
+        project: {
+            id: null,
+            name: "",
+            summary: "",
+            pitch: "",
+            is_webembed: false,
+            phase: null,
+            status: "",
+            repository : "",
+            event: {
+                id: null,
+                name: "",
+                community: ""
+            },
             challenge: {
-                name: "challengeName"
+                id: null,
+                name: ""
+            },
+            team: [
+
+            ]
+        },
+        custom_project: {
+            name: "getaround.io",
+            summary: "We want to get people to be more concerned about their health. The average person does not exercise enough. With this project we hope to motivate people to be more active.",
+            challenge: {
+                //name: "Help people be more active"
+                name: "Help people be more active"
             },
             id: 1,
-            pitch: "https://example.com"
+            pitch: "'https://www.youtube.com/embed/0lwOmIHcSno'",
+            phase: 4,
+            status: "Looking for designers",
+            event: {
+
+            }
+
+
         },
         contributors: [],
         issues: [],
@@ -30,46 +59,56 @@ export default new Vuex.Store({
         editMode: false
     },
     mutations: {
-        SET_CONTRIBUTORS(state, contributors) {
+        SET_CONTRIBUTORS (state, contributors) {
             state.contributors = contributors
         },
-        SET_ISSUES(state, issues) {
+        SET_ISSUES (state, issues) {
             state.issues = issues
         },
-        SET_PROJECT(state, project) {
+        SET_PROJECT (state, project) {
             state.project = project
         },
-        SET_CUSTOM_PROJECT(state, custom_project) {
-            state.custom_project.id = custom_project.project.id;
-            state.custom_project.name = custom_project.project.name;
-            state.custom_project.summary = custom_project.project.summary;
-            state.custom_project.challenge.name = custom_project.project.category.name;
+        SET_CUSTOM_PROJECT (state, custom_project) {
+            state.custom_project = custom_project.project
+            state.custom_project.challenge = {name: ''}
+            state.custom_project.event = custom_project.event
+            state.custom_project.pitch = custom_project.pitch
+            state.custom_project.is_webembed = custom_project.is_webembed
+            state.custom_project.team = custom_project.team
+            state.custom_project.phase = custom_project.phase
         },
-        SET_PROJECT_LIST(state, projectList) {
+        SET_PROJECT_LIST (state, projectList) {
             state.projectList = projectList;
         },
-        SET_EDITABLE(state, editMode) {
+        SET_EDITABLE (state, editMode) {
             state.editMode = editMode;
+        },
+        SET_PROJECT_PROGRESS (state, progress) {
+            state.custom_project.progress = progress
         }
     },
     actions: {
-        loadContributors({commit}) {
+        loadContributors ({ commit, state }) {
             axios
-                .get(github_apiURL + path + '/stats/contributors')
+                .get(github_apiURL
+                    + state.custom_project.source_url.replace('https://github.com', '')
+                    + '/stats/contributors')
                 .then(r => r.data)
                 .then(contributors => {
                     commit('SET_CONTRIBUTORS', contributors)
                 })
         },
-        loadIssues({commit, state}) {
+        loadIssues ({ commit, state }) {
             axios
-                .get(github_apiURL + state.github_repoPath + '/issues')
+                .get(github_apiURL
+                    + state.custom_project.source_url.replace('https://github.com', '')
+                    + '/issues')
                 .then(r => r.data)
                 .then(issues => {
                     commit('SET_ISSUES', issues)
                 })
         },
-        loadProject({commit}) {
+        loadProject ({ commit }) {
             axios
                 .get(`${Backend_API_URL}/project/1/info.json`)
                 .then(r => r.data)
@@ -120,14 +159,36 @@ export default new Vuex.Store({
 
         setModeDisplay({commit}){
             commit('SET_EDITABLE', false)
+        },
+        setProjectProgress ({ commit }, progress) {
+            if (progress < -1 || progress > 7) return
+
+            const url = `${Backend_API_URL}/project/push.json`;
+
+            commit('SET_PROJECT_PROGRESS', progress)
+
+            axios
+                .put(url, {
+                    method: 'PUT',
+                    mode: 'no-cors',
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json',
+                    },
+                    data: {
+                        project: this.state.custom_project
+                    }
+                })
+                .then(response => {
+                    if (response.status === 200) {
+                        commit('SET_PROJECT_PROGRESS', progress)
+                    }
+                })
         }
     },
     getters: {
-        projectSourceUrl: state => {
-            return state.project.project.source_url
-        },
         projectSourceAPI_Path: state => {
-            return state.project.project.source_url.replace('https://github.com', '')
+            return state.custom_project.source_url.replace('https://github.com', '')
         },
     }
 })

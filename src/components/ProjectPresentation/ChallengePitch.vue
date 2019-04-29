@@ -1,12 +1,23 @@
 <template>
-  <div>
+  <div class="pitch">
+    <!-- USED IF WE NEED TO EDIT THE COMPNENT IN THE WEB APP
+
     <div v-if="editMode">
-      <input type="text" placeholder="Insert the URL of the pitch">
+      <input class="input-pitch" type="text" :placeholder="embedLink(this.challenge_pitch)">
+      <button type="button" class="btn btn-primary" @click="modify">Modify</button>
     </div>
     <div v-else>
       <div class="resp-container">
-        <iframe class="rest-iframe" :src="embedable_pitch"></iframe>
+        <iframe class="rest-iframe" :src="embedLink(this.pitch)"></iframe>
       </div>
+    </div>-->
+    <div v-if="is_webembed" class="resp-container">
+      <iframe
+        class="resp-iframe"
+        :src="sanitized_url"
+        allow="encrypted-media"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </template>
@@ -15,26 +26,40 @@
 export default {
   props: {
     pitch: String,
-    editMode: Boolean
+    is_webembed: Boolean
   },
   data() {
-    return {
-      embedable_pitch: ""
-    };
+    return {};
   },
-  created() {
-    if (this.pitch.includes("youtube")) {
-      // youtube video
-      let yt_video_id = this.pitch.split("=")[1];
-      this.embedable_pitch = "https://www.youtube.com/embed/" + yt_video_id;
-    } else if (this.pitch.includes("dailymotion")) {
-      // dailymotion video
-      let dm_video_id = this.pitch.split("video/")[1];
-      this.embedable_pitch =
-        "https://www.dailymotion.com/embed/video/" + dm_video_id;
-    } else {
-      // other
-      this.embedable_pitch = this.pitch;
+  methods: {
+    /*modify() {
+      this.pitch = this.embedLink(this.challenge_pitch);
+    },*/
+    /*embedLink(link = "https://www.youtube.com/watch?v=Vh5FW5hSZyI") {
+      if (link.includes("youtube.com/watch")) {
+        // youtube video
+        let yt_video_id = link.split("=")[1];
+        return "https://www.youtube.com/embed/" + yt_video_id;
+      } else if (link.includes("dailymotion.com/video")) {
+        // dailymotion video
+        let dm_video_id = this.pitch.split("video/")[1];
+        return "https://www.dailymotion.com/embed/video/" + dm_video_id;
+      } else {
+        // other
+        return link;
+      }
+    }*/
+  },
+  computed: {
+    sanitized_url: function() {
+        let url = this.pitch;
+        let link = "";
+        if(this.pitch !== undefined && url.includes("<iframe"))
+        {
+            url = this.pitch.split("=\"")[1];
+            link = url.split("\">")[0];
+        }
+        return link;
     }
   }
 };
@@ -47,35 +72,15 @@ export default {
   padding-top: 56.25%;
 }
 
-.rest-iframe {
+.resp-iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: 0;
+    opacity: 1 !important;
 }
 
-input[type="text"],
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
-@media screen and (min-width: 1200px) {
-  .rest-iframe {
-    height: 75%;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .rest-iframe {
-    height: 100%;
-  }
-}
 </style>

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
-
+// Add the different principal component to the router
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
@@ -11,9 +11,11 @@ export default new Router({
             path: '/event', component: () => import('./views/ProjectList'), alias: '/'
         },
 
+
         { path: '/project/:id', component: () => import('./components/Project'),
             props: true,
             children: [
+
                 {
                     // UserProfile will be rendered inside User's <router-view>
                     // when /user/:id/profile is matched
@@ -38,7 +40,8 @@ export default new Router({
                     path: 'ressources',
                     name: 'ressources',
                     component: () => import(/* webpackChunkName: "about" */ './views/Ressources.vue')
-                }
+                },
+
             ]
         }
     ]
