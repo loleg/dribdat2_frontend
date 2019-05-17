@@ -8,12 +8,13 @@ Vue.use(VueAxios, axios)
 
 let github_apiURL = 'https://api.github.com/repos'
 //let path = '/repos/ChallengeHunt/challengehunt'
-const Backend_API_URL = 'https://dribdat2.herokuapp.com/api'
+// const Backend_API_URL = 'https://dribdat2.herokuapp.com/api'
+const Backend_API_URL = 'https://hack.opendata.ch/api'
 
 export default new Vuex.Store({
     state: {
         github_BaseURL: '',
-        github_repoPath: '/repos/ChallengeHunt/challengehunt',
+        github_repoPath: '/repos/hackathons-ftw/dribdat2_frontend',
         project: {
             id: null,
             name: "",
